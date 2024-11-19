@@ -1,16 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LoginPage from '../views/LoginPage.vue'
-import DashboardAims from '../views/DashboardAims.vue'
-import PurchaseOverview from '../views/PurchaseOverview.vue'
-import PurchaseRequests from '../views/PurchaseRequests.vue'
-import PurchaseApproval from '../views/PurchaseApproval.vue'
-import BudgetFund from '../views/BudgetFund.vue'
-import AssetManagement from '@/views/AssetManagement.vue'
-import MovedAssetsIn from '@/views/MovedAssetsIn.vue'
-import MovedAssetsOut from '@/views/MovedAssetsOut.vue'
-import ScrappedAssets from '@/views/ScrappedAssets.vue'
-import Category from '@/views/Category.vue'
+import DashboardAims from '../views/aims/DashboardAims.vue'
+import PurchaseOverview from '../views/aims/PurchaseOverview.vue'
+import PurchaseRequests from '../views/aims/PurchaseRequests.vue'
+import PurchaseApproval from '../views/aims/PurchaseApproval.vue'
+import BudgetFund from '../views/aims/BudgetFund.vue'
+import AssetManagement from '../views/aims/AssetManagement.vue'
+import MovedAssetsIn from '../views/aims/MovedAssetsIn.vue'
+import MovedAssetsOut from '../views/aims/MovedAssetsOut.vue'
+import ScrappedAssets from '../views/aims/ScrappedAssets.vue'
+import Category from '../views/aims/Category.vue'
+
+import PortalDashboard from '../views/itportal/PortalDashboard.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -74,6 +76,11 @@ const router = createRouter({
       path: '/category',
       name: 'category',
       component: Category
+    },
+    {
+      path: '/portal-dashboard',
+      name: 'portal-dashboard',
+      component: PortalDashboard
     },
 
 

@@ -1,7 +1,7 @@
 <script setup>
-import NavBar from '../components/NavBar.vue'
-import SidebarPannel from '@/components/SidebarPannel.vue';
-import ModalBudgetFund from '@/components/ModalBudgetFund.vue';
+import NavBar from '../../components/NavBar.vue'
+import SidebarPannel from '../../components/SidebarPannel.vue';
+import ModalBudgetFund from '../../components/modals/ModalBudgetFund.vue'
 import Swal from 'sweetalert2'
 import { ref } from 'vue'
 
@@ -64,19 +64,19 @@ export default {
                 <div class="">
                     <div class="flex gap-2">
                         <div class="bg-gray rounded-md px-4 py-1 flex cursor-pointer hover:scale-105 duration-300">
-                            <img width="40" src="../components/images/icon-save.png" class="pr-1" alt="save"/>
+                            <img width="40" src="../../components/images/icon-save.png" class="pr-1" alt="save"/>
                             <h5 class="pt-2 text-white">
                                 SAVE
                             </h5>
                         </div>
                         <div class="bg-gray rounded-md px-4 py-1 flex cursor-pointer hover:scale-105 duration-300">
-                            <img width="30" src="../components/images/icon-preview.png" class="pr-1 pt-1 pb-1" alt="preview"/>
+                            <img width="30" src="../../components/images/icon-preview.png" class="pr-1 pt-1 pb-1" alt="preview"/>
                             <h5 class="pt-2 text-white">
                                 PREVIEW
                             </h5>
                         </div>
                         <div class="bg-gray rounded-md px-4 py-1 flex cursor-pointer hover:scale-105 duration-300">
-                            <img width="30" src="../components/images/icon-submit.png" class="pr-1 pt-1 pb-1" alt="submit"/>
+                            <img width="30" src="../../components/images/icon-submit.png" class="pr-1 pt-1 pb-1" alt="submit"/>
                             <h5 class="pt-2 text-white">
                                 SUBMIT
                             </h5>
@@ -253,7 +253,7 @@ export default {
         <div class="mt-4">
             <div class="text-white bg-black h-[40px] pt-1">
                 <div class="flex ml-[10px]">
-                    <img src="../components/images/icon_aims.png" class="w-[30px] mt-1" alt="Aims Icon">
+                    <img src="../../components/images/icon_aims.png" class="w-[30px] mt-1" alt="Aims Icon">
                     <h2 class="text-white text-[20px] font-bold ml-[20px]">AIMS</h2>
                 </div>
             </div>

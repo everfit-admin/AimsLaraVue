@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import ModalAsset from '../components/ModalAsset.vue'
+import ModalAsset from '../components/modals/ModalAsset.vue';
 
 const showModalAsset = ref(false);
 

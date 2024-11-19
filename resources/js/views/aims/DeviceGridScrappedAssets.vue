@@ -13,7 +13,7 @@
           :disabled="currentPage === 1"
           class="px-3 py-1 mx-1 bg-gray-300 rounded-md hover:bg-gray-400"
         >
-            <img src="../components/images/icon-arrow-back.png" alt="back arrow">
+            <img src="../../components/images/icon-arrow-back.png" alt="back arrow">
         </button>
         <button 
           v-for="page in totalPages" 
@@ -31,7 +31,7 @@
           :disabled="currentPage === totalPages"
           class="px-3 py-1 mx-1 bg-gray-300 rounded-md hover:bg-gray-400"
         >
-        <img src="../components/images/icon-arrow-right.png" alt="back arrow">
+        <img src="../../components/images/icon-arrow-right.png" alt="back arrow">
         </button>
       </div>
     </div>

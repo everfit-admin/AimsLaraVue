@@ -134,7 +134,7 @@ function handleClickOutside(event) {
             >
               <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                 <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white no-hover">Assign Assets</a>
+                  <router-link to="/asset-management" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white no-hover" active-class="font-semibold bg-zinc-300 pr-[11px] py-1 shadow-lg no-hover">Assign Assets</router-link>
                 </li>
                 <li>
                   <router-link to="/moved-assets-in" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white no-hover" active-class="font-semibold bg-zinc-300 pr-[11px] py-1 shadow-lg no-hover">Moved Assets</router-link>

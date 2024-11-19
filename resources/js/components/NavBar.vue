@@ -27,13 +27,13 @@
             </div>
             <div class="hover:scale-110 transform transition duration-300">
                 
-                <router-link to="/d" class="no-hover-nav" active-class="bg-silver text-black px-2 py-1 rounded-sm no-hover-nav">
+                <router-link to="/portal-dashboard" class="no-hover-nav" active-class="bg-silver text-black px-2 py-1 rounded-sm no-hover-nav">
                     PORTAL
                 </router-link>
             </div>
             <div class="hover:scale-110 transform transition duration-300">
                 
-                <router-link to="/d" class="no-hover-nav" active-class="bg-silver text-black px-2 py-1 rounded-sm no-hover-nav">
+                <router-link to="/p" class="no-hover-nav" active-class="bg-silver text-black px-2 py-1 rounded-sm no-hover-nav">
                     DIRECTORY
                 </router-link>
             </div>

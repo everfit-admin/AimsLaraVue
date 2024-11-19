@@ -1,8 +1,8 @@
 <script setup>
-import NavBar from '../components/NavBar.vue'
-import SidebarPannel from '@/components/SidebarPannel.vue';
+import NavBar from '../../components/NavBar.vue'
+import SidebarPannel from '../../components/SidebarPannel.vue';
 import Swal from 'sweetalert2'
-import Modal from '../components/Modal.vue';
+import Modal from '../../components/modals/Modal.vue';
 
 import { ref } from 'vue'
 
@@ -90,14 +90,14 @@ export default {
                 </div>
                 <!-- Add class 'active' to progress -->
                 <div class="row flex justify-center">
-                    <div class="col-12">
+                    <div class="col-12 w-[100%]">
                         <ul id="progressbar" class="text-center">
                             
                             <li class="active step0 pt-[33px]">( 0 ) <br> Requestor</li>
                             <li class="active step0 pt-[33px]">( 1 ) <br> Manager</li>
                             <li class="active step0 pt-[33px]">( 2 ) <br> COO</li>
-                            <li class="active step0 pt-[33px]">( 3 ) <br> CFO</li>
-                            <li class="active step0 pt-[33px]">( 4 ) <br> Procurement</li>
+                            <li class="step0 pt-[33px]">( 3 ) <br> CFO</li>
+                            <li class="step0 pt-[33px]">( 4 ) <br> Procurement</li>
                             <li class="step0 pt-[33px]">( 5 ) <br >Completed</li>
                         </ul>
                     </div>
@@ -107,21 +107,16 @@ export default {
                 </div>
                 
                     <table class="ml-auto mr-auto mt-7">
-                        <thead>
-                            <tr>
+                        <tr>
                             <th>Description</th>
                             <th>Unit</th>
                             <th>Qty</th>
                         </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Acer</td>
-                                <td>pc</td>
-                                <td>2</td>
-                            </tr>
-                        </tbody>
-                        
+                        <tr>
+                            <td>Acer</td>
+                            <td>pc</td>
+                            <td>2</td>
+                        </tr>
                     </table>
             </div>
         </div>
@@ -130,7 +125,7 @@ export default {
         <div class="mt-4">
             <div class="text-white bg-black h-[40px] pt-1">
                 <div class="flex ml-[10px]">
-                    <img src="../components/images/icon_aims.png" class="w-[30px] mt-1" alt="Aims Icon">
+                    <img src="../../components/images/icon_aims.png" class="w-[30px] mt-1" alt="Aims Icon">
                     <h2 class="text-white text-[20px] font-bold ml-[20px]">AIMS</h2>
                 </div>
             </div>

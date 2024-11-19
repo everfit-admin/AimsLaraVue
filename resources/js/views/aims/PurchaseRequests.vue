@@ -1,8 +1,8 @@
 <script setup>
-import NavBar from '../components/NavBar.vue'
-import SidebarPannel from '@/components/SidebarPannel.vue';
+import NavBar from '../../components/NavBar.vue'
+import SidebarPannel from '../../components/SidebarPannel.vue';
 import Swal from 'sweetalert2'
-import Modal from '../components/Modal.vue';
+import Modal from '../../components/modals/Modal.vue';
 import { ref } from 'vue'
 
 
@@ -129,25 +129,27 @@ export default {
         <div class="flex justify-start ml-[30px] pt-2 pb-[20px] mt-[15px]">
             <h2 class="font-semibold">PURCHASE REQUEST INFORMATION:</h2>
         </div>
-        <div class="flex justify-center ml-7">
-            <div class="grid grid-cols-6 w-[100%]">
-                <div class="">
-                    <label for="po_num" class="mt-2">PO#:</label>
-                    <br>
-                    <label for="classif" class="mt-5">Classification:</label>
+        <div class="flex justify-center">
+            <div class="flex gap-[70px]">
+                <div class="flex items-center gap-[80px]">
+                    <label for="">PO#:</label>
+                    <input type="text" id="po_num" name="po_num" value="100123" disabled class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
                 </div>
-                <div class="col-span-2">
-                    
-                    <input type="text" id="po_num" name="po_num" value="100123" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
-                    <input type="text" id="classif" name="classif" value="Assets" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                <div class="flex items-center gap-[35px]">
+                    <label for="">Current Budget:</label>
+                    <input type="text" id="po_num" name="po_num" value="P2,523,000.00" disabled class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
                 </div>
-                <div class="">
-                    <label for="cur_budget" class="mt-2">Current Budget:</label>
-                    <label for="es_budget" class="mt-5">Estimated Budget:</label>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <div class="flex gap-[70px]">
+                <div class="flex items-center gap-[20px]">
+                    <label for="">Classification:</label>
+                    <input type="text" id="po_num" name="po_num" value="Asset" disabled class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
                 </div>
-                <div class="col-span-2">
-                    <input type="text" id="cur_budget" name="cur_budget" value="P2,523,000.00" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
-                    <input type="text" id="es_budget" name="es_budget" value="P60,000.00" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                <div class="flex items-center gap-[20px]">
+                    <label for="">Estimated Budget:</label>
+                    <input type="text" id="po_num" name="po_num" value="P60,000" disabled class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
                 </div>
             </div>
         </div>
@@ -208,25 +210,27 @@ export default {
         <div class="flex justify-start ml-[30px] pt-2 pb-[20px] mt-[15px]">
             <h2 class="font-semibold">PURCHASE REQUEST INFORMATION:</h2>
         </div>
-        <div class="flex justify-center ml-7">
-            <div class="grid grid-cols-6 w-[100%]">
-                <div class="">
-                    <label for="po_num" class="mt-2">PO#:</label>
-                    <br>
-                    <label for="classif" class="mt-5">Classification:</label>
+        <div class="flex justify-center">
+            <div class="flex gap-[70px]">
+                <div class="flex items-center gap-[80px]">
+                    <label for="">PO#:</label>
+                    <input type="text" id="po_num" name="po_num" value="100123" disabled class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
                 </div>
-                <div class="col-span-2">
-                    
-                    <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
-                    <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                <div class="flex items-center gap-[35px]">
+                    <label for="">Current Budget:</label>
+                    <input type="text" id="po_num" name="po_num" value="P2,523,000.00" disabled class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
                 </div>
-                <div class="">
-                    <label for="cur_budget" class="mt-2">Current Budget:</label>
-                    <label for="es_budget" class="mt-5">Estimated Budget:</label>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <div class="flex gap-[70px]">
+                <div class="flex items-center gap-[20px]">
+                    <label for="">Classification:</label>
+                    <input type="text" id="po_num" name="po_num" value="Asset" disabled class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
                 </div>
-                <div class="col-span-2">
-                    <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
-                    <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                <div class="flex items-center gap-[20px]">
+                    <label for="">Estimated Budget:</label>
+                    <input type="text" id="po_num" name="po_num" value="P60,000" disabled class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
                 </div>
             </div>
         </div>
@@ -262,7 +266,7 @@ export default {
                         
                     </div>
                     <div class="flex-grow items-center flex">
-                        <img src="../components/images/icon-delete.png" class="w-[25px] pt-[27px] ml-[100px] cursor-pointer" alt="">
+                        <img src="../../components/images/icon-delete.png" class="w-[25px] pt-[27px] ml-[100px] cursor-pointer" alt="">
                     </div>
                 </div>
                 <div>
@@ -295,7 +299,7 @@ export default {
         <div class="mt-4">
             <div class="text-white bg-black h-[40px] pt-1">
                 <div class="flex ml-[10px]">
-                    <img src="../components/images/icon_aims.png" class="w-[30px] mt-1" alt="Aims Icon">
+                    <img src="../../components/images/icon_aims.png" class="w-[30px] mt-1" alt="Aims Icon">
                     <h2 class="text-white text-[20px] font-bold ml-[20px]">AIMS</h2>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 
 <script setup>
-import NavBar from '../components/NavBar.vue'
-import SidebarPannel from '@/components/SidebarPannel.vue';
+import NavBar from '../../components/NavBar.vue'
+import SidebarPannel from '../../components/SidebarPannel.vue';
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import SidebarPannel from '@/components/SidebarPannel.vue';
     <div class="mt-4 flex-grow">
       <div class="text-white bg-black h-[40px] pt-1">
         <div class="flex ml-[10px]">
-          <img src="../components/images/icon_aims.png" class="w-[30px] mt-1" alt="Aims Icon">
+          <img src="../../components/images/icon_aims.png" class="w-[30px] mt-1" alt="Aims Icon">
           <h2 class="text-white text-[20px] font-bold ml-[20px]">AIMS</h2>
         </div>
       </div>
@@ -30,7 +30,7 @@ import SidebarPannel from '@/components/SidebarPannel.vue';
                 </div>
                 
                 <div>
-                  <img src="../components/images/hardware_icon.png" class="w-[70px] " alt="Total Hardware Icon">
+                  <img src="../../components/images/hardware_icon.png" class="w-[70px] " alt="Total Hardware Icon">
                 </div>
               
               
@@ -42,7 +42,7 @@ import SidebarPannel from '@/components/SidebarPannel.vue';
               </div>
               
               <div>
-                <img src="../components/images/windows_icon.png" class="w-[70px]" alt="Total Software Icon">
+                <img src="../../components/images/windows_icon.png" class="w-[70px]" alt="Total Software Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
@@ -52,7 +52,7 @@ import SidebarPannel from '@/components/SidebarPannel.vue';
               </div>
               
               <div>
-                <img src="../components/images/email_icon.png" class="w-[70px]" alt="Total Email Icon">
+                <img src="../../components/images/email_icon.png" class="w-[70px]" alt="Total Email Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
@@ -62,7 +62,7 @@ import SidebarPannel from '@/components/SidebarPannel.vue';
               </div>
               
               <div>
-                <img src="../components/images/user.png" class="w-[70px]" alt="Total User Icon">
+                <img src="../../components/images/user.png" class="w-[70px]" alt="Total User Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
@@ -72,7 +72,7 @@ import SidebarPannel from '@/components/SidebarPannel.vue';
               </div>
               
               <div>
-                <img src="../components/images/coins_icon.png" class="w-[70px]" alt="Total User Icon">
+                <img src="../../components/images/coins_icon.png" class="w-[70px]" alt="Total User Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
@@ -82,7 +82,7 @@ import SidebarPannel from '@/components/SidebarPannel.vue';
               </div>
               
               <div>
-                <img src="../components/images/money_icon.png" class="w-[70px]" alt="Total User Icon">
+                <img src="../../components/images/money_icon.png" class="w-[70px]" alt="Total User Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
@@ -92,7 +92,7 @@ import SidebarPannel from '@/components/SidebarPannel.vue';
               </div>
               
               <div>
-                <img src="../components/images/request_icon.png" class="w-[70px]" alt="Total User Icon">
+                <img src="../../components/images/request_icon.png" class="w-[70px]" alt="Total User Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
@@ -101,7 +101,7 @@ import SidebarPannel from '@/components/SidebarPannel.vue';
                 <div class="text-gray-600">Total Request Approved</div>
               </div>
               <div>
-                <img src="../components/images/request_approve_icon.png" class="w-[70px]" alt="Total User Icon">
+                <img src="../../components/images/request_approve_icon.png" class="w-[70px]" alt="Total User Icon">
               </div>
             </div>
           </div>

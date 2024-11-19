@@ -1,11 +1,11 @@
 <script setup>
-import NavBar from '../components/NavBar.vue'
+import NavBar from '../../components/NavBar.vue'
 import SidebarPannel from '@/components/SidebarPannel.vue';
 import Swal from 'sweetalert2'
-import Modal from '../components/Modal.vue';
+import Modal from '../../components/modals/Modal.vue';
 import SideAssetCategories from '@/components/SideAssetCategories.vue';
 import DeviceGrid from './DeviceGridAssetManagement.vue';
-import ModalSquareSize from '@/components/ModalSquareSize.vue';
+import ModalSquareSize from '../../components/modals/ModalSquareSize.vue';
 
 import { ref } from 'vue'
 
@@ -106,7 +106,7 @@ export default {
         <div class="mt-4">
             <div class="text-white bg-black h-[40px] pt-1">
                 <div class="flex ml-[10px]">
-                    <img src="../components/images/icon_aims.png" class="w-[30px] mt-1" alt="Aims Icon">
+                    <img src="../../components/images/icon_aims.png" class="w-[30px] mt-1" alt="Aims Icon">
                     <h2 class="text-white text-[20px] font-bold ml-[20px]">AIMS</h2>
                 </div>
             </div>
@@ -133,7 +133,7 @@ export default {
                             <h2 class="font-semibold text-[23px]">{{ "<<" }}All Assets</h2>
                             <div class="flex">
                                 <input type="text" class="border rounded-md h-[40px] px-3 mx-2" placeholder="Search">
-                                <img src="../components/images/icon-filter.png" class="w-[25px] h-[30px] pt-2" alt="filter">
+                                <img src="../../components/images/icon-filter.png" class="w-[25px] h-[30px] pt-2" alt="filter">
                             </div>
                         </div>
                         <div class="">

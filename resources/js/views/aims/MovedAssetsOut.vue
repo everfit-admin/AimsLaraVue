@@ -1,26 +1,25 @@
 <script setup>
-import NavBar from '../components/NavBar.vue'
+import NavBar from '../../components/NavBar.vue'
 import SidebarPannel from '@/components/SidebarPannel.vue';
 import Swal from 'sweetalert2'
-import Modal from '../components/Modal.vue';
 import SideAssetCategories from '@/components/SideAssetCategories.vue';
-import DeviceGridAssetIn from './DeviceGridAssetIn.vue';
-import ModalSquareSize from '@/components/ModalSquareSize.vue';
-import DeviceGridAssetManagement from './DeviceGridAssetManagement.vue';
+import DeviceGridAssetOut from './DeviceGridAssetOut.vue';
+
+
 
 import { ref } from 'vue'
 
 
-const isModalAddAsset = ref(false);
+const isModalCreateAssetout = ref(false);
 const currentItem = ref(null); // Store the item to be edited
 
 // Methods to toggle each modal's visibility
-function openModalAddAsset() {
-    isModalAddAsset.value = true;
+function openModalAssetOut() {
+    isModalCreateAssetout.value = true;
 }
 
-function closeModalAddAsset() {
-    isModalAddAsset.value = false;
+function closeModalAssetOut() {
+    isModalCreateAssetout.value = false;
 }
 
 
@@ -41,7 +40,7 @@ export default {
         <div class="mt-4">
             <div class="text-white bg-black h-[40px] pt-1">
                 <div class="flex ml-[10px]">
-                    <img src="../components/images/icon_aims.png" class="w-[30px] mt-1" alt="Aims Icon">
+                    <img src="../../components/images/icon_aims.png" class="w-[30px] mt-1" alt="Aims Icon">
                     <h2 class="text-white text-[20px] font-bold ml-[20px]">AIMS</h2>
                 </div>
             </div>
@@ -51,22 +50,18 @@ export default {
                     <div class="absolute w-[100%] h-[100%] bg-black z-40 opacity-35" :class="isModalAddAsset ? 'block' : 'hidden'"></div>
                     <div class="flex justify-between">
                         <div class="mx-10 mt-5 mb-6 font-semibold text-[23px]">
-                            <h1 class="">Moved Assets >> Assets In</h1>
+                            <h1 class="">Moved Assets >> Assets Out</h1>
                         </div>
                         <div class="flex mx-4 gap-2 py-4">
-                            <router-link to="/moved-assets-in" class="bg-gray text-black px-4 rounded-lg font-semibold pt-1.5 no-hover" active-class="bg-black text-white">
+                            <router-link to="/moved-assets-in" class="bg-gray text-black px-4 rounded-lg font-semibold flex items-center no-hover" active-class="bg-black text-white">
                                 ASSET IN
                             </router-link>
-                            <router-link to="/moved-assets-out" class="bg-gray text-black px-4 rounded-lg font-semibold pt-1.5 no-hover" active-class="bg-black text-white">
+                            <router-link to="/moved-assets-out" class="bg-gray text-black px-4 rounded-lg font-semibold flex items-center no-hover" active-class="bg-black text-white">
                                 ASSET OUT
                             </router-link>
                         </div>
                     </div>
-                    
-                    <div class="flex mx-8">
-                        <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] px-2 cursor-pointer hover:scale-110 duration-500" @click=""/>
-                        <h5 class="text-[15px] font-semibold pt-1">Create Assets In</h5>
-                    </div>
+                  
                     <div class="flex justify-center">
                         <div class="w-[95%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
                     </div>
@@ -76,17 +71,17 @@ export default {
                     <!--Container-->
                     <div class="w-[100%] mr-6 overflow-y-scroll">
                         <div class="flex justify-between items-center">
-                            <h2 class="font-semibold text-[23px]">{{ "<<" }}All Assets IN</h2>
+                            <h2 class="font-semibold text-[23px]">{{ "<<" }}All Assets Out</h2>
                             <div class="flex">
                                 <input type="text" class="border rounded-md h-[40px] px-3 mx-2" placeholder="Search">
-                                <img src="../components/images/icon-filter.png" class="w-[25px] h-[30px] pt-2" alt="filter">
+                                <img src="../../components/images/icon-filter.png" class="w-[25px] h-[30px] pt-2" alt="filter">
                             </div>
                         </div>
                         <div class="">
                             <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
                         </div>
                         <div class="">
-                            <DeviceGridAssetIn
+                            <DeviceGridAssetOut
                             />
                         </div>
                         
