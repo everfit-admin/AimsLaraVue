@@ -113,7 +113,7 @@ function handleClickOutsidePos(event) {
           </li>
           <li class="text-lg">
             <div class="flex">
-              <router-link to="/ass" active-class="font-semibold bg-white pr-[0px] py-1 shadow-lg no-hover rounded-r-full">
+              <router-link to="/user-management" active-class="font-semibold bg-white pr-[0px] py-1 shadow-lg no-hover rounded-r-full">
                 <button
                 id="dropdownDefaultButton"
                 
@@ -151,7 +151,7 @@ function handleClickOutsidePos(event) {
             >
               <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                 <li>
-                  <router-link to="/asset-management" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white no-hover" active-class="font-semibold bg-zinc-300 pr-[11px] py-1 shadow-lg no-hover">User</router-link>
+                  <router-link to="/user-management" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white no-hover" active-class="font-semibold bg-zinc-300 pr-[11px] py-1 shadow-lg no-hover">User</router-link>
                 </li>
                 <li>
                   <router-link to="/moved-assets-in" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white no-hover" active-class="font-semibold bg-zinc-300 pr-[11px] py-1 shadow-lg no-hover">Department</router-link>

@@ -13,6 +13,7 @@ import ScrappedAssets from '../views/aims/ScrappedAssets.vue'
 import Category from '../views/aims/Category.vue'
 
 import PortalDashboard from '../views/itportal/PortalDashboard.vue'
+import UserManagement from '../views/itportal/UserManagement.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -81,6 +82,12 @@ const router = createRouter({
       path: '/portal-dashboard',
       name: 'portal-dashboard',
       component: PortalDashboard
+    },
+
+    {
+      path: '/user-management',
+      name: 'user-management',
+      component: UserManagement
     },
 
 
