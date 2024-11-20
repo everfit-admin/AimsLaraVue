@@ -15,6 +15,7 @@ import Category from '../views/aims/Category.vue'
 import PortalDashboard from '../views/itportal/PortalDashboard.vue'
 import UserManagement from '../views/itportal/UserManagement.vue'
 
+import ProcurementDashboard from '../views/procurement/ProcurementDashboard.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -89,7 +90,11 @@ const router = createRouter({
       name: 'user-management',
       component: UserManagement
     },
-
+    {
+      path: '/procurement-dashboard',
+      name: 'procurement-dashboard',
+      component: ProcurementDashboard
+    },
 
     
 

@@ -77,7 +77,7 @@ export default {
       <Modal :isVisible="isModalCreateNewUser" @close="closeCreateModal">
         <div class="px-2 py-2">
             <div class="flex justify-between">
-                <div>
+                <div class="flex items-center">
                     <h4 class="font-semibold text-[20px]">Create New User</h4>
                 </div>
                 <div>
@@ -155,7 +155,7 @@ export default {
             </div>
             <div>
                 <p>Custom:</p>
-                <table class="w-[100%]">
+                <table class="w-[100%] border">
                     <tr>
                         <th class="text-center">Role</th>
                         <th class="text-center">Add</th>
@@ -164,7 +164,7 @@ export default {
                         <th class="text-center">Delete</th>
                         <th class="text-center">All</th>
                     </tr>
-                    <tr class="font-semibold">
+                    <tr class="font-semibold border">
                         <td class="flex cursor-pointer" @click="toggleAssetInventory">
                             Asset Inventory Management
                             <span>
@@ -205,7 +205,7 @@ export default {
                         </td>
                     </tr>
                     
-                        <tr v-if="assetInventory === true">
+                        <tr v-if="assetInventory === true" class="border">
                             <td>
                                 Dashboard
                             </td>
@@ -225,7 +225,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="assetInventory === true">
+                        <tr v-if="assetInventory === true" class="border">
                             <td>
                                 Purchase Overview
                             </td>
@@ -245,7 +245,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="assetInventory === true">
+                        <tr v-if="assetInventory === true" class="border">
                             <td>
                                 Purchase Request
                             </td>
@@ -265,7 +265,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="assetInventory === true">
+                        <tr v-if="assetInventory === true" class="border">
                             <td>
                                 Purchase Approval
                             </td>
@@ -285,7 +285,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="assetInventory === true">
+                        <tr v-if="assetInventory === true" class="border">
                             <td>
                                 Budget/Fund
                             </td>
@@ -305,7 +305,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="assetInventory === true">
+                        <tr v-if="assetInventory === true" class="border">
                             <td>
                                 1. Assign Assets 
                             </td>
@@ -325,7 +325,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="assetInventory === true">
+                        <tr v-if="assetInventory === true" class="border">
                             <td>
                                 2. Moved Assets
                             </td>
@@ -345,7 +345,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="assetInventory === true">
+                        <tr v-if="assetInventory === true" class="border">
                             <td>
                                 3. Scrapped Assets
                             </td>
@@ -365,7 +365,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="assetInventory === true">
+                        <tr v-if="assetInventory === true" class="border">
                             <td>
                                 4. Category
                             </td>
@@ -385,7 +385,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr class="font-semibold">
+                        <tr class="font-semibold border">
                             <td class="flex cursor-pointer" @click="toggleItPortal">
                                 IT Portal
                                 <span>
@@ -425,7 +425,7 @@ export default {
                         </td>
                     </tr>
                     
-                        <tr v-if="itPortal === true">
+                        <tr v-if="itPortal === true" class="border">
                             <td>
                                 Dashboard
                             </td>
@@ -445,7 +445,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="itPortal === true">
+                        <tr v-if="itPortal === true" class="border">
                             <td>
                                 Account Management
                             </td>
@@ -465,7 +465,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="itPortal === true">
+                        <tr v-if="itPortal === true" class="border">
                             <td>
                                 1. User
                             </td>
@@ -485,7 +485,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="itPortal === true">
+                        <tr v-if="itPortal === true" class="border">
                             <td>
                                 2. Department
                             </td>
@@ -505,7 +505,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="itPortal === true">
+                        <tr v-if="itPortal === true" class="border">
                             <td>
                                 Maintenance
                             </td>
@@ -525,7 +525,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="itPortal === true">
+                        <tr v-if="itPortal === true" class="border">
                             <td>
                                 Point of Sale 
                             </td>
@@ -545,7 +545,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="itPortal === true">
+                        <tr v-if="itPortal === true" class="border">
                             <td>
                                 1. Store List
                             </td>
@@ -565,7 +565,7 @@ export default {
                                 <input type="checkbox">
                             </td>
                         </tr>
-                        <tr v-if="itPortal === true">
+                        <tr v-if="itPortal === true" class="border">
                             <td>
                                 2. Remote
                             </td>

@@ -21,7 +21,7 @@
             </div>
             <div class="hover:scale-110 transform transition duration-300">
                 
-                <router-link to="/d" class="no-hover-nav" active-class="bg-silver text-black px-2 py-1 rounded-sm no-hover-nav">
+                <router-link to="/procurement-dashboard" class="no-hover-nav" active-class="bg-silver text-black px-2 py-1 rounded-sm no-hover-nav">
                     PROCUREMENT
                 </router-link>
             </div>
