@@ -30,7 +30,7 @@ import PortalSidebarPannel from '../../components/PortalSidebarPannel.vue';
                 </div>
                 
                 <div>
-                  <img src="../../components/images/hardware_icon.png" class="w-[70px] " alt="Total Hardware Icon">
+                  <img src="../../components/images/icon-monitor-1.png" class="w-[47px] " alt="Total Hardware Icon">
                 </div>
               
               
@@ -42,102 +42,102 @@ import PortalSidebarPannel from '../../components/PortalSidebarPannel.vue';
               </div>
               
               <div>
-                <img src="../../components/images/windows_icon.png" class="w-[70px]" alt="Total Software Icon">
+                <img src="../../components/images/icon-software.png" class="w-[47px]" alt="Total Software Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
               <div>
                 <div class="text-2xl font-semibold">7</div>
-                <div class="text-gray-600">Total Email</div>
+                <div class="text-gray-600">Total Kaspersky</div>
               </div>
               
               <div>
-                <img src="../../components/images/email_icon.png" class="w-[70px]" alt="Total Email Icon">
+                <img src="../../components/images/icon-protect.png" class="w-[47px]" alt="Total Email Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
               <div>
                 <div class="text-2xl font-semibold">85</div>
-                <div class="text-gray-600">Total User</div>
+                <div class="text-gray-600">Total Google Workspace</div>
               </div>
               
               <div>
-                <img src="../../components/images/user.png" class="w-[70px]" alt="Total User Icon">
+                <img src="../../components/images/icon-envelope-1.png" class="w-[47px]" alt="Total User Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
               <div>
-                <div class="text-2xl font-semibold">12,000,000.00</div>
-                <div class="text-gray-600">Total Allocated Budget</div>
+                <div class="text-2xl font-semibold">80</div>
+                <div class="text-gray-600">Total Active User</div>
               </div>
               
               <div>
-                <img src="../../components/images/coins_icon.png" class="w-[70px]" alt="Total User Icon">
-              </div>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
-              <div>
-                <div class="text-2xl font-semibold">8,000,000.00</div>
-                <div class="text-gray-600">Total Remaining Budget</div>
-              </div>
-              
-              <div>
-                <img src="../../components/images/money_icon.png" class="w-[70px]" alt="Total User Icon">
+                <img src="../../components/images/icon-user-1.png" class="w-[47px]" alt="Total User Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
               <div>
                 <div class="text-2xl font-semibold">26</div>
-                <div class="text-gray-600">Total Purchase Request</div>
+                <div class="text-gray-600">Total Inactive User</div>
               </div>
               
               <div>
-                <img src="../../components/images/request_icon.png" class="w-[70px]" alt="Total User Icon">
+                <img src="../../components/images/icon-delete-user.png" class="w-[47px]" alt="Total User Icon">
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
+              <div>
+                <div class="text-2xl font-semibold">26</div>
+                <div class="text-gray-600">Total Store</div>
+              </div>
+              
+              <div>
+                <img src="../../components/images/icon-store.png" class="w-[47px]" alt="Total User Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
               <div>
                 <div class="text-2xl font-semibold">100</div>
-                <div class="text-gray-600">Total Request Approved</div>
+                <div class="text-gray-600">Total Department</div>
               </div>
               <div>
-                <img src="../../components/images/request_approve_icon.png" class="w-[70px]" alt="Total User Icon">
-              </div>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
-              <div>
-                <div class="text-2xl font-semibold">100</div>
-                <div class="text-gray-600">Total Request Approved</div>
-              </div>
-              <div>
-                <img src="../../components/images/request_approve_icon.png" class="w-[70px]" alt="Total User Icon">
+                <img src="../../components/images/icon-department.png" class="w-[47px]" alt="Total User Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
               <div>
                 <div class="text-2xl font-semibold">100</div>
-                <div class="text-gray-600">Total Request Approved</div>
+                <div class="text-gray-600">Total Budget</div>
               </div>
               <div>
-                <img src="../../components/images/request_approve_icon.png" class="w-[70px]" alt="Total User Icon">
-              </div>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
-              <div>
-                <div class="text-2xl font-semibold">100</div>
-                <div class="text-gray-600">Total Request Approved</div>
-              </div>
-              <div>
-                <img src="../../components/images/request_approve_icon.png" class="w-[70px]" alt="Total User Icon">
+                <img src="../../components/images/icon-us-dollar-circled.png" class="w-[47px]" alt="Total User Icon">
               </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
               <div>
                 <div class="text-2xl font-semibold">100</div>
-                <div class="text-gray-600">Total Request Approved</div>
+                <div class="text-gray-600">Total Assets Value</div>
               </div>
               <div>
-                <img src="../../components/images/request_approve_icon.png" class="w-[70px]" alt="Total User Icon">
+                <img src="../../components/images/icon-investment.png" class="w-[47px]" alt="Total User Icon">
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
+              <div>
+                <div class="text-2xl font-semibold">100</div>
+                <div class="text-gray-600">Total Assets Depreciated Value</div>
+              </div>
+              <div>
+                <img src="../../components/images/icon-combo-chart.png" class="w-[47px]" alt="Total User Icon">
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
+              <div>
+                <div class="text-2xl font-semibold">100</div>
+                <div class="text-gray-600">Total Scrapped Value</div>
+              </div>
+              <div>
+                <img src="../../components/images/icon-trash-1.png" class="w-[47px]" alt="Total User Icon">
               </div>
             </div>
           </div>

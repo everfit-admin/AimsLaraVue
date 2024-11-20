@@ -71,34 +71,34 @@ function handleClickOutsidePos(event) {
     <div class="bg-black h-[100%] text-white w-[45px] pt-[41px] transition-all duration-500 ease-in-out transform z-20">
       <div class="flex justify-center">
         <div>
-          <div class="py-[7px]">
+          <div class="pt-3">
             <router-link to="/dashboard-aims">
-              <font-awesome-icon :icon="['fas', 'gauge']" class="text-[30px] no-hover-side-icon"/>
+              <img src="./images/icon-dashboard-portal.png" class="w-[30px]" alt="dashboard Icon">
             </router-link>
           </div>
           <div class="py-[7px]">
             <router-link to="/purchase-overview">
-              <font-awesome-icon :icon="['far', 'clock']" class="text-[30px] no-hover-side-icon"/>
+              <img src="./images/icon-admin-setting.png" class="w-[37px]" alt="user management icon">
             </router-link>
           </div>
           <div class="py-[7px]">
             <router-link to="/purchase-requests">
-                <font-awesome-icon :icon="['fas', 'bag-shopping']" class="text-[30px] no-hover-side-icon" />
+              <img src="./images/icon-maintenance.png" class="w-[30px]" alt="maintenance icon">
             </router-link>
           </div>
           <div class="py-[4px]">
             <router-link to="/purchase-approval">
-              <font-awesome-icon :icon="['far', 'circle-check']" class="text-[30px] no-hover-side-icon"/>
+              <img src="./images/icon-check.png" class="w-[30px]" alt="point of sale icon">
             </router-link>
           </div>
           <div class="py-[7px]">
             <router-link to="/budget-fund">
-              <font-awesome-icon :icon="['fas', 'money-check-dollar']" class="text-[30px] no-hover-side-icon"/>
+              <img src="./images/icon-product-knowledge.png" class="w-[30px]" alt="knowledge icon">
             </router-link>
           </div>
           <div class="py-[7px]">
             <router-link to="/asset-management">
-                <font-awesome-icon :icon="['fas', 'warehouse']" class="text-[25px] no-hover-side-icon"/>
+              <img src="./images/icon-paw.png" class="w-[30px]" alt="log icon">
             </router-link>
           </div>
         </div>
@@ -107,7 +107,7 @@ function handleClickOutsidePos(event) {
       <div class="bg-gray h-[100%] duration-500 border-r border-black group-hover:w-[220px] w-[290px] -translate-x-[500px] group-hover:translate-x-0 absolute top-0 left-11 z-10">
         <ul class="space-y-4 mt-[53px]">
           <li class="text-lg">
-            <router-link to="/portal-dashboard" class="no-hover pl-3" active-class="font-semibold bg-white pl-3 pr-[97px] py-1 shadow-lg no-hover">
+            <router-link to="/portal-dashboard" class="no-hover pl-3" active-class="font-semibold bg-white pl-3 pr-[117px] py-1 shadow-lg no-hover">
                 Dashboard
             </router-link>
           </li>

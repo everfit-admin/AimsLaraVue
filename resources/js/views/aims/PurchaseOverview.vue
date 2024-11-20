@@ -95,10 +95,12 @@ export default {
                             
                             <li class="active step0 pt-[33px]">( 0 ) <br> Requestor</li>
                             <li class="active step0 pt-[33px]">( 1 ) <br> Manager</li>
-                            <li class="active step0 pt-[33px]">( 2 ) <br> COO</li>
-                            <li class="step0 pt-[33px]">( 3 ) <br> CFO</li>
-                            <li class="step0 pt-[33px]">( 4 ) <br> Procurement</li>
-                            <li class="step0 pt-[33px]">( 5 ) <br >Completed</li>
+                            <li class="active step0 pt-[33px]">( 2 ) <br >Quotation</li>
+                            <li class="active step0 pt-[33px]">( 3 ) <br> COO</li>
+                            <li class="active step0 pt-[33px]">( 4 ) <br> CFO</li>
+                            <li class="active step0 pt-[33px]">( 5 ) <br> Procurement</li>
+                            <li class="step0 pt-[33px]">( 6 ) <br >Completed</li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -107,16 +109,21 @@ export default {
                 </div>
                 
                     <table class="ml-auto mr-auto mt-7">
-                        <tr>
-                            <th>Description</th>
-                            <th>Unit</th>
-                            <th>Qty</th>
-                        </tr>
-                        <tr>
-                            <td>Acer</td>
-                            <td>pc</td>
-                            <td>2</td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Unit</th>
+                                <th>Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Acer</td>
+                                <td>pc</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                
                     </table>
             </div>
         </div>
