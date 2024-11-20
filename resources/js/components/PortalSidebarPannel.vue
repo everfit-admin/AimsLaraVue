@@ -72,12 +72,12 @@ function handleClickOutsidePos(event) {
       <div class="flex justify-center">
         <div>
           <div class="pt-3">
-            <router-link to="/dashboard-aims">
+            <router-link to="/portal-dashboard">
               <img src="./images/icon-dashboard-portal.png" class="w-[30px]" alt="dashboard Icon">
             </router-link>
           </div>
           <div class="py-[7px]">
-            <router-link to="/purchase-overview">
+            <router-link to="/user-management">
               <img src="./images/icon-admin-setting.png" class="w-[37px]" alt="user management icon">
             </router-link>
           </div>

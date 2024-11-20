@@ -76,9 +76,15 @@ export default {
     <!--Create/Add User-->
       <Modal :isVisible="isModalCreateNewUser" @close="closeCreateModal">
         <div class="px-2 py-2">
-            <div>
-                <h4 class="font-semibold text-[20px]">Create New User</h4>
+            <div class="flex justify-between">
+                <div>
+                    <h4 class="font-semibold text-[20px]">Create New User</h4>
+                </div>
+                <div>
+                    <img src="../../components/images/icon-check-1.png" class="w-[40px] cursor-pointer hover:scale-105 duration-500" alt="">
+                </div>
             </div>
+            
             <div class="flex justify-center">
                 <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
             </div>
@@ -125,22 +131,22 @@ export default {
                         <span class="slider round"></span>
                     </label>
                 </div>
-                <button class="bg-gray text-white text-[13px] mx-1 w-[140px] rounded-lg">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
                     USER
                 </button>
-                <button class="bg-gray text-white text-[13px] mx-1 w-[140px] rounded-lg">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
                     HEAD 
                 </button>
-                <button class="bg-gray text-white text-[13px] mx-1 w-[140px] rounded-lg">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
                     APPROVER 
                 </button>
-                <button class="bg-gray text-white text-[13px] mx-1 w-[140px] rounded-lg">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
                     ADMIN 
                 </button>
-                <button class="bg-gray text-white text-[13px] mx-1 w-[140px] rounded-lg">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
                     PROCUREMENT 
                 </button>
-                <button class="bg-gray text-white text-[13px] mx-1 w-[140px] rounded-lg">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
                     CUSTOM 
                 </button>
             </div>
@@ -589,9 +595,15 @@ export default {
       <!--Create/add Department-->
       <ModalSmallSize :isVisible="isModalCreateDepartment" @close="closeDepartmentModal">
         <div class="px-2 py-2">
-            <div>
-                <h4 class="font-semibold text-[20px]">Create Department</h4>
+            <div class="flex justify-between">
+                <div>
+                    <h4 class="font-semibold text-[20px]">Create Department</h4>
+                </div>
+                <div>
+                    <img src="../../components/images/icon-check-1.png" class="w-[40px] cursor-pointer hover:scale-105 duration-500" alt="">
+                </div>
             </div>
+            
             <div class="flex justify-center">
                 <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
             </div>
