@@ -14,20 +14,24 @@ import Category from '../views/aims/Category.vue'
 
 import PortalDashboard from '../views/itportal/PortalDashboard.vue'
 import UserManagement from '../views/itportal/UserManagement.vue'
+import DepartmentManagement from '../views/itportal/DepartmentManagement.vue'
 
 import ProcurementDashboard from '../views/procurement/ProcurementDashboard.vue'
+import DepartmentRequest from '../views/procurement/DepartmentRequest.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/home',
-      name: 'home',
-      component: HomeView
-    },
+    //AIMS  
+    
     {
       path: '/',
       name: 'login',
       component: LoginPage
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: HomeView
     },
     {
       path: '/dashboard-aims',
@@ -79,6 +83,9 @@ const router = createRouter({
       name: 'category',
       component: Category
     },
+    
+
+    //IT PORTAL
     {
       path: '/portal-dashboard',
       name: 'portal-dashboard',
@@ -91,9 +98,22 @@ const router = createRouter({
       component: UserManagement
     },
     {
+      path: '/department-management',
+      name: 'department-management',
+      component: DepartmentManagement
+    },
+
+
+    //PROCUREMENT
+    {
       path: '/procurement-dashboard',
       name: 'procurement-dashboard',
       component: ProcurementDashboard
+    },
+    {
+      path: '/department-request',
+      name: 'department-request',
+      component: DepartmentRequest
     },
 
     

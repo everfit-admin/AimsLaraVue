@@ -17,16 +17,7 @@ function toggleItPortal() {
     itPortal.value = !itPortal.value;
 }
 
-//create user
-const isModalCreateNewUser = ref(false);
 
-function openCreateModal() {
-  isModalCreateNewUser.value = true;
-}
-
-function closeCreateModal() {
-    isModalCreateNewUser.value = false;
-}
 
 //create departmemt
 const isModalCreateDepartment = ref(false);
@@ -39,15 +30,15 @@ function closeDepartmentModal() {
     isModalCreateDepartment.value = false;
 }
 
-//edit user
-const isModalEditUser = ref(false);
+//edit department
+const isModalEditDepartment = ref(false);
 
-function openEditUserModal() {
-    isModalEditUser.value = true;
+function openEditDepartmentModal() {
+    isModalEditDepartment.value = true;
 }
 
-function closeEditUserModal() {
-    isModalEditUser.value = false;
+function closeEditDepartmentModal() {
+    isModalEditDepartment.value = false;
 }
 </script>
 
@@ -87,12 +78,12 @@ export default {
     <header>
         <NavBar />
     </header>
-    <!--Create/Add User-->
-      <Modal :isVisible="isModalCreateNewUser" @close="closeCreateModal">
+      <!--Create/add Department-->
+      <ModalSmallSize :isVisible="isModalCreateDepartment" @close="closeDepartmentModal">
         <div class="px-2 py-2">
             <div class="flex justify-between">
-                <div class="flex items-center">
-                    <h4 class="font-semibold text-[20px]">Create New User</h4>
+                <div>
+                    <h4 class="font-semibold text-[20px]">Create Department</h4>
                 </div>
                 <div>
                     <img src="../../components/images/icon-check-1.png" class="w-[40px] cursor-pointer hover:scale-105 duration-500" alt="">
@@ -102,517 +93,52 @@ export default {
             <div class="flex justify-center">
                 <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
             </div>
-            <div class="flex justify-center">
-                <div class="flex gap-[70px]">
-                    <div class="flex items-center gap-[80px]">
-                        <label for="">ID#:</label>
-                        <input type="text" id="po_num" name="po_num" class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
-                    </div>
-                    <div class="flex items-center gap-[35px]">
-                        <label for="">Department:</label>
-                        <input type="text" id="po_num" name="po_num" class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
-                    </div>
-                </div>
-            </div>
-            <div class="flex justify-center">
-                <div class="flex gap-[72px]">
-                    <div class="flex items-center gap-[28px]">
-                        <label for="">First Name:</label>
-                        <input type="text" id="po_num" name="po_num" class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
-                    </div>
-                    <div class="flex items-center gap-[80px]">
-                        <label for="">Email:</label>
-                        <input type="text" id="po_num" name="po_num" class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
-                    </div>
-                </div>
-            </div>
-            <div class="flex justify-center mb-4">
-                <div class="flex gap-[70px]">
-                    <div class="flex items-center gap-[30px]">
-                        <label for="">Last Name:</label>
-                        <input type="text" id="po_num" name="po_num" class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
-                    </div>
-                    <div class="flex items-center gap-[70px]">
-                        <label for="">Mobile:</label>
-                        <input type="text" id="po_num" name="po_num" class="mt-[10px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
-                    </div>
-                </div>
-            </div>
-            <div class="flex mb-2">
+            <div class="">
                 <div>
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
+                    <div class="flex justify-between">
+                        <label for="" class="pt-2">ID#:</label>
+                        <input type="text" class="border rounded-md h-[33px] w-[300px] px-3 mx-2 my-1">
+                    </div>
+                    <div class="flex justify-between">
+                        <label for="" class="pt-2">Head:</label>
+                        <input type="text" class="border rounded-md h-[33px] w-[300px] px-3 mx-2 my-1">
+                    </div>
+                    <div class="flex justify-between">
+                        <label for="" class="pt-2">Requested:</label>
+                        <input type="text" value="" class="border rounded-md h-[33px] w-[300px] px-3 mx-2 my-1">
+                    </div>
+                    <div class="flex justify-between">
+                        <label for="" class="pt-2">Department:</label>
+                        <input type="text" value="" class="border rounded-md h-[33px] w-[300px] px-3 mx-2 my-1">
+                    </div>
+                
+                    <div class="flex justify-between">
+                        <label for="" class="pt-2">Email:</label>
+                        <input type="text" value="" class="border rounded-md h-[33px] w-[300px] px-3 mx-2 my-1">
+                    </div>
+                    <div class="flex justify-between">
+                        <label for="" class="pt-2">Local:</label>
+                        <input type="text" value="" class="border rounded-md h-[33px] w-[300px] px-3 mx-2 my-1">
+                    </div>
+                    <div class="flex gap-[155px]">
+                        <label for="" class="pt-2">Status:</label>
+                        <div class="flex justify-center my-1">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    USER
-                </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    HEAD 
-                </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    APPROVER 
-                </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    ADMIN 
-                </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    PROCUREMENT 
-                </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    CUSTOM 
-                </button>
-            </div>
-            <div class="flex justify-center">
-                <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
-            </div>
-            <div>
-                <p>Custom:</p>
-                <table class="w-[100%] border">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Role</th>
-                            <th class="text-center">Add</th>
-                            <th class="text-center">Edit</th>
-                            <th class="text-center">View</th>
-                            <th class="text-center">Delete</th>
-                            <th class="text-center">All</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="font-semibold border">
-                            <td class="flex cursor-pointer" @click="toggleAssetInventory">
-                                Asset Inventory Management
-                                <span>
-                                    <svg
-                                    class="w-3 h-3 transition-transform duration-300 -rotate-90 cursor-pointer mt-1.5 ml-2"
-                                    :class="assetInventory ? 'rotate-3' : ''"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 10 6"
-                                    
-                                    >
-                                    <path
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="m1 1 4 4 4-4"
-                                    />
-                                    </svg>
-                                </span>
-                            </td>
-                            
-                            <td class="text-center">
-                                <input type="checkbox" id="add" name="add">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox" id="edit" name="edit">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox" id="view" name="view">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox" id="delete" name="delete">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox" id="all" name="all">
-                            </td>
-                        </tr>
-                        
-                            <tr v-if="assetInventory === true" class="border">
-                                <td>
-                                    Dashboard
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="assetInventory === true" class="border">
-                                <td>
-                                    Purchase Overview
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="assetInventory === true" class="border">
-                                <td>
-                                    Purchase Request
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="assetInventory === true" class="border">
-                                <td>
-                                    Purchase Approval
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="assetInventory === true" class="border">
-                                <td>
-                                    Budget/Fund
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="assetInventory === true" class="border">
-                                <td>
-                                    1. Assign Assets 
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="assetInventory === true" class="border">
-                                <td>
-                                    2. Moved Assets
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="assetInventory === true" class="border">
-                                <td>
-                                    3. Scrapped Assets
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="assetInventory === true" class="border">
-                                <td>
-                                    4. Category
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr class="font-semibold border">
-                                <td class="flex cursor-pointer" @click="toggleItPortal">
-                                    IT Portal
-                                    <span>
-                                        <svg
-                                        class="w-3 h-3 transition-transform duration-300 -rotate-90 cursor-pointer mt-1.5 ml-2"
-                                        :class="itPortal ? 'rotate-3' : ''"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 10 6"
-                                        
-                                        >
-                                        <path
-                                            stroke="currentColor"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="m1 1 4 4 4-4"
-                                        />
-                                        </svg>
-                                    </span>
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="add" name="add">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="edit" name="edit">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="view" name="view">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="delete" name="delete">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="all" name="all">
-                                </td>
-                            </tr>
-                        
-                            <tr v-if="itPortal === true" class="border">
-                                <td>
-                                    Dashboard
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="itPortal === true" class="border">
-                                <td>
-                                    Account Management
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="itPortal === true" class="border">
-                                <td>
-                                    1. User
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="itPortal === true" class="border">
-                                <td>
-                                    2. Department
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="itPortal === true" class="border">
-                                <td>
-                                    Maintenance
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="itPortal === true" class="border">
-                                <td>
-                                    Point of Sale 
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="itPortal === true" class="border">
-                                <td>
-                                    1. Store List
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                            <tr v-if="itPortal === true" class="border">
-                                <td>
-                                    2. Remote
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
-      </Modal>
-      <!--Edit User-->
-      <Modal :isVisible="isModalEditUser" @close="closeEditUserModal">
+      </ModalSmallSize>
+      <!--Edit Department-->
+      <Modal :isVisible="isModalEditDepartment" @close="closeEditDepartmentModal">
         <div class="px-2 py-2">
             <div class="flex justify-between">
                 <div class="flex items-center">
-                    <h4 class="font-semibold text-[20px]">Edit User</h4>
+                    <h4 class="font-semibold text-[20px]">Edit Department</h4>
                 </div>
                 <div>
                     <img src="../../components/images/icon-check-1.png" class="w-[40px] cursor-pointer hover:scale-105 duration-500" alt="">
@@ -665,31 +191,14 @@ export default {
                         <span class="slider round"></span>
                     </label>
                 </div>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    USER
-                </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    HEAD 
-                </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    APPROVER 
-                </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    ADMIN 
-                </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    PROCUREMENT 
-                </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    CUSTOM 
-                </button>
+                
             </div>
             <div class="flex justify-center">
                 <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
             </div>
             <div>
                 <p>Custom:</p>
-                <table class="w-[100%] border">
+                <!---<table class="w-[100%] border">
                     <thead>
                         <tr>
                             <th class="text-center">Role</th>
@@ -1123,7 +632,7 @@ export default {
                                 </td>
                             </tr>
                     </tbody>
-                </table>
+                </table>-->
             </div>
         </div>
       </Modal>
@@ -1138,16 +647,16 @@ export default {
             <div class="flex">
                 <PortalSidebarPannel />
                 <div class="h-screen">
-                    <div class="absolute w-[100%] h-[100%] bg-black z-40 opacity-35" :class="isModalCreateNewUser || isModalEditUser ? 'block' : 'hidden'"></div>
+                    <div class="absolute w-[100%] h-[100%] bg-black z-40 opacity-35" :class="isModalCreateDepartment || isModalEditDepartment ? 'block' : 'hidden'"></div>
                         <div class="flex-grow">
                             <div class="mt-5">
-                                <h1 class="text-[23px] font-semibold ml-[40px]">User Account</h1>
+                                <h1 class="text-[23px] font-semibold ml-[40px]">Department</h1>
                                 
                             </div>
                             <div class="flex">
                                 <div class="flex mt-[20px] ml-[35px] relative">
-                                    <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] px-2 cursor-pointer hover:scale-110 duration-500" @click="openCreateModal"/>
-                                    <h3 class="text-[20px] font-semibold">Add User Account</h3> 
+                                    <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] px-2 cursor-pointer hover:scale-110 duration-500" @click="openDepartmentModal"/>
+                                    <h3 class="text-[20px] font-semibold">Add Departmant</h3> 
                                 </div>
                             </div>
                             
@@ -1175,7 +684,7 @@ export default {
                                                 class="elevation-1 table-style w-screen" dense :items-per-page="5" @click:row="openApprovalModal">
                                                 
                                                 <template #item.action="{ item }">
-                                                    <img src="../../components/images/icon-edit.png" @click.stop="openEditUserModal" class="w-[25px] h-[25px] cursor-pointer z-50 ml-5" alt="Edit Icon">
+                                                    <img src="../../components/images/icon-edit.png" @click.stop="openEditDepartmentModal" class="w-[25px] h-[25px] cursor-pointer z-50 ml-5" alt="Edit Icon">
                                                 </template>
                                             </v-data-table>
                                         </v-card>

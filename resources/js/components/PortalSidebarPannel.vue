@@ -154,7 +154,7 @@ function handleClickOutsidePos(event) {
                   <router-link to="/user-management" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white no-hover" active-class="font-semibold bg-zinc-300 pr-[11px] py-1 shadow-lg no-hover">User</router-link>
                 </li>
                 <li>
-                  <router-link to="/moved-assets-in" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white no-hover" active-class="font-semibold bg-zinc-300 pr-[11px] py-1 shadow-lg no-hover">Department</router-link>
+                  <router-link to="/department-management" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white no-hover" active-class="font-semibold bg-zinc-300 pr-[11px] py-1 shadow-lg no-hover">Department</router-link>
                 </li>
                 
               </ul>

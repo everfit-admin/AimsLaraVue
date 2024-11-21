@@ -1,3 +1,28 @@
+
+<script>
+import { useRoute } from 'vue-router';
+
+export default {
+  setup() {
+    
+    const route = useRoute();
+
+    // Check if the current route matches any of the desired paths
+    const isActive = ['/dashboard-aims', '/purchase-overview', '/purchase-approval', '/purchase-requests', '/asset-management', '/moved-assets-in', '/moved-assets-out', '/scrapped-assets', '/category'].includes(route.path);
+
+
+    const routeItPortal = useRoute();
+
+    // Check if the current route matches any of the desired paths
+    const isActiveItPortal = ['/portal-dashboard', '/user-management', '/department-management'].includes(routeItPortal.path);
+
+    return { isActive ,isActiveItPortal };
+
+  },
+  
+  
+};
+</script>
 <template>
     <div class="grid grid-cols-5 h-10 pt-1.5 bg-black">
         <div class="">
@@ -10,7 +35,11 @@
                 </router-link>
            </div>
             <div class="hover:scale-110 transform transition duration-300">
-                <router-link to="/dashboard-aims" class="no-hover-nav" active-class="bg-silver text-black px-2 py-1 rounded-sm no-hover-nav">
+                <router-link
+                    to="/dashboard-aims"
+                    class="no-hover-nav"
+                    :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': isActive }"
+                >
                     AIMS
                 </router-link>
             </div>
@@ -27,7 +56,10 @@
             </div>
             <div class="hover:scale-110 transform transition duration-300">
                 
-                <router-link to="/portal-dashboard" class="no-hover-nav" active-class="bg-silver text-black px-2 py-1 rounded-sm no-hover-nav">
+                <router-link to="/portal-dashboard"
+                    class="no-hover-nav"
+                    :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': isActiveItPortal }"
+                >
                     PORTAL
                 </router-link>
             </div>

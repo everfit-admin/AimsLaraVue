@@ -8,7 +8,7 @@ import FooterPage from './components/FooterPage.vue'
 
 
     <main class="flex-grow">
-      <RouterView />
+      <router-view></router-view>
     </main>
   </div>
 
