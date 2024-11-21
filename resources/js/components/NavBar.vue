@@ -16,7 +16,14 @@ export default {
     // Check if the current route matches any of the desired paths
     const isActiveItPortal = ['/portal-dashboard', '/user-management', '/department-management'].includes(routeItPortal.path);
 
-    return { isActive ,isActiveItPortal };
+
+
+    const routeProcurement = useRoute();
+
+    // Check if the current route matches any of the desired paths
+    const isActiveProcurement = ['/procurement-dashboard', '/department-request'].includes(routeProcurement.path);
+
+    return { isActive ,isActiveItPortal, isActiveProcurement };
 
   },
   
@@ -50,7 +57,7 @@ export default {
             </div>
             <div class="hover:scale-110 transform transition duration-300">
                 
-                <router-link to="/procurement-dashboard" class="no-hover-nav" active-class="bg-silver text-black px-2 py-1 rounded-sm no-hover-nav">
+                <router-link to="/procurement-dashboard" class="no-hover-nav" :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': isActiveProcurement }">
                     PROCUREMENT
                 </router-link>
             </div>

@@ -215,7 +215,7 @@ export default {
                         <h3>Description</h3>
                         <h3>Quanity</h3>
                     </div>
-                    <div class="flex justify-between mr-4">
+                    <div class="flex justify-between mr-4 mt-9">
                         <p>Acer Altos</p>
                         <p>1</p>
                     </div>

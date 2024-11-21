@@ -77,7 +77,7 @@ function handleClickOutsidePos(event) {
             </router-link>
           </div>
           <div class="py-[7px]">
-            <router-link to="/use">
+            <router-link to="/department-request">
               <img src="./images/icon-management.png" class="w-[37px]" alt="user management icon">
             </router-link>
           </div>
