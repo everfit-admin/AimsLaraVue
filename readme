@@ -1,0 +1,9 @@
+Pag mag sesetup ng clone 
+
+copy paste yung github source sa xaamp
+npm install sa terminal
+composer install
+gagawa ng .env file tapos iseset yung database credentials
+php artisan migrate
+php artisan key:generate
+php artisan serve
