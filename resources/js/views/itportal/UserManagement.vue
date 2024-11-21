@@ -156,242 +156,24 @@ export default {
             <div>
                 <p>Custom:</p>
                 <table class="w-[100%] border">
-                    <tr>
-                        <th class="text-center">Role</th>
-                        <th class="text-center">Add</th>
-                        <th class="text-center">Edit</th>
-                        <th class="text-center">View</th>
-                        <th class="text-center">Delete</th>
-                        <th class="text-center">All</th>
-                    </tr>
-                    <tr class="font-semibold border">
-                        <td class="flex cursor-pointer" @click="toggleAssetInventory">
-                            Asset Inventory Management
-                            <span>
-                                <svg
-                                class="w-3 h-3 transition-transform duration-300 -rotate-90 cursor-pointer mt-1.5 ml-2"
-                                :class="assetInventory ? 'rotate-3' : ''"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 10 6"
-                                 
-                                >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="m1 1 4 4 4-4"
-                                />
-                                </svg>
-                            </span>
-                        </td>
-                        
-                        <td class="text-center">
-                            <input type="checkbox" id="add" name="add">
-                        </td>
-                        <td class="text-center">
-                            <input type="checkbox" id="edit" name="edit">
-                        </td>
-                        <td class="text-center">
-                            <input type="checkbox" id="view" name="view">
-                        </td>
-                        <td class="text-center">
-                            <input type="checkbox" id="delete" name="delete">
-                        </td>
-                        <td class="text-center">
-                            <input type="checkbox" id="all" name="all">
-                        </td>
-                    </tr>
-                    
-                        <tr v-if="assetInventory === true" class="border">
-                            <td>
-                                Dashboard
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
+                    <thead>
+                        <tr>
+                            <th class="text-center">Role</th>
+                            <th class="text-center">Add</th>
+                            <th class="text-center">Edit</th>
+                            <th class="text-center">View</th>
+                            <th class="text-center">Delete</th>
+                            <th class="text-center">All</th>
                         </tr>
-                        <tr v-if="assetInventory === true" class="border">
-                            <td>
-                                Purchase Overview
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="assetInventory === true" class="border">
-                            <td>
-                                Purchase Request
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="assetInventory === true" class="border">
-                            <td>
-                                Purchase Approval
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="assetInventory === true" class="border">
-                            <td>
-                                Budget/Fund
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="assetInventory === true" class="border">
-                            <td>
-                                1. Assign Assets 
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="assetInventory === true" class="border">
-                            <td>
-                                2. Moved Assets
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="assetInventory === true" class="border">
-                            <td>
-                                3. Scrapped Assets
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="assetInventory === true" class="border">
-                            <td>
-                                4. Category
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
+                    </thead>
+                    <tbody>
                         <tr class="font-semibold border">
-                            <td class="flex cursor-pointer" @click="toggleItPortal">
-                                IT Portal
+                            <td class="flex cursor-pointer" @click="toggleAssetInventory">
+                                Asset Inventory Management
                                 <span>
                                     <svg
                                     class="w-3 h-3 transition-transform duration-300 -rotate-90 cursor-pointer mt-1.5 ml-2"
-                                    :class="itPortal ? 'rotate-3' : ''"
+                                    :class="assetInventory ? 'rotate-3' : ''"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -408,184 +190,405 @@ export default {
                                     </svg>
                                 </span>
                             </td>
-                        <td class="text-center">
-                            <input type="checkbox" id="add" name="add">
-                        </td>
-                        <td class="text-center">
-                            <input type="checkbox" id="edit" name="edit">
-                        </td>
-                        <td class="text-center">
-                            <input type="checkbox" id="view" name="view">
-                        </td>
-                        <td class="text-center">
-                            <input type="checkbox" id="delete" name="delete">
-                        </td>
-                        <td class="text-center">
-                            <input type="checkbox" id="all" name="all">
-                        </td>
-                    </tr>
-                    
-                        <tr v-if="itPortal === true" class="border">
-                            <td>
-                                Dashboard
+                            
+                            <td class="text-center">
+                                <input type="checkbox" id="add" name="add">
                             </td>
                             <td class="text-center">
-                                <input type="checkbox">
+                                <input type="checkbox" id="edit" name="edit">
                             </td>
                             <td class="text-center">
-                                <input type="checkbox">
+                                <input type="checkbox" id="view" name="view">
                             </td>
                             <td class="text-center">
-                                <input type="checkbox">
+                                <input type="checkbox" id="delete" name="delete">
                             </td>
                             <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
+                                <input type="checkbox" id="all" name="all">
                             </td>
                         </tr>
-                        <tr v-if="itPortal === true" class="border">
-                            <td>
-                                Account Management
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="itPortal === true" class="border">
-                            <td>
-                                1. User
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="itPortal === true" class="border">
-                            <td>
-                                2. Department
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="itPortal === true" class="border">
-                            <td>
-                                Maintenance
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="itPortal === true" class="border">
-                            <td>
-                                Point of Sale 
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="itPortal === true" class="border">
-                            <td>
-                                1. Store List
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr v-if="itPortal === true" class="border">
-                            <td>
-                                2. Remote
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                    
+                        
+                            <tr v-if="assetInventory === true" class="border">
+                                <td>
+                                    Dashboard
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="assetInventory === true" class="border">
+                                <td>
+                                    Purchase Overview
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="assetInventory === true" class="border">
+                                <td>
+                                    Purchase Request
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="assetInventory === true" class="border">
+                                <td>
+                                    Purchase Approval
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="assetInventory === true" class="border">
+                                <td>
+                                    Budget/Fund
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="assetInventory === true" class="border">
+                                <td>
+                                    1. Assign Assets 
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="assetInventory === true" class="border">
+                                <td>
+                                    2. Moved Assets
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="assetInventory === true" class="border">
+                                <td>
+                                    3. Scrapped Assets
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="assetInventory === true" class="border">
+                                <td>
+                                    4. Category
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr class="font-semibold border">
+                                <td class="flex cursor-pointer" @click="toggleItPortal">
+                                    IT Portal
+                                    <span>
+                                        <svg
+                                        class="w-3 h-3 transition-transform duration-300 -rotate-90 cursor-pointer mt-1.5 ml-2"
+                                        :class="itPortal ? 'rotate-3' : ''"
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 10 6"
+                                        
+                                        >
+                                        <path
+                                            stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="m1 1 4 4 4-4"
+                                        />
+                                        </svg>
+                                    </span>
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" id="add" name="add">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" id="edit" name="edit">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" id="view" name="view">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" id="delete" name="delete">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" id="all" name="all">
+                                </td>
+                            </tr>
+                        
+                            <tr v-if="itPortal === true" class="border">
+                                <td>
+                                    Dashboard
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="itPortal === true" class="border">
+                                <td>
+                                    Account Management
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="itPortal === true" class="border">
+                                <td>
+                                    1. User
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="itPortal === true" class="border">
+                                <td>
+                                    2. Department
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="itPortal === true" class="border">
+                                <td>
+                                    Maintenance
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="itPortal === true" class="border">
+                                <td>
+                                    Point of Sale 
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="itPortal === true" class="border">
+                                <td>
+                                    1. Store List
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                            <tr v-if="itPortal === true" class="border">
+                                <td>
+                                    2. Remote
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
