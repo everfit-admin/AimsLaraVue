@@ -93,13 +93,29 @@ export default {
                     <div class="col-12 w-[100%]">
                         <ul id="progressbar" class="text-center">
                             
-                            <li class="active step0 pt-[33px]">( 0 ) <br> Requestor</li>
-                            <li class="active step0 pt-[33px]">( 1 ) <br> Manager</li>
-                            <li class="active step0 pt-[33px]">( 2 ) <br >Quotation</li>
-                            <li class="active step0 pt-[33px]">( 3 ) <br> COO</li>
-                            <li class="active step0 pt-[33px]">( 4 ) <br> CFO</li>
-                            <li class="active step0 pt-[33px]">( 5 ) <br> Procurement</li>
-                            <li class="step0 pt-[33px]">( 6 ) <br >Completed</li>
+                            
+                            <li class="active step0 pt-[33px] tooltip-requestor">( 0 ) <br> Requestor
+                                <span class="tooltiptext-requestor">11/25/2024</span>
+                            </li>
+                            
+                            <li class="active step0 pt-[33px] tooltip-manager">( 1 ) <br> Manager
+                                <span class="tooltiptext-manager">11/26/2024</span>
+                            </li>
+                            <li class="active step0 pt-[33px] tooltip-quotation">( 2 ) <br >Quotation
+                                <span class="tooltiptext-quotation">11/27/2024</span>
+                            </li>
+                            <li class="active step0 pt-[33px] tooltip-coo">( 3 ) <br> COO
+                                <span class="tooltiptext-coo">11/28/2024</span>
+                            </li>
+                            <li class="active step0 pt-[33px] tooltip-cfo">( 4 ) <br> CFO
+                                <span class="tooltiptext-cfo">11/29/2024</span>
+                            </li>
+                            <li class="active step0 pt-[33px] tooltip-procurement">( 5 ) <br> Procurement
+                                <span class="tooltiptext-procurement">11/30/2024</span>
+                            </li>
+                            <li class="step0 pt-[33px] tooltip-completed">( 6 ) <br >Completed
+                                <span class="tooltiptext-completed">11/31/2024</span>
+                            </li>
                             
                         </ul>
                     </div>
