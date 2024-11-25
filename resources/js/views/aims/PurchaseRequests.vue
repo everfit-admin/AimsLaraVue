@@ -360,7 +360,8 @@ export default {
                                                 <span class="text-h6 font-weight-bold"></span>
                                                 <v-spacer></v-spacer>
                                                 <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
-                                                    hide-details dense class="mr-4 search-bar"></v-text-field>
+                                                    hide-details dense class="mr-4 search-bar"><img src="../../components/images/icon-search.png" class="w-[30px] h-[30px] absolute right-2" alt="">
+                                                </v-text-field>
                                             </v-card-title>
 
                                             <v-data-table :headers="headers" :items="items" :search="search"

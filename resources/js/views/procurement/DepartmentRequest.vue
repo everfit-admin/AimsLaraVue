@@ -221,24 +221,92 @@ export default {
                 
                 <div class="flex gap-3">
                     <div class="w-[170px] bg-zinc-300 rounded-md shadow-lg">
-                        <div class="bg-gray text-center py-2 rounded-t-md">
-                            Alpha Core
+                        
+                        <div class="bg-gray py-2 rounded-t-md flex justify-between">
+                            <p class="flex-grow text-center">Alpha Core</p>
+
+                            <div class="bg-white flex justify-end mr-2 items-center rounded-md">
+                                <svg
+                                class="w-5 h-5 transition-transform duration-300 rotate-3 pt-[2px] px-1  cursor-pointer"
+                                
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 10 6"
+                                @click.stop="toggleDropdown"
+                                >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="m1 1 4 4 4-4"
+                                />
+                                </svg>
+                            </div>
+                        
+                        
                         </div>
+                        
                         <div class="flex justify-center mt-5">
                             <input type="text" class="border rounded-md shadow-md w-[150px] bg-white">
                         </div>
                     </div>
                     <div class="w-[170px] bg-zinc-300 h-[110px] rounded-md shadow-lg">
-                        <div class="bg-gray text-center py-2 rounded-t-md">
-                            Pacita Aire
+                        <div class="bg-gray py-2 rounded-t-md flex justify-between">
+                            <p class="flex-grow text-center">Pacita Aire</p>
+
+                            <div class="bg-white flex justify-end mr-2 items-center rounded-md">
+                                <svg
+                                    class="w-5 h-5 transition-transform duration-300 rotate-3 pt-[2px] px-1  cursor-pointer"
+                                    
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 10 6"
+                                    @click.stop="toggleDropdown"
+                                    >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m1 1 4 4 4-4"
+                                    />
+                                    </svg>
+                            </div>
+                        
+                        
                         </div>
                         <div class="flex justify-center mt-5">
                             <input type="text" class="border rounded-md shadow-md w-[150px] bg-white">
                         </div>
                     </div>
                     <div class="w-[170px] bg-zinc-300 rounded-md shadow-lg">
-                        <div class="bg-gray text-center py-2 rounded-t-md">
-                            Titans Infinity
+                        <div class="bg-gray py-2 rounded-t-md flex justify-between">
+                            <p class="flex-grow text-center">Titans Infinity</p>
+
+                            <div class="bg-white flex justify-end mr-2 items-center rounded-md">
+                                <svg
+                                    class="w-5 h-5 transition-transform duration-300 rotate-3 pt-[2px] px-1  cursor-pointer"
+                                    
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 10 6"
+                                    @click.stop="toggleDropdown"
+                                    >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m1 1 4 4 4-4"
+                                    />
+                                    </svg>
+                            </div>
+                        
+                        
                         </div>
                         <div class="flex justify-center mt-5">
                             <input type="text" class="border rounded-md shadow-md w-[150px] bg-white">
@@ -302,7 +370,8 @@ export default {
                                             <span class="text-h6 font-weight-bold"></span>
                                             <v-spacer></v-spacer>
                                             <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
-                                                hide-details dense class="mr-4 search-bar"></v-text-field>
+                                                hide-details dense class="mr-4 search-bar"><img src="../../components/images/icon-search.png" class="w-[30px] h-[30px] absolute right-2" alt="">
+                                            </v-text-field>
                                         </v-card-title>
                                         <v-data-table :headers="headers" :items="items" :search="search"
                                             class="elevation-1 table-style w-screen" dense :items-per-page="5" @click:row="openModalDepartmentRequest">

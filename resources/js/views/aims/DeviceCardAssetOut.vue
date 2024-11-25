@@ -31,12 +31,12 @@ function closeEditAssetModal() {
       }
     }
   }
-  </script>
+</script>
   
-  <style scoped>
-  
-  /* Add any additional styling here */
-  </style>
+<style scoped>
+
+/* Add any additional styling here */
+</style>
 
 <template>
     <ModalAsset :isVisible="showModalAsset" @close="closeAssetModal">
