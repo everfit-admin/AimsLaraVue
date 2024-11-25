@@ -4,6 +4,7 @@ import SidebarPannel from '../../components/SidebarPannel.vue';
 import ModalBudgetFund from '../../components/modals/ModalBudgetFund.vue'
 import Swal from 'sweetalert2'
 import { ref } from 'vue'
+import { reactive } from "vue";
 
 const isModalVisible = ref(false);
 
@@ -18,6 +19,85 @@ function closeModal() {
 }
 
 const activeTab = ref('operating');
+
+//reactive inputs for OPERATING EXPENSES
+const rows = reactive([
+  {
+    jan: "",
+    feb: "",
+    mar: "",
+    apr: "",
+    may: "",
+    jun: "",
+    jul: "",
+    aug: "",
+    sep: "",
+    oct: "",
+    nov: "",
+    dec: "",
+  },
+]);
+
+const addRow = () => {
+  rows.push({
+    jan: "",
+    feb: "",
+    mar: "",
+    apr: "",
+    may: "",
+    jun: "",
+    jul: "",
+    aug: "",
+    sep: "",
+    oct: "",
+    nov: "",
+    dec: "",
+  });
+};
+
+const removeRow = (index) => {
+  rows.splice(index, 1);
+};
+
+
+//reactive inputs for CAPITAL EXPENDITURE EXPENSES
+const rowscapex = reactive([
+  {
+    jancapex: "",
+    febcapex: "",
+    marcapex: "",
+    aprcapex: "",
+    maycapex: "",
+    juncapex: "",
+    julcapex: "",
+    augcapex: "",
+    sepcapex: "",
+    octcapex: "",
+    novcapex: "",
+    deccapex: "",
+  },
+]);
+
+const addRowcapex = () => {
+    rowscapex.push({
+    jancapex: "",
+    febcapex: "",
+    marcapex: "",
+    aprcapex: "",
+    maycapex: "",
+    juncapex: "",
+    julcapex: "",
+    augcapex: "",
+    sepcapex: "",
+    octcapex: "",
+    novcapex: "",
+    deccapex: "",
+  });
+};
+
+const removeRowcapex = (indexcapex) => {
+    rowscapex.splice(indexcapex, 1);
+};
 </script>
 
 <script>
@@ -101,146 +181,164 @@ export default {
         
             <div class="pt-5">
                 <div v-if="activeTab === 'operating'">
-                    <div class="flex justify-between">
-                        <div class="flex my-2">
-                            <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] px-2 cursor-pointer hover:scale-110 duration-500" @click=""/>
-                            <h5 class="text-[15px] font-semibold pt-1">Create New Line</h5>
-                        </div>
-                        <div class="flex">
-                            <label for="" class="pt-2">Operating Expenses:</label>
-                            <input type="text" class="border rounded-md mx-1 px-2">
-                        </div>
-                    </div>
-                    
-                
-                    <div class="flex justify-start mt-2 mb-6">
-                        <h3 class="font-semibold text-lg">Salary Wages</h3>
-                    </div>
-                    <div class="flex overflow-auto overflow-y-hidden gap-1">
-                        <div>
-                            <p class="font-semibold">JAN</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">FEB</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">MAR</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">APR</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">MAY</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">JUN</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">JUL</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">AUG</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">SEP</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">OCT</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">NOV</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">DEC</p>
-                            <input type="text" class="border w-[100px] px-1">
+                    <div v-for="(row, index) in rows" :key="index">
+                        <div class="flex justify-end">
+                            
+                            <div class="flex">
+                                <label for="" class="pt-2">Operating Expenses:</label>
+                                <input type="text" class="border rounded-md mx-1 px-2">
+                            </div>
                         </div>
                         
+                        <div class="flex justify-between">
+                            <div class="flex justify-start mt-2 mb-6">
+                                <h3 class="font-semibold text-lg">Salary Wages</h3>
+                            </div>
+                            <div class="items-center flex">
+                                <img src="../../components/images/icon-delete.png" @click="removeRow(index)" class="w-[25px] cursor-pointer hover:scale-110 duration-500" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="flex overflow-auto overflow-y-hidden gap-1">
+                            <div>
+                                <p class="font-semibold">JAN</p>
+                                <input type="text" id="jan" name="jan" v-model="row.jan" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">FEB</p>
+                                <input type="text" id="feb" name="feb" v-model="row.feb" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">MAR</p>
+                                <input type="text" id="mar" name="mar" v-model="row.mar" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">APR</p>
+                                <input type="text" id="apr" name="apr" v-model="row.apr" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">MAY</p>
+                                <input type="text" id="may" name="may" v-model="row.may" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">JUN</p>
+                                <input type="text" id="jun" name="jun" v-model="row.jun" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">JUL</p>
+                                <input type="text" id="jul" name="jul" v-model="row.jul" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">AUG</p>
+                                <input type="text" id="aug" name="aug" v-model="row.aug" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">SEP</p>
+                                <input type="text" id="sep" name="sep" v-model="row.sep" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">OCT</p>
+                                <input type="text" id="oct" name="oct" v-model="row.oct" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">NOV</p>
+                                <input type="text" id="nov" name="nov" v-model="row.nov" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">DEC</p>
+                                <input type="text" id="dec" name="dec" v-model="row.dec" class="border w-[100px] px-1">
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[10px] rounded-full duration-500 ease-in-out transform"> </div>
+                        </div>
                     </div>
-                    <div class="flex justify-center">
-                        <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"> </div>
+                    <div class="flex my-1 pb-5">
+                        <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] pr-2 cursor-pointer hover:scale-110 duration-500" @click="addRow"/>
+                        <h5 class="text-[15px] font-semibold pt-1">Create New Line</h5>
                     </div>
+                    
                 </div>
                 <div v-if="activeTab === 'capital'">
-                    <div class="flex justify-between">
-                        <div class="flex my-2">
-                            <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] px-2 cursor-pointer hover:scale-110 duration-500" @click=""/>
-                            <h5 class="text-[15px] font-semibold pt-1">Create New Line</h5>
-                        </div>
-                        <div class="flex">
-                            <label for="" class="pt-2">Capital Expenditure Expenses:</label>
-                            <input type="text" class="border rounded-md mx-1 px-2">
-                        </div>
-                    </div>
-                    
-                
-                    <div class="flex justify-start mt-2 mb-6">
-                        <h3 class="font-semibold text-lg">POS Package</h3>
-                    </div>
-                    <div class="flex overflow-auto overflow-y-hidden gap-1">
-                        <div>
-                            <p class="font-semibold">JAN</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">FEB</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">MAR</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">APR</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">MAY</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">JUN</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">JUL</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">AUG</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">SEP</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">OCT</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">NOV</p>
-                            <input type="text" class="border w-[100px] px-1">
-                        </div>
-                        <div>
-                            <p class="font-semibold">DEC</p>
-                            <input type="text" class="border w-[100px] px-1">
+                    <div v-for="(rowcapex, indexcapex) in rowscapex" :key="indexcapex">
+                        <div class="flex justify-end">
+                            <div class="flex">
+                                <label for="" class="pt-2">Capital Expenditure Expenses:</label>
+                                <input type="text" class="border rounded-md mx-1 px-2">
+                            </div>
                         </div>
                         
+                        <div class="flex justify-between">
+                            <div class="flex justify-start mt-2 mb-6">
+                                <h3 class="font-semibold text-lg">POS Package</h3>
+                            </div>
+                            <div class="items-center flex">
+                                <img src="../../components/images/icon-delete.png" @click="removeRowcapex(indexcapex)" class="w-[25px] cursor-pointer hover:scale-110 duration-500" alt="">
+                            </div>
+                        </div>
+
+                        <div class="flex overflow-auto overflow-y-hidden gap-1">
+                            <div>
+                                <p class="font-semibold">JAN</p>
+                                <input type="text" id="jancapex" name="jancapex" v-model="rowcapex.jancapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">FEB</p>
+                                <input type="text" id="febcapex" name="febcapex" v-model="rowcapex.febcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">MAR</p>
+                                <input type="text" id="marcapex" name="marcapex" v-model="rowcapex.marcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">APR</p>
+                                <input type="text" id="aprcapex" name="aprcapex" v-model="rowcapex.aprcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">MAY</p>
+                                <input type="text" id="maycapex" name="maycapex" v-model="rowcapex.maycapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">JUN</p>
+                                <input type="text" id="juncapex" name="juncapex" v-model="rowcapex.juncapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">JUL</p>
+                                <input type="text" id="julcapex" name="julcapex" v-model="rowcapex.julcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">AUG</p>
+                                <input type="text" id="augcapex" name="augcapex" v-model="rowcapex.augcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">SEP</p>
+                                <input type="text" id="sepcapex" name="sepcapex" v-model="rowcapex.sepcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">OCT</p>
+                                <input type="text" id="octcapex" name="octcapex" v-model="rowcapex.octcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">NOV</p>
+                                <input type="text" id="novcapex" name="novcapex" v-model="rowcapex.novcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">DEC</p>
+                                <input type="text" id="deccapex" name="deccapex" v-model="rowcapex.deccapex" class="border w-[100px] px-1">
+                            </div>
+                            
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[10px] rounded-full duration-500 ease-in-out transform"> </div>
+                        </div>
                     </div>
-                    <div class="flex justify-center">
-                        <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"> </div>
+                    <div class="flex my-1 pb-5">
+                        <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] pr-2 cursor-pointer hover:scale-110 duration-500" @click="addRowcapex"/>
+                        <h5 class="text-[15px] font-semibold pt-1">Create New Line</h5>
                     </div>
+                    
                 </div>
             </div>
             

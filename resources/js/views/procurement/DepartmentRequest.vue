@@ -128,10 +128,7 @@ export default {
             <div class="flex justify-center mt-4">
                 <div class="w-[92%] h-0.5 bg-gray mt-[5px] rounded-full duration-500 ease-in-out transform"></div>
             </div>
-            <div class="flex justify-start ml-5 my-2">
-                <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] px-2 cursor-pointer hover:scale-110 duration-500" @click=""/>
-                <h5 class="text-[15px] font-semibold pt-1">Create New Line</h5>
-            </div>
+        
             <div class="mt-3 ml-[28px]">
                 
                 <!--create new line-->
@@ -151,14 +148,12 @@ export default {
                                 <input type="text" id="unit" name="unit" value="pc" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                             </div>
                             <div>
-                                <label for="quality">Quality</label>
-                                <input type="text" id="quality" name="quality" value="1" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                                <label for="quantity">Quantity</label>
+                                <input type="text" id="quantity" name="quantity" value="1" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                             </div>
                             
                         </div>
-                        <div class="flex-grow items-center flex">
-                            <img src="../../components/images/icon-delete.png" class="w-[25px] pt-[27px] ml-[100px] cursor-pointer" alt="">
-                        </div>
+                        
                     </div>
                     <div>
                         <label for="comment_remarks">Comment/Remarks</label>

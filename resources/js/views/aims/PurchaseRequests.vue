@@ -4,7 +4,7 @@ import SidebarPannel from '../../components/SidebarPannel.vue';
 import Swal from 'sweetalert2'
 import Modal from '../../components/modals/Modal.vue';
 import { ref } from 'vue'
-
+import { reactive } from "vue";
 
 const isCreateModalVisible = ref(false);
 const isEditModalVisible = ref(false);
@@ -38,6 +38,30 @@ function closeApprovalModal() {
     showModalApproval.value = false;
 }
 
+
+const rows = reactive([
+  {
+    category: "",
+    brand: "",
+    unit: "",
+    quality: "",
+    comments: "",
+  },
+]);
+
+const addRow = () => {
+  rows.push({
+    category: "",
+    brand: "",
+    unit: "",
+    quality: "",
+    comments: "",
+  });
+};
+
+const removeRow = (index) => {
+  rows.splice(index, 1);
+};
 </script>
 
 <script>
@@ -111,6 +135,8 @@ export default {
             });
         }
     },
+
+    
 }
 </script>
 
@@ -176,8 +202,8 @@ export default {
                             <input type="text" id="unit" name="unit" value="pc" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                         </div>
                         <div>
-                            <label for="quality">Quality</label>
-                            <input type="text" id="quality" name="quality" value="1" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                            <label for="quantity">Quantity</label>
+                            <input type="text" id="quantity" name="quantity" value="1" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                         </div>
                         
                     </div>
@@ -234,53 +260,54 @@ export default {
                 </div>
             </div>
         </div>
-        
         <div class="flex justify-center mt-4">
             <div class="w-[90%] h-0.5 bg-gray mt-[10px] rounded-full duration-500 ease-in-out transform"></div>
         </div>
-        <div class="mt-3 ml-[28px]">
-            <div class="flex justify-start">
-                <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] px-2 cursor-pointer hover:scale-110 duration-500" @click=""/>
-                <h5 class="text-[15px] font-semibold pt-1">Create New Line</h5>
-            </div>
-            <!--create new line-->
-            <div class="">
-                <div class="flex justify-between mt-[20px]">
-                    <div class="flex gap-3">
-                        <div>
-                            <label for="category">Category</label>
-                            <input type="text" id="category" name="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                        </div>
-                        <div>
-                            <label for="brand">Brand</label>
-                            <input type="text" id="brand" name="brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                        </div>
-                        <div>
-                            <label for="unit">Unit</label>
-                            <input type="text" id="unit" name="unit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                        </div>
-                        <div>
-                            <label for="quality">Quality</label>
-                            <input type="text" id="quality" name="quality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                        </div>
-                        
-                    </div>
-                    <div class="flex-grow items-center flex">
-                        <img src="../../components/images/icon-delete.png" class="w-[25px] pt-[27px] ml-[100px] cursor-pointer" alt="">
-                    </div>
-                </div>
-                <div>
-                    <label for="comment_remarks">Comment/Remarks</label>
-                    <textarea id="comment_remarks" name="comment_remarks" rows="4" class="block p-2.5 w-[750px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
-                </div>
-            </div>
-            
-            <div>
+        <div v-for="(row, index) in rows" :key="index" class="input-row">
+    
+            <div class="mt-3 ml-[28px]">
                 
+                <!--create new line-->
+                <div class="">
+                    <div class="flex justify-between mt-[20px]">
+                        <div class="flex gap-3">
+                            <div>
+                                <label for="category">Category</label>
+                                <input type="text" id="category" name="category" v-model="row.category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                            </div>
+                            <div>
+                                <label for="brand">Brand</label>
+                                <input type="text" id="brand" name="brand" v-model="row.brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                            </div>
+                            <div>
+                                <label for="unit">Unit</label>
+                                <input type="text" id="unit" name="unit" v-model="row.unit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                            </div>
+                            <div>
+                                <label for="quality">Quality</label>
+                                <input type="text" id="quality" name="quality" v-model="row.quality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                            </div>
+                            
+                        </div>
+                        <div class="flex-grow items-center flex">
+                            <img src="../../components/images/icon-delete.png" @click="removeRow(index)" class="w-[25px] pt-[27px] ml-[100px] cursor-pointer hover:scale-110 duration-500" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="comment_remarks">Comment/Remarks</label>
+                        <textarea id="comment_remarks" name="comment_remarks" rows="4" v-model="row.comments" class="block p-2.5 w-[750px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                    </div>
+                </div>
+            
             </div>
-        
+            <div class="flex justify-center mt-4">
+                <div class="w-[95%] h-0.5 bg-gray mt-[10px] rounded-full duration-500 ease-in-out transform"></div>
+            </div>
         </div>
-        
+        <div class="flex justify-start ml-5 mt-4">
+            <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] px-2 cursor-pointer hover:scale-110 duration-500" @click="addRow"/>
+            <h5 class="text-[15px] font-semibold pt-1">Create New Line</h5>
+        </div>
         <!------------------------------------------------------------------>
         
         <!--buttonsss-->

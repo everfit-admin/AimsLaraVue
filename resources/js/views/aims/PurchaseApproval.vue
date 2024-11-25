@@ -187,8 +187,8 @@ export default {
                                 <input type="text" id="unit" name="unit" value="pc" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                             </div>
                             <div>
-                                <label for="quality">Quality</label>
-                                <input type="text" id="quality" name="quality" value="1" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                                <label for="quantity">Quantity</label>
+                                <input type="text" id="quantity" name="quantity" value="1" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                             </div>
                             
                         </div>
@@ -280,8 +280,8 @@ export default {
                             <input type="text" id="unit" name="unit" value="pc" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                         </div>
                         <div>
-                            <label for="quality">Quality</label>
-                            <input type="text" id="quality" name="quality" value="1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                            <label for="quantity">Quantity</label>
+                            <input type="text" id="quantity" name="quantity" value="1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
                         </div>
                         
                     </div>
@@ -311,142 +311,7 @@ export default {
         </div>
     </Modal>
     <!--modal for create new request-->
-    <Modal :isVisible="isCreateModalVisible" @close="closeCreateModal">
-        
-        
-        <div class="flex justify-between pt-[20px]">
-            <p>Requestor: Jeff Orilla -Information Technology</p>
-            <p class="pr-[250px]">0-requestor</p>
-            <p>11/12/2024</p>
-            
-        </div>
-        <div class="flex justify-start ml-[30px] pt-2 pb-[20px] mt-[15px]">
-            <h2 class="font-semibold">PURCHASE REQUEST INFORMATION:</h2>
-        </div>
-        <div class="flex justify-center ml-7">
-            <div class="grid grid-cols-6 w-[100%]">
-                <div class="">
-                    <label for="po_num" class="mt-2">PO#:</label>
-                    <br>
-                    <label for="classif" class="mt-5">Classification:</label>
-                </div>
-                <div class="col-span-2">
-                    
-                    <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
-                    <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                </div>
-                <div class="">
-                    <label for="cur_budget" class="mt-2">Current Budget:</label>
-                    <label for="es_budget" class="mt-5">Estimated Budget:</label>
-                </div>
-                <div class="col-span-2">
-                    <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2" placeholder="" required />
-                    <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                </div>
-            </div>
-        </div>
-        
-        <div class="flex justify-center mt-4">
-            <div class="w-[90%] h-0.5 bg-gray mt-[10px] rounded-full duration-500 ease-in-out transform"></div>
-        </div>
-        <div class="mt-3 ml-[28px]">
-            <div class="flex justify-start">
-                <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] px-2 cursor-pointer hover:scale-110 duration-500" @click=""/>
-                <h5 class="text-[15px] font-semibold pt-1">Create New Line</h5>
-            </div>
-            <!--create new line-->
-            <div class="">
-                <div class="flex justify-between mt-[20px]">
-                    <div class="flex gap-3">
-                        <div>
-                            <label for="category">Category</label>
-                            <input type="text" id="category" name="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                        </div>
-                        <div>
-                            <label for="brand">Brand</label>
-                            <input type="text" id="brand" name="brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                        </div>
-                        <div>
-                            <label for="unit">Unit</label>
-                            <input type="text" id="unit" name="unit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                        </div>
-                        <div>
-                            <label for="quality">Quality</label>
-                            <input type="text" id="quality" name="quality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                        </div>
-                        
-                    </div>
-                    <div class="flex-grow items-end flex">
-                        <img src="../../components/images/icon-delete.png" class="w-[25px] pb-[10px] ml-[100px] cursor-pointer" alt="">
-                    </div>
-                </div>
-                <div>
-                    <label for="comment_remarks">Comment/Remarks</label>
-                    <textarea id="comment_remarks" name="comment_remarks" rows="4" class="block p-2.5 w-[750px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
-                </div>
-            </div>
-            
-            <div>
-                
-            </div>
-        
-        </div>
-        
-        <!------------------------------------------------------------------>
-        <div class="flex justify-center mt-4">
-            <div class="w-[90%] h-0.5 bg-gray mt-[10px] rounded-full duration-500 ease-in-out transform"></div>
-        </div>
-        <div class="mt-3 ml-[28px]">
-            
-            <!--create new line-->
-            <div class="">
-                <div class="flex justify-between mt-[20px]">
-                    <div class="flex gap-3">
-                        <div>
-                            <label for="">Category</label>
-                            <input type="text" id="category" name="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                        </div>
-                        <div>
-                            <label for="">Brand</label>
-                            <input type="text" id="brand" name="brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                        </div>
-                        <div>
-                            <label for="">Unit</label>
-                            <input type="text" id="unit" name="unit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                        </div>
-                        <div>
-                            <label for="">Quality</label>
-                            <input type="text" id="quality" name="quality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[150px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                        </div>
-                        
-                    </div>
-                    <div class="flex-grow items-center flex">
-                        <img src="../../components/images/icon-delete.png" class="w-[25px] pt-[27px] ml-[100px] cursor-pointer" alt="">
-                    </div>
-                </div>
-                <div>
-                    <label for="comment_remarks">Comment/Remarks</label>
-                    <textarea id="comment_remarks" name="comment_remarks" rows="4" class="block p-2.5 w-[750px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
-                </div>
-            </div>
-            
-            <div>
-                
-            </div>
-
-        </div>
-        <!--buttonsss-->
-        <div class="flex justify-end py-10 mr-[10px]">
-            <!--<div class="ml-[250px]">
-                <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white">APPROVE</button>
-                <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-red-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white">REJECT</button>
-                <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-yellow-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white">REVISE</button>
-            </div>-->
-            
-            <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white">SAVE</button>
-        </div>
-        
-    </Modal>
+    
     
     <div class="flex flex-col min-h-screen">
         <div class="mt-4">
