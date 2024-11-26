@@ -4,7 +4,7 @@ import SidebarPannel from '@/components/SidebarPannel.vue';
 import Swal from 'sweetalert2'
 import Modal from '../../components/modals/Modal.vue';
 import SideAssetCategories from '@/components/SideAssetCategories.vue';
-import DeviceGrid from './DeviceGridAssetManagement.vue';
+import DeviceGridAssetManagement from './DeviceGridAssetManagement.vue';
 import ModalSquareSize from '../../components/modals/ModalSquareSize.vue';
 
 import { ref } from 'vue'
@@ -140,7 +140,7 @@ export default {
                             <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
                         </div>
                         <div class="">
-                            <DeviceGrid
+                            <DeviceGridAssetManagement
                             />
                         </div>
                         

@@ -17,6 +17,11 @@ function toggleItPortal() {
     itPortal.value = !itPortal.value;
 }
 
+const approverButton = ref(false);
+function toggleapproverButton() {
+    approverButton.value = !approverButton.value;
+}
+
 //create user
 const isModalCreateNewUser = ref(false);
 
@@ -48,6 +53,33 @@ function openEditUserModal() {
 
 function closeEditUserModal() {
     isModalEditUser.value = false;
+}
+
+
+const isActiveUser = ref(false);
+const isActiveHead = ref(false);
+const isActiveApprover = ref(false);
+const isActiveAdmin = ref(false);
+const isActiveProcurement = ref(false);
+const isActiveCustom = ref(false);
+
+function toggleActiveUser() {
+    isActiveUser.value = !isActiveUser.value;
+}
+function toggleActiveHead() {
+    isActiveHead.value = !isActiveHead.value;
+}
+function toggleActiveApprover() {
+    isActiveApprover.value = !isActiveApprover.value;
+}
+function toggleActiveAdmin() {
+    isActiveAdmin.value = !isActiveAdmin.value;
+}
+function toggleActiveProcurement() {
+    isActiveProcurement.value = !isActiveProcurement.value;
+}
+function toggleActiveCustom() {
+    isActiveCustom.value = !isActiveCustom.value;
 }
 </script>
 
@@ -145,22 +177,28 @@ export default {
                         <span class="slider round"></span>
                     </label>
                 </div>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
+                <button class="text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveUser ? 'bg-blue-800' : 'bg-gray' "
+                @click="toggleActiveUser">
                     USER
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveHead ? 'bg-blue-800' : 'bg-gray' "
+                @click="toggleActiveHead">
                     HEAD 
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveApprover ? 'bg-blue-800' : 'bg-gray' "
+                @click="toggleActiveApprover">
                     APPROVER 
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveAdmin ? 'bg-blue-800' : 'bg-gray' "
+                @click="toggleActiveAdmin">
                     ADMIN 
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveProcurement ? 'bg-blue-800' : 'bg-gray' "
+                @click="toggleActiveProcurement">
                     PROCUREMENT 
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="approverButton  ? 'bg-blue-800' : 'bg-gray' "
+                @click="toggleapproverButton">
                     CUSTOM 
                 </button>
             </div>
@@ -177,6 +215,7 @@ export default {
                             <th class="text-center">Edit</th>
                             <th class="text-center">View</th>
                             <th class="text-center">Delete</th>
+                            <th v-if="approverButton === true" class="text-center">Approver</th>
                             <th class="text-center">All</th>
                         </tr>
                     </thead>
@@ -205,61 +244,36 @@ export default {
                                 </span>
                             </td>
                             
-                            <td class="text-center">
-                                <input type="checkbox" id="add" name="add">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox" id="edit" name="edit">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox" id="view" name="view">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox" id="delete" name="delete">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox" id="all" name="all">
-                            </td>
+                            
                         </tr>
                         
                             <tr v-if="assetInventory === true" class="border">
                                 <td>
                                     Dashboard
                                 </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
+                                
                             </tr>
                             <tr v-if="assetInventory === true" class="border">
                                 <td>
                                     Purchase Overview
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
+                                </td>
+                                <td class="text-center">
+                                    -
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
+                                </td>
+                                <td v-if="approverButton === true" class="text-center">
+                                    -
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                             </tr>
                             <tr v-if="assetInventory === true" class="border">
@@ -270,13 +284,16 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
+                                </td>
+                                <td v-if="approverButton === true" class="text-center">
+                                    -
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -287,15 +304,18 @@ export default {
                                     Purchase Approval
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                                 <td class="text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td v-if="approverButton === true" class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
@@ -310,16 +330,19 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
+                                </td>
+                                <td v-if="approverButton === true" class="text-center">
+                                    -
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                             </tr>
                             <tr v-if="assetInventory === true" class="border">
@@ -336,7 +359,10 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
+                                </td>
+                                <td v-if="approverButton === true" class="text-center">
+                                    -
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -347,15 +373,18 @@ export default {
                                     2. Moved Assets
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                                 <td class="text-center">
+                                    -
+                                </td>
+                                <td v-if="approverButton === true" class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
@@ -373,10 +402,13 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
+                                </td>
+                                <td v-if="approverButton === true" class="text-center">
+                                    -
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -390,16 +422,19 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
+                                </td>
+                                <td v-if="approverButton === true" class="text-center">
+                                    -
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                             </tr>
                             <tr class="font-semibold border">
@@ -425,62 +460,20 @@ export default {
                                         </svg>
                                     </span>
                                 </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="add" name="add">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="edit" name="edit">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="view" name="view">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="delete" name="delete">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="all" name="all">
-                                </td>
+                                
                             </tr>
                         
                             <tr v-if="itPortal === true" class="border">
                                 <td>
                                     Dashboard
                                 </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
+                                
                             </tr>
                             <tr v-if="itPortal === true" class="border">
                                 <td>
                                     Account Management
                                 </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
+                                
                             </tr>
                             <tr v-if="itPortal === true" class="border">
                                 <td>
@@ -493,10 +486,13 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
+                                </td>
+                                <td v-if="approverButton === true" class="text-center">
+                                    -
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -513,10 +509,13 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    -
+                                </td>
+                                <td v-if="approverButton === true" class="text-center">
+                                    -
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -538,6 +537,9 @@ export default {
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
+                                <td v-if="approverButton === true" class="text-center">
+                                    -
+                                </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
@@ -557,6 +559,9 @@ export default {
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
+                                </td>
+                                <td v-if="approverButton === true" class="text-center">
+                                    -
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -578,6 +583,9 @@ export default {
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
+                                <td v-if="approverButton === true" class="text-center">
+                                    -
+                                </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
@@ -597,6 +605,9 @@ export default {
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
+                                </td>
+                                <td v-if="approverButton === true" class="text-center">
+                                    -
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
