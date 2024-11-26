@@ -35,7 +35,7 @@ function closeAssetModal() {
         Assets
       </div>
     </ModalAsset>
-    <div class="absolute w-[78%] h-[49%] bg-white z-40 opacity-50 rounded-md" :class="showModalAsset ? 'block' : 'hidden'"></div>
+    <div class="absolute w-[78%] h-[100%] bg-white z-40 opacity-50 rounded-md" :class="showModalAsset ? 'block' : 'hidden'"></div>
     <div class="border rounded-md shadow-md p-4 w-[100%] bg-zinc-200" @click="openAssetsModal">
       <div class="flex justify-between items-center mb-2">
         <h2 class="text-lg font-semibold">{{ device.name }}</h2>

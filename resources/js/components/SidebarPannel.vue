@@ -30,7 +30,7 @@ function handleClickOutside(event) {
 
 <template>
 <div class="flex relative group">
-    <div class="bg-black h-[100%] text-white w-[45px] pt-[41px] transition-all duration-500 ease-in-out transform z-20">
+    <div class="bg-black min-h-[700px] text-white w-[45px] pt-[41px] transition-all duration-500 ease-in-out transform z-20">
       <div class="flex justify-center">
         <div>
           <div class="py-[7px]">

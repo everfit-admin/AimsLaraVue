@@ -336,7 +336,7 @@ export default {
             <div class="flex">
                 <ProcurementSidebarPannel />
                 <div class="h-screen">
-                    <div class="absolute w-[100%] h-[100%] bg-black z-40 opacity-35" :class="isModalDepartmentRequest ? 'block' : 'hidden'"></div>
+                    <div class="absolute w-[100%] h-[100%] min-h-[700px] bg-black z-40 opacity-35" :class="isModalDepartmentRequest ? 'block' : 'hidden'"></div>
                         <div class="flex-grow">
                             <div class="mt-5">
                                 <h1 class="text-[23px] font-semibold ml-[40px]">Department Request</h1>

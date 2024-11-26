@@ -1,5 +1,5 @@
 <template>
-    <div class="w-[100%] absolute top-[30px] left-[34%]">
+    <div class="w-[100%] absolute top-[30px] flex justify-center">
       <div v-if="isVisible" class="w-[600px] h-[380px] shadow-lg bg-white rounded-lg absolute z-50 mt-[120px] animate-bounceModal px-10 overflow-y-auto overflow-x-hidden" @click.self="close">
           <div class="flex justify-end">
               <div class="bg-red-700 absolute right-0 rounded-md mt-0.5 mr-0.5">

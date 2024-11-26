@@ -395,7 +395,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="absolute w-[100%] h-[100%] bg-black z-40 opacity-35" :class="isModalVisible ? 'block' : 'hidden'"></div>
+                <div class="absolute w-[100%] h-[100%] min-h-[700px] bg-black z-40 opacity-35" :class="isModalVisible ? 'block' : 'hidden'"></div>
                 
             </div>
         </div>

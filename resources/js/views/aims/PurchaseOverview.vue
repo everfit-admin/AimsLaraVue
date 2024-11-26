@@ -155,7 +155,7 @@ export default {
             <div class="flex">
                 <SidebarPannel />
                 <div class="h-screen">
-                    <div class="absolute w-[100%] h-[100%] bg-black z-40 opacity-35" :class="isModalVisible ? 'block' : 'hidden'"></div>
+                    <div class="absolute w-[100%] h-[100%] min-h-[700px] bg-black z-40 opacity-35" :class="isModalVisible ? 'block' : 'hidden'"></div>
                         <div class="flex-grow">
                             <div class="flex ml-[30px] mt-[20px] gap-6 opacity-45">
                                 <div>
@@ -181,7 +181,7 @@ export default {
                                 <h1 class="text-[20px] font-semibold pr-[130px]">Purchase Request Summary</h1>
                                 <h2 class="pr-[130px]">10/01/2024 - 10/30/2024</h2>
                             </div>
-                            <div>
+                            <div class="">
                                 <v-container fluid class="pa-5">
                                     <div class="xl:w-[93%] w-[90%]">
                                     <v-card class="elevation-3">
