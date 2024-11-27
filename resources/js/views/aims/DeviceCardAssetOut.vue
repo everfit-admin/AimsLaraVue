@@ -123,7 +123,7 @@ function closeEditAssetModal() {
               <button class="bg-green-700 text-white text-[14px] my-1 px-4 py-1 rounded-md font-semibold hover:scale-105 duration-300">
                 TRANSFER
               </button>
-              <button class="bg-red-700 text-white text-[14px] my-1 px-4 py-1 rounded-md font-semibold hover:scale-105 duration-300">
+              <button class="bg-red-700 text-white text-[14px] my-1 px-[24px] py-1 rounded-md font-semibold hover:scale-105 duration-300">
                 CANCEL
               </button>
             </div>

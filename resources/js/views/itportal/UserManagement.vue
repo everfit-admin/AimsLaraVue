@@ -258,22 +258,27 @@ export default {
                                     Purchase Overview
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                             </tr>
                             <tr v-if="assetInventory === true" class="border">
@@ -284,16 +289,19 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -304,13 +312,15 @@ export default {
                                     Purchase Approval
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -329,20 +339,24 @@ export default {
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
-                                <td class="text-center">
-                                    -
+                                <td class="text-center"><!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                             </tr>
                             <tr v-if="assetInventory === true" class="border">
@@ -359,10 +373,12 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -373,16 +389,19 @@ export default {
                                     2. Moved Assets
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
                                     <input type="checkbox">
@@ -402,13 +421,16 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -422,19 +444,24 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                             </tr>
                             <tr class="font-semibold border">
@@ -486,13 +513,13 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
-                                    -
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -509,13 +536,13 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    -
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
-                                    -
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -538,7 +565,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
-                                    -
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -561,7 +588,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
-                                    -
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -584,7 +611,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
-                                    -
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -607,7 +634,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td v-if="approverButton === true" class="text-center">
-                                    -
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
