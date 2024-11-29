@@ -92,7 +92,40 @@ export default {
             Swal.fire({
                 title: 'Are you sure you want to delete this row?',
                 text: "You won't be able to revert this!",
-                icon: 'warning',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    Swal.fire({
+                        title: 'Deleted Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                })
+                }
+            });
+        },
+        approveRequest(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Are you sure you want to approve this request?',
+                text: "",
+                icon: 'question',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
@@ -104,11 +137,119 @@ export default {
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Perform delete operation here
-                    Swal.fire(
-                        'Deleted!',
-                        'Your item has been deleted.',
-                        'success'
-                    )
+                    Swal.fire({
+                        title: 'Approved!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                })
+                }
+            });
+        },
+
+        rejectRequest(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Are you sure you want to reject this request?',
+                text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Perform delete operation here
+                    Swal.fire({
+                        title: 'The request has been rejected!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                })
+                }
+            });
+        },
+
+        saveRequest(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Save this request?',
+                text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Perform delete operation here
+                    Swal.fire({
+                        title: 'Saved Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                })
+                }
+            });
+        },
+
+        saveEditChange(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Save changes?',
+                text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Perform delete operation here
+                    Swal.fire({
+                        title: 'Saved Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                })
                 }
             });
         }
@@ -207,11 +348,11 @@ export default {
             </div>
             <div class="flex justify-between py-10">
                 <div class="ml-[280px]">
-                    <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">APPROVE</button>
-                    <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-red-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">REJECT</button>
-                    <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-yellow-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">REVISE</button>
+                    <button type="button" @click="approveRequest" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">APPROVE</button>
+                    <button type="button" @click="rejectRequest" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-red-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">REJECT</button>
+                    <button type="button" @click="" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-yellow-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">REVISE</button>
                 </div>
-                <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">SAVE</button>
+                <button type="button" @click="saveRequest" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">SAVE</button>
                 
             </div>
         </div>
@@ -285,9 +426,7 @@ export default {
                         </div>
                         
                     </div>
-                    <div class="flex-grow items-end flex">
-                        <img src="../../components/images/icon-delete.png" class="w-[25px] pb-[10px] ml-[100px] cursor-pointer" alt="">
-                    </div>
+                    
                 </div>
                 <div>
                     <label for="comment_remarks">Comment/Remarks</label>
@@ -307,7 +446,7 @@ export default {
                 <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-yellow-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white">REVISE</button>
             </div>-->
             
-            <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">SAVE</button>
+            <button type="button" @click="saveEditChange" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">SAVE</button>
         </div>
     </Modal>
     <!--modal for create new request-->

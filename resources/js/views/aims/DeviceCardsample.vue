@@ -22,7 +22,7 @@ function closeAssetModal() {
       }
     }
   }
-  </script>
+</script>
   
   <style scoped>
   

@@ -56,24 +56,46 @@ export default {
         }
     },
 
-    name: 'MyComponent',
     methods: {
-        showAlert() {
+        editItem(item) {
+            // Logic to edit the item
+            console.log("Edit item:", item);
+            // Here you can open a modal to edit the item, or redirect to another page
+        },
+        deleteItem(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
             Swal.fire({
-                confirmButtonText: 'Ok',
-                width: '1200px',
+                title: 'Are you sure you want to delete this row?',
+                text: "You won't be able to revert this!",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
                 customClass: {
-                    popup: 'h-[800px]', // Custom class for additional styling
-                    confirmButton: 'bg-blue-500 text-white px-4 py-2 rounded border hover:bg-blue-600',
-                    
-
-                },
-                buttonsStyling: false,  // Disable default styling to allow custom styles
-                html: ``
-
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Perform delete operation here
+                    Swal.fire({
+                        title: 'Deleted Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                })
+                }
             });
         }
-    }
+    },
 }
 </script>
 

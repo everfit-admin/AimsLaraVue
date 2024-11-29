@@ -55,7 +55,7 @@ function closeEditUserModal() {
     isModalEditUser.value = false;
 }
 
-
+//USER MANAGEMENT ROLE
 const isActiveUser = ref(false);
 const isActiveHead = ref(false);
 const isActiveApprover = ref(false);
@@ -64,23 +64,103 @@ const isActiveProcurement = ref(false);
 const isActiveCustom = ref(false);
 
 function toggleActiveUser() {
-    isActiveUser.value = !isActiveUser.value;
+    resetAll();
+    isActiveUser.value = true;
 }
+
 function toggleActiveHead() {
-    isActiveHead.value = !isActiveHead.value;
+    resetAll();
+    isActiveHead.value = true;
 }
+
 function toggleActiveApprover() {
-    isActiveApprover.value = !isActiveApprover.value;
+    resetAll();
+    isActiveApprover.value = true;
 }
+
 function toggleActiveAdmin() {
-    isActiveAdmin.value = !isActiveAdmin.value;
+    resetAll();
+    isActiveAdmin.value = true;
 }
+
 function toggleActiveProcurement() {
-    isActiveProcurement.value = !isActiveProcurement.value;
+    resetAll();
+    isActiveProcurement.value = true;
 }
+
 function toggleActiveCustom() {
-    isActiveCustom.value = !isActiveCustom.value;
+    resetAll();
+    isActiveCustom.value = true;
 }
+
+
+//USER MANAGEMENT ROLE EDIT
+const isActiveUserEdit = ref(false);
+const isActiveHeadEdit = ref(false);
+const isActiveApproverEdit = ref(false);
+const isActiveAdminEdit = ref(false);
+const isActiveProcurementEdit = ref(false);
+const isActiveCustomEdit = ref(false);
+
+function toggleActiveUserEdit() {
+    resetAll();
+    isActiveUserEdit.value = true;
+}
+
+function toggleActiveHeadEdit() {
+    resetAll();
+    isActiveHeadEdit.value = true;
+}
+
+function toggleActiveApproverEdit() {
+    resetAll();
+    isActiveApproverEdit.value = true;
+}
+
+function toggleActiveAdminEdit() {
+    resetAll();
+    isActiveAdminEdit.value = true;
+}
+
+function toggleActiveProcurementEdit() {
+    resetAll();
+    isActiveProcurementEdit.value = true;
+}
+
+function toggleActiveCustomEdit() {
+    resetAll();
+    isActiveCustomEdit.value = true;
+}
+
+function resetAll() {
+    isActiveUserEdit.value = false;
+    isActiveHeadEdit.value = false;
+    isActiveApproverEdit.value = false;
+    isActiveAdminEdit.value = false;
+    isActiveProcurementEdit.value = false;
+    isActiveCustomEdit.value = false;
+    isActiveUser.value = false;
+    isActiveHead.value = false;
+    isActiveApprover.value = false;
+    isActiveAdmin.value = false;
+    isActiveProcurement.value = false;
+    isActiveCustom.value = false;
+}
+
+//toggle for SWITCH ACTIVE
+const isSwitchActive = ref(false);
+
+function toggleSwitchActive() {
+    isSwitchActive.value = !isSwitchActive.value;
+}
+
+//toggle for SWITCH ACTIVE EDIT
+const isSwitchActiveEdit = ref(false);
+
+function toggleSwitchActiveEdit() {
+    isSwitchActiveEdit.value = !isSwitchActiveEdit.value;
+}
+
 </script>
 
 <script>
@@ -111,8 +191,88 @@ export default {
         }
     
     },
-    
+
+
+    methods: {
+        editItem(item) {
+            // Logic to edit the item
+            console.log("Edit item:", item);
+            // Here you can open a modal to edit the item, or redirect to another page
+        },
+        saveChanges(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Are you sure you want to save changes?',
+                text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Perform delete operation here
+                    Swal.fire({
+                        title: 'Saved Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                    })
+                    
+                }
+            });
+        },
+
+
+        saveEditChanges(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Are you sure you want to save changes?',
+                text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Perform delete operation here
+                    Swal.fire({
+                        title: 'Saved Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                    })
+                    
+                }
+            });
+        }
+    },  
 }
+
+
 </script>
 
 <template>
@@ -127,7 +287,7 @@ export default {
                     <h4 class="font-semibold text-[20px]">Create New User</h4>
                 </div>
                 <div>
-                    <img src="../../components/images/icon-check-1.png" class="w-[40px] cursor-pointer hover:scale-105 duration-500" alt="">
+                    <img src="../../components/images/icon-check-1.png" class="w-[40px] cursor-pointer hover:scale-105 duration-500" alt="" @click="saveChanges">
                 </div>
             </div>
             
@@ -171,10 +331,12 @@ export default {
                 </div>
             </div>
             <div class="flex mb-2">
-                <div>
+                <div class="tooltip-active">
                     <label class="switch">
                         <input type="checkbox">
-                        <span class="slider round"></span>
+                        <span class="slider round" @click="toggleSwitchActive"></span>
+                        <span v-if="isSwitchActive === true" class="tooltiptext-active">Active</span>
+                        <span v-if="isSwitchActive === false" class="tooltiptext-active">Inactive</span>
                     </label>
                 </div>
                 <button class="text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveUser ? 'bg-blue-800' : 'bg-gray' "
@@ -197,10 +359,7 @@ export default {
                 @click="toggleActiveProcurement">
                     PROCUREMENT 
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="approverButton  ? 'bg-blue-800' : 'bg-gray' "
-                @click="toggleapproverButton">
-                    CUSTOM 
-                </button>
+                
             </div>
             <div class="flex justify-center">
                 <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
@@ -215,7 +374,7 @@ export default {
                             <th class="text-center">Edit</th>
                             <th class="text-center">View</th>
                             <th class="text-center">Delete</th>
-                            <th v-if="approverButton === true" class="text-center">Approver</th>
+                            <th class="text-center">Approver</th>
                             <th class="text-center">All</th>
                         </tr>
                     </thead>
@@ -272,7 +431,7 @@ export default {
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
@@ -299,7 +458,7 @@ export default {
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
@@ -325,7 +484,7 @@ export default {
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
@@ -350,7 +509,7 @@ export default {
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
@@ -376,7 +535,7 @@ export default {
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
@@ -403,7 +562,7 @@ export default {
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
@@ -428,7 +587,7 @@ export default {
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
@@ -455,7 +614,7 @@ export default {
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <!--DISABLED checkbox-->
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
@@ -518,7 +677,7 @@ export default {
                                 <td class="text-center">
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
@@ -541,7 +700,7 @@ export default {
                                 <td class="text-center">
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
@@ -564,7 +723,7 @@ export default {
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
@@ -587,7 +746,7 @@ export default {
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
@@ -610,7 +769,7 @@ export default {
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
@@ -633,7 +792,7 @@ export default {
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
-                                <td v-if="approverButton === true" class="text-center">
+                                <td class="text-center">
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
@@ -653,7 +812,7 @@ export default {
                     <h4 class="font-semibold text-[20px]">Edit User</h4>
                 </div>
                 <div>
-                    <img src="../../components/images/icon-check-1.png" class="w-[40px] cursor-pointer hover:scale-105 duration-500" alt="">
+                    <img src="../../components/images/icon-check-1.png" @click="saveEditChanges" class="w-[40px] cursor-pointer hover:scale-105 duration-500" alt="">
                 </div>
             </div>
             
@@ -697,30 +856,36 @@ export default {
                 </div>
             </div>
             <div class="flex mb-2">
-                <div>
+                
+                <div class="tooltip-activeedit">
                     <label class="switch">
                         <input type="checkbox">
-                        <span class="slider round"></span>
+                        <span class="slider round" @click="toggleSwitchActiveEdit"></span>
+                        <span v-if="isSwitchActiveEdit === true" class="tooltiptext-activeedit">Active</span>
+                        <span v-if="isSwitchActiveEdit === false" class="tooltiptext-activeedit">Inactive</span>
                     </label>
                 </div>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
+                <button class="text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveUserEdit ? 'bg-blue-800' : 'bg-gray' "
+                @click="toggleActiveUserEdit">
                     USER
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveHeadEdit ? 'bg-blue-800' : 'bg-gray' "
+                @click="toggleActiveHeadEdit">
                     HEAD 
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveApproverEdit ? 'bg-blue-800' : 'bg-gray' "
+                @click="toggleActiveApproverEdit">
                     APPROVER 
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveAdminEdit ? 'bg-blue-800' : 'bg-gray' "
+                @click="toggleActiveAdminEdit">
                     ADMIN 
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
+                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveProcurementEdit ? 'bg-blue-800' : 'bg-gray' "
+                @click="toggleActiveProcurementEdit">
                     PROCUREMENT 
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500">
-                    CUSTOM 
-                </button>
+                
             </div>
             <div class="flex justify-center">
                 <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
@@ -735,6 +900,7 @@ export default {
                             <th class="text-center">Edit</th>
                             <th class="text-center">View</th>
                             <th class="text-center">Delete</th>
+                            <th class="text-center">Approver</th>
                             <th class="text-center">All</th>
                         </tr>
                     </thead>
@@ -763,61 +929,41 @@ export default {
                                 </span>
                             </td>
                             
-                            <td class="text-center">
-                                <input type="checkbox" id="add" name="add">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox" id="edit" name="edit">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox" id="view" name="view">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox" id="delete" name="delete">
-                            </td>
-                            <td class="text-center">
-                                <input type="checkbox" id="all" name="all">
-                            </td>
+                            
                         </tr>
                         
                             <tr v-if="assetInventory === true" class="border">
                                 <td>
                                     Dashboard
                                 </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
+                                
                             </tr>
                             <tr v-if="assetInventory === true" class="border">
                                 <td>
                                     Purchase Overview
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
+                                </td>
+                                <td class="text-center">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                             </tr>
                             <tr v-if="assetInventory === true" class="border">
@@ -828,13 +974,19 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
+                                </td>
+                                <td class="text-center">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -845,10 +997,15 @@ export default {
                                     Purchase Approval
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -867,17 +1024,24 @@ export default {
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
+                                <td class="text-center"><!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
+                                </td>
+                                <td class="text-center">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                             </tr>
                             <tr v-if="assetInventory === true" class="border">
@@ -894,7 +1058,12 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
+                                </td>
+                                <td class="text-center">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -905,13 +1074,19 @@ export default {
                                     2. Moved Assets
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
+                                </td>
+                                <td class="text-center">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -931,10 +1106,16 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
+                                </td>
+                                <td class="text-center">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -948,16 +1129,24 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
+                                </td>
+                                <td class="text-center">
+                                    <!--DISABLED checkbox-->
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                             </tr>
                             <tr class="font-semibold border">
@@ -983,62 +1172,20 @@ export default {
                                         </svg>
                                     </span>
                                 </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="add" name="add">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="edit" name="edit">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="view" name="view">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="delete" name="delete">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox" id="all" name="all">
-                                </td>
+                                
                             </tr>
                         
                             <tr v-if="itPortal === true" class="border">
                                 <td>
                                     Dashboard
                                 </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
+                                
                             </tr>
                             <tr v-if="itPortal === true" class="border">
                                 <td>
                                     Account Management
                                 </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="text-center">
-                                    <input type="checkbox">
-                                </td>
+                                
                             </tr>
                             <tr v-if="itPortal === true" class="border">
                                 <td>
@@ -1051,10 +1198,13 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <input type="checkbox" disabled class="opacity-80">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -1071,10 +1221,13 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
-                                    <input type="checkbox">
+                                    <input type="checkbox" disabled class="opacity-80">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -1097,6 +1250,9 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
+                                    <input type="checkbox" disabled class="opacity-80">
+                                </td>
+                                <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                             </tr>
@@ -1115,6 +1271,9 @@ export default {
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
@@ -1137,6 +1296,9 @@ export default {
                                     <input type="checkbox">
                                 </td>
                                 <td class="text-center">
+                                    <input type="checkbox" disabled class="opacity-80">
+                                </td>
+                                <td class="text-center">
                                     <input type="checkbox">
                                 </td>
                             </tr>
@@ -1155,6 +1317,9 @@ export default {
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" disabled class="opacity-80">
                                 </td>
                                 <td class="text-center">
                                     <input type="checkbox">

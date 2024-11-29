@@ -40,6 +40,13 @@ function openEditDepartmentModal() {
 function closeEditDepartmentModal() {
     isModalEditDepartment.value = false;
 }
+
+//toggle for SWITCH ACTIVE
+const isSwitchActive = ref(false);
+
+function toggleSwitchActive() {
+    isSwitchActive.value = !isSwitchActive.value;
+}
 </script>
 
 <script>
@@ -70,6 +77,48 @@ export default {
         }
     
     },
+
+    methods: {
+        editItem(item) {
+            // Logic to edit the item
+            console.log("Edit item:", item);
+            // Here you can open a modal to edit the item, or redirect to another page
+        },
+        saveChanges(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Are you sure you want to save changes?',
+                text: "",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Perform delete operation here
+                    Swal.fire({
+                        title: 'Saved Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                    })
+                    
+                }
+            });
+        }
+    },  
     
 }
 </script>
@@ -86,7 +135,7 @@ export default {
                     <h4 class="font-semibold text-[20px]">Create Department</h4>
                 </div>
                 <div>
-                    <img src="../../components/images/icon-check-1.png" class="w-[40px] cursor-pointer hover:scale-105 duration-500" alt="">
+                    <img src="../../components/images/icon-check-1.png" class="w-[40px] cursor-pointer hover:scale-105 duration-500" @click="saveChanges" alt="">
                 </div>
             </div>
             
@@ -122,10 +171,12 @@ export default {
                     </div>
                     <div class="flex gap-[155px]">
                         <label for="" class="pt-2">Status:</label>
-                        <div class="flex justify-center my-1">
+                        <div class="flex justify-center my-1 tooltip-activedepartment">
                             <label class="switch">
                                 <input type="checkbox">
-                                <span class="slider round"></span>
+                                <span class="slider round" @click="toggleSwitchActive"></span>
+                                <span v-if="isSwitchActive === true" class="tooltiptext-activedepartment">Active</span>
+                                <span v-if="isSwitchActive === false" class="tooltiptext-activedepartment">Inactive</span>
                             </label>
                         </div>
                     </div>

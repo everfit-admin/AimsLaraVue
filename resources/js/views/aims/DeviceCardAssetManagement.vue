@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import ModalAsset from '../../components/modals/ModalAsset.vue';
+import Swal from 'sweetalert2'
 
 const showModalAsset = ref(false);
 const showModalEditAsset = ref(false);
@@ -29,6 +30,42 @@ function closeEditAssetModal() {
         type: Object,
         required: true
       }
+    },
+
+    methods: {
+      saveEditAssets(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Save changes?',
+                text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    Swal.fire({
+                        title: 'Saved Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                })
+                }
+            });
+        },
     }
   }
   </script>
@@ -193,7 +230,7 @@ function closeEditAssetModal() {
             <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
           </div>
           <div class="flex justify-center">
-            <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">SAVE</button>
+            <button type="button" @click="saveEditAssets" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">SAVE</button>
             
           </div>
         </div>

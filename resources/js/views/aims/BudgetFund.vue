@@ -125,6 +125,76 @@ export default {
         }
     
     },
+
+    methods: {
+        saveBudgetChanges(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Save changes?',
+                text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    Swal.fire({
+                        title: 'Saved Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                })
+                }
+            });
+        },
+
+        submitBudget(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Submit Budget?',
+                text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    Swal.fire({
+                        title: 'Submitted Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                })
+                }
+            });
+        },
+    }
 }
 
 
@@ -143,7 +213,7 @@ export default {
                 </div>
                 <div class="">
                     <div class="flex gap-2">
-                        <div class="bg-gray rounded-md px-4 py-1 flex cursor-pointer hover:scale-105 duration-300">
+                        <div @click="saveBudgetChanges" class="bg-gray rounded-md px-4 py-1 flex cursor-pointer hover:scale-105 duration-300">
                             <img width="40" src="../../components/images/icon-save.png" class="pr-1" alt="save"/>
                             <h5 class="pt-2 text-white">
                                 SAVE
@@ -155,7 +225,7 @@ export default {
                                 PREVIEW
                             </h5>
                         </div>
-                        <div class="bg-gray rounded-md px-4 py-1 flex cursor-pointer hover:scale-105 duration-300">
+                        <div @click="submitBudget" class="bg-gray rounded-md px-4 py-1 flex cursor-pointer hover:scale-105 duration-300">
                             <img width="30" src="../../components/images/icon-submit.png" class="pr-1 pt-1 pb-1" alt="submit"/>
                             <h5 class="pt-2 text-white">
                                 SUBMIT

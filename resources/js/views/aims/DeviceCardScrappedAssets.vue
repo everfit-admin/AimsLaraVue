@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import ModalAsset from '../../components/modals/ModalAsset.vue';
+import Swal from 'sweetalert2';
 
 const showModalAsset = ref(false);
 const showModalEditAsset = ref(false);
@@ -29,6 +30,109 @@ function closeEditAssetModal() {
         type: Object,
         required: true
       }
+    },
+
+    methods: {
+      transferScrappedAsset(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Transfer Scrapped Asset?',
+                text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    Swal.fire({
+                        title: 'Transfered Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                        }
+                })
+                }
+            });
+        },
+
+        saveEditScrappedAsset(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Save changes?',
+                text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    Swal.fire({
+                        title: 'Saved Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                    }
+                })
+                }
+            });
+        },
+        saveEditScrappedAsset(item) {
+            // Logic to delete the item
+            console.log("Delete item:", item);
+            // You might want to show a confirmation dialog before deleting
+            Swal.fire({
+                title: 'Save changes?',
+                text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!',
+                customClass: {
+                    confirmButton: 'text-white border-0',
+                    cancelButton: 'text-white',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    Swal.fire({
+                        title: 'Saved Successfully!',
+                        text: '', // Optional, you can add a message here
+                        icon: 'success', // This determines the alert type
+                        confirmButtonText: 'OK', // Customize the button text
+                        confirmButtonColor: '#3085d6', // Customize the button color
+                        customClass: {
+                            confirmButton: 'text-white border-0',
+                            cancelButton: 'text-white',
+                    }
+                })
+                }
+            });
+        },
     }
   }
   </script>
@@ -120,10 +224,10 @@ function closeEditAssetModal() {
             <label for="" class="pr-4">Remarks:</label>
             <textarea name="" id="" disabled value="AMD Ryzen 5 3600 6-core Processor, 3600 Mhz, 6 Core(s) 12 Logical Processor(s)" class="border h-[80px] w-[300px] px-1 py-1 mr-2"></textarea>
             <div class="text-center">
-              <button class="bg-green-700 text-white text-[14px] my-1 px-4 py-1 rounded-md font-semibold">
+              <button @click="transferScrappedAsset" class="bg-green-700 text-white text-[14px] my-1 px-4 py-1 rounded-md font-semibold">
                 TRANSFER
               </button>
-              <button class="bg-red-700 text-white text-[14px] my-1 px-4 py-1 rounded-md font-semibold">
+              <button @click="closeAssetModal" class="bg-red-700 text-white text-[14px] my-1 px-4 py-1 rounded-md font-semibold">
                 CANCEL
               </button>
             </div>
