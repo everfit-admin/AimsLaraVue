@@ -435,12 +435,12 @@ input:checked + .slider:before {
   color: #fff;
   text-align: center;
   padding: 5px 0;
-  border-radius: 6px;
-  bottom: 485px;
-  left: 450px;
+  border-radius: 20px 17px 17px 2px;
+  transform: translateY(-36px) translateX(10px);
+  
 
   /* Position the tooltip text - see examples below! */
-  position: fixed;
+  position: absolute;
   z-index: 50;
 }
 
@@ -457,12 +457,11 @@ input:checked + .slider:before {
   color: #fff;
   text-align: center;
   padding: 5px 0;
-  border-radius: 6px;
-  bottom: 485px;
-  left: 450px;
-
+  border-radius: 20px 17px 17px 2px;
+  transform: translateY(-36px) translateX(10px);
+  
   /* Position the tooltip text - see examples below! */
-  position: fixed;
+  position: absolute;
   z-index: 50;
 }
 
@@ -480,12 +479,11 @@ input:checked + .slider:before {
   color: #fff;
   text-align: center;
   padding: 5px 0;
-  border-radius: 6px;
-  bottom: 440px;
-  left: 965px;
+  border-radius: 50px;
+  transform: translateX(70px);
 
   /* Position the tooltip text - see examples below! */
-  position: fixed;
+  position: absolute;
   z-index: 50;
 }
 

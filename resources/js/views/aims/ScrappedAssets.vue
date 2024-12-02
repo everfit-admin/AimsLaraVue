@@ -32,8 +32,8 @@ function closeModalAddAsset() {
 export default {
     methods: {
       saveAddAssets(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to save the item
+            console.log("save item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Add Scrapped Asset?',

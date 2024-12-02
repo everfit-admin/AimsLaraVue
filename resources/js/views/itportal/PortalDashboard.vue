@@ -17,30 +17,23 @@ import PortalSidebarPannel from '../../components/PortalSidebarPannel.vue';
         </div>
       </div>
       <div class="flex">
-        
         <PortalSidebarPannel/>
-
         <div class="flex justify-center flex-grow h-screen">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-[98%] h-[300px] mt-[50px]">
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
-              
                 <div>
                   <div class="text-2xl font-semibold">620</div>
                   <div class="text-gray-600">Total Hardware</div>
                 </div>
-                
                 <div>
                   <img src="../../components/images/icon-monitor-1.png" class="w-[47px] " alt="Total Hardware Icon">
                 </div>
-              
-              
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
               <div>
                 <div class="text-2xl font-semibold">129</div>
                 <div class="text-gray-600">Total Software</div>
               </div>
-              
               <div>
                 <img src="../../components/images/icon-software.png" class="w-[47px]" alt="Total Software Icon">
               </div>
@@ -50,7 +43,6 @@ import PortalSidebarPannel from '../../components/PortalSidebarPannel.vue';
                 <div class="text-2xl font-semibold">7</div>
                 <div class="text-gray-600">Total Kaspersky</div>
               </div>
-              
               <div>
                 <img src="../../components/images/icon-protect.png" class="w-[47px]" alt="Total Email Icon">
               </div>
@@ -60,7 +52,6 @@ import PortalSidebarPannel from '../../components/PortalSidebarPannel.vue';
                 <div class="text-2xl font-semibold">85</div>
                 <div class="text-gray-600">Total Google Workspace</div>
               </div>
-              
               <div>
                 <img src="../../components/images/icon-envelope-1.png" class="w-[47px]" alt="Total User Icon">
               </div>
@@ -70,7 +61,6 @@ import PortalSidebarPannel from '../../components/PortalSidebarPannel.vue';
                 <div class="text-2xl font-semibold">80</div>
                 <div class="text-gray-600">Total Active User</div>
               </div>
-              
               <div>
                 <img src="../../components/images/icon-user-1.png" class="w-[47px]" alt="Total User Icon">
               </div>
@@ -80,7 +70,6 @@ import PortalSidebarPannel from '../../components/PortalSidebarPannel.vue';
                 <div class="text-2xl font-semibold">26</div>
                 <div class="text-gray-600">Total Inactive User</div>
               </div>
-              
               <div>
                 <img src="../../components/images/icon-delete-user.png" class="w-[47px]" alt="Total User Icon">
               </div>
@@ -90,7 +79,6 @@ import PortalSidebarPannel from '../../components/PortalSidebarPannel.vue';
                 <div class="text-2xl font-semibold">26</div>
                 <div class="text-gray-600">Total Store</div>
               </div>
-              
               <div>
                 <img src="../../components/images/icon-store.png" class="w-[47px]" alt="Total User Icon">
               </div>

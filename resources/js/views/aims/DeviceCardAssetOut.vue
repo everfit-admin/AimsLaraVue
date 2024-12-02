@@ -34,8 +34,8 @@ function closeEditAssetModal() {
 
     methods: {
       transferAssetOut(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to transfer the item
+            console.log("transfer item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Transfer Asset?',
@@ -68,41 +68,8 @@ function closeEditAssetModal() {
         },
 
         saveEditAssetOut(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
-            // You might want to show a confirmation dialog before deleting
-            Swal.fire({
-                title: 'Save changes?',
-                text: "",
-                icon: 'question',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes!',
-                customClass: {
-                    confirmButton: 'text-white border-0',
-                    cancelButton: 'text-white',
-                }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    
-                    Swal.fire({
-                        title: 'Saved Successfully!',
-                        text: '', // Optional, you can add a message here
-                        icon: 'success', // This determines the alert type
-                        confirmButtonText: 'OK', // Customize the button text
-                        confirmButtonColor: '#3085d6', // Customize the button color
-                        customClass: {
-                            confirmButton: 'text-white border-0',
-                            cancelButton: 'text-white',
-                    }
-                })
-                }
-            });
-        },
-        saveEditAssetOut(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to save edit the item
+            console.log("save edit item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Save changes?',

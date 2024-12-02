@@ -333,8 +333,8 @@ export default {
             <div class="flex mb-2">
                 <div class="tooltip-active">
                     <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round" @click="toggleSwitchActive"></span>
+                        <input type="checkbox" @click="toggleSwitchActive">
+                        <span class="slider round"></span>
                         <span v-if="isSwitchActive === true" class="tooltiptext-active">Active</span>
                         <span v-if="isSwitchActive === false" class="tooltiptext-active">Inactive</span>
                     </label>
@@ -859,8 +859,8 @@ export default {
                 
                 <div class="tooltip-activeedit">
                     <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round" @click="toggleSwitchActiveEdit"></span>
+                        <input type="checkbox" @click="toggleSwitchActiveEdit">
+                        <span class="slider round"></span>
                         <span v-if="isSwitchActiveEdit === true" class="tooltiptext-activeedit">Active</span>
                         <span v-if="isSwitchActiveEdit === false" class="tooltiptext-activeedit">Inactive</span>
                     </label>

@@ -128,8 +128,8 @@ export default {
 
     methods: {
         saveBudgetChanges(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to save the item
+            console.log("save item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Save changes?',
@@ -162,8 +162,8 @@ export default {
         },
 
         submitBudget(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to submit the item
+            console.log("submit item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Submit Budget?',

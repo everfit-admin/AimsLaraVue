@@ -108,8 +108,8 @@ export default {
             // Here you can open a modal to edit the item, or redirect to another page
         },
         saveChanges(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to save the item
+            console.log("save item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Are you sure you want to save changes?',

@@ -85,8 +85,8 @@ export default {
             // Here you can open a modal to edit the item, or redirect to another page
         },
         saveChanges(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to save changes the item
+            console.log("save changes item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Are you sure you want to save changes?',
@@ -173,8 +173,8 @@ export default {
                         <label for="" class="pt-2">Status:</label>
                         <div class="flex justify-center my-1 tooltip-activedepartment">
                             <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round" @click="toggleSwitchActive"></span>
+                                <input type="checkbox" @click="toggleSwitchActive">
+                                <span class="slider round"></span>
                                 <span v-if="isSwitchActive === true" class="tooltiptext-activedepartment">Active</span>
                                 <span v-if="isSwitchActive === false" class="tooltiptext-activedepartment">Inactive</span>
                             </label>

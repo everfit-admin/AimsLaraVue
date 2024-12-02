@@ -34,8 +34,8 @@ function closeEditAssetModal() {
 
     methods: {
       saveEditAssets(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to save edit the item
+            console.log("save edit item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Save changes?',

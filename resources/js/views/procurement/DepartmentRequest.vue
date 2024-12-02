@@ -106,8 +106,8 @@ export default {
         },
 
         approveRequest(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to approve the item
+            console.log("approve item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Are you sure you want to approve this request?',
@@ -140,8 +140,8 @@ export default {
         },
 
         rejectRequest(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to reject the item
+            console.log("reject item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Are you sure you want to reject this request?',
@@ -174,8 +174,8 @@ export default {
         },
 
         saveRequest(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to save request the item
+            console.log("save request item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Save this request?',
@@ -209,8 +209,8 @@ export default {
 
         ///Edit confirmation
         saveEditChange(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to save the item
+            console.log("save item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Save changes?',
@@ -244,8 +244,8 @@ export default {
 
         //////////////////////////////////////////////////
         sendQuotation(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to send quotation the item
+            console.log("send quotation item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Are you sure to send this quotation?',
@@ -278,8 +278,8 @@ export default {
         },
 
         rejectQuotation(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to reject quotation the item
+            console.log("reject quotation item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Are you sure to reject this quotation?',
@@ -312,8 +312,8 @@ export default {
         },
 
         saveQuotationChange(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to save quotation the item
+            console.log("save quotation item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Save quotation?',

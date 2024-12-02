@@ -34,8 +34,8 @@ function closeEditAssetModal() {
 
     methods: {
       approveAssetIn(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to approve the item
+            console.log("approve item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Approve Asset In?',
@@ -68,8 +68,8 @@ function closeEditAssetModal() {
         },
 
         declineAssetIn(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to decline the item
+            console.log("decline item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Decline Asset In?',
@@ -102,8 +102,8 @@ function closeEditAssetModal() {
         },
 
         saveEditAssetIn(item) {
-            // Logic to delete the item
-            console.log("Delete item:", item);
+            // Logic to save edit the item
+            console.log("save edit item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
                 title: 'Save changes?',

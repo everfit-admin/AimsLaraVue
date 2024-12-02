@@ -23,24 +23,19 @@ import SidebarPannel from '../../components/SidebarPannel.vue';
         <div class="flex justify-center flex-grow h-screen">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-[98%] h-[300px] mt-[50px]">
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
-              
                 <div>
                   <div class="text-2xl font-semibold">620</div>
                   <div class="text-gray-600">Total Hardware</div>
                 </div>
-                
                 <div>
                   <img src="../../components/images/hardware_icon.png" class="w-[70px] " alt="Total Hardware Icon">
                 </div>
-              
-              
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
               <div>
                 <div class="text-2xl font-semibold">129</div>
                 <div class="text-gray-600">Total Software</div>
               </div>
-              
               <div>
                 <img src="../../components/images/windows_icon.png" class="w-[70px]" alt="Total Software Icon">
               </div>
@@ -50,7 +45,6 @@ import SidebarPannel from '../../components/SidebarPannel.vue';
                 <div class="text-2xl font-semibold">7</div>
                 <div class="text-gray-600">Total Email</div>
               </div>
-              
               <div>
                 <img src="../../components/images/email_icon.png" class="w-[70px]" alt="Total Email Icon">
               </div>
