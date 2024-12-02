@@ -33,8 +33,8 @@ export default {
             console.log("Delete item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
-                title: 'Save Asset?',
-                text: "You won't be able to revert this!",
+                title: 'Add Asset?',
+                text: "",
                 icon: 'question',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -130,7 +130,7 @@ export default {
             <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
           </div>
           <div class="flex justify-center">
-            <button type="button" @click="saveAddAssets" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white">SAVE</button>
+            <button type="button" @click="saveAddAssets" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white">ADD</button>
             
           </div>
         </div>

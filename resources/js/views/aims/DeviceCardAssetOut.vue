@@ -272,7 +272,7 @@ function closeEditAssetModal() {
             <div class="flex justify-between">
               <label for="" class="pt-2">Description:</label>
               <textarea name="" id="" value="AMD Ryzen 5 3600 6-core Processor, 3600 Mhz, 6 Core(s) 12 Logical Processor(s)"class="border h-[60px] w-[300px] px-1 py-1 mr-2"></textarea>
-              <img src="../../components/images/icon-edit-2.png" class="w-[23px] h-[23px] absolute right-4" alt="Edit Icon">
+              <img src="../../components/images/icon-edit-2.png" class="w-[18px] h-[18px] opacity-40 absolute right-4" alt="Edit Icon">
             </div>
             <div class="flex justify-between">
               <label for="" class="pt-2">Cost:</label>
@@ -289,17 +289,17 @@ function closeEditAssetModal() {
             <div class="flex justify-between">
               <label for="" class="pt-2">Status:</label>
               <input type="text" value="Assigned" class="border rounded-md h-[33px] w-[300px] px-3 mx-2 my-1">
-              <img src="../../components/images/icon-edit-2.png" class="w-[23px] h-[23px] absolute right-4" alt="Edit Icon">
+              <img src="../../components/images/icon-edit-2.png" class="w-[18px] h-[18px] opacity-40 absolute right-4" alt="Edit Icon">
             </div>
             <div class="flex justify-between">
               <label for="" class="pt-2">Condition:</label>
               <input type="text" value="Working" class="border rounded-md h-[33px] w-[300px] px-3 mx-2 my-1">
-              <img src="../../components/images/icon-edit-2.png" class="w-[23px] h-[23px] absolute right-4" alt="Edit Icon">
+              <img src="../../components/images/icon-edit-2.png" class="w-[18px] h-[18px] opacity-40 absolute right-4" alt="Edit Icon">
             </div>
             <div class="flex justify-between">
               <label for="" class="pt-2">User:</label>
               <input type="text" value="Jeff Orilla" class="border rounded-md h-[33px] w-[300px] px-3 mx-2 my-1">
-              <img src="../../components/images/icon-edit-2.png" class="w-[23px] h-[23px] absolute right-4" alt="Edit Icon">
+              <img src="../../components/images/icon-edit-2.png" class="w-[18px] h-[18px] opacity-40 absolute right-4" alt="Edit Icon">
             </div>
             <div class="flex justify-between">
               <label for="" class="pt-2">Years:</label>

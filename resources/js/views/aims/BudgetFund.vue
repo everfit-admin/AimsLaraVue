@@ -262,7 +262,8 @@ export default {
                         
                         <div class="flex justify-between">
                             <div class="flex justify-start mt-2 mb-6">
-                                <h3 class="font-semibold text-lg">Salary Wages</h3>
+                                
+                                <input type="text" class="font-semibold text-lg border rounded-md w-[230px] px-2 py-1">
                             </div>
                             <div class="items-center flex">
                                 <img src="../../components/images/icon-delete.png" @click="removeRow(index)" class="w-[25px] cursor-pointer hover:scale-110 duration-500" alt="">
@@ -342,7 +343,7 @@ export default {
                         
                         <div class="flex justify-between">
                             <div class="flex justify-start mt-2 mb-6">
-                                <h3 class="font-semibold text-lg">POS Package</h3>
+                                <input type="text" class="font-semibold text-lg border rounded-md w-[230px] px-2 py-1">
                             </div>
                             <div class="items-center flex">
                                 <img src="../../components/images/icon-delete.png" @click="removeRowcapex(indexcapex)" class="w-[25px] cursor-pointer hover:scale-110 duration-500" alt="">
