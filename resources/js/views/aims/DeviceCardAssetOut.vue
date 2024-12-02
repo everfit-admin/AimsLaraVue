@@ -36,7 +36,7 @@ function closeEditAssetModal() {
       transferAssetOut(item) {
             // Logic to transfer the item
             console.log("transfer item:", item);
-            // You might want to show a confirmation dialog before deleting
+            // show a confirmation
             Swal.fire({
                 title: 'Transfer Asset?',
                 text: "",
@@ -70,7 +70,7 @@ function closeEditAssetModal() {
         saveEditAssetOut(item) {
             // Logic to save edit the item
             console.log("save edit item:", item);
-            // You might want to show a confirmation dialog before deleting
+            // show a confirmation
             Swal.fire({
                 title: 'Save changes?',
                 text: "",

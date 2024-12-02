@@ -87,7 +87,7 @@ export default {
         saveChanges(item) {
             // Logic to save changes the item
             console.log("save changes item:", item);
-            // You might want to show a confirmation dialog before deleting
+            // show a confirmation
             Swal.fire({
                 title: 'Are you sure you want to save changes?',
                 text: "",
@@ -702,7 +702,6 @@ export default {
                         <div class="flex-grow">
                             <div class="mt-5">
                                 <h1 class="text-[23px] font-semibold ml-[40px]">Department</h1>
-                                
                             </div>
                             <div class="flex">
                                 <div class="flex mt-[20px] ml-[35px] relative">
@@ -710,15 +709,11 @@ export default {
                                     <h3 class="text-[20px] font-semibold">Add Departmant</h3> 
                                 </div>
                             </div>
-                            
-                            
-                            
                             <div class="flex justify-center">
                                 <div
                                     class="w-[95%] h-0.5 bg-gray mt-[20px] mb-[20px] rounded-full duration-500 ease-in-out transform">
                                 </div>
                             </div>
-                            
                             <div class="">
                                 <v-container fluid class="pa-5">
                                     <div class="xl:w-[93%] w-[90%]">
@@ -745,7 +740,6 @@ export default {
                             </div>
                         </div>
                 </div>
-                
             </div>
         </div>
         <div class="bg-black text-center text-white p-1 mt-auto">

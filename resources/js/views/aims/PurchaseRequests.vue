@@ -110,7 +110,7 @@ export default {
         saveChanges(item) {
             // Logic to save the item
             console.log("save item:", item);
-            // You might want to show a confirmation dialog before deleting
+            // show a confirmation
             Swal.fire({
                 title: 'Are you sure you want to save changes?',
                 text: "",

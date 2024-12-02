@@ -4,7 +4,7 @@
 </script>
 
 <template>
-    <div class="w-[310px] h-[100%] bg-gray mx-10 border-2 border-zinc-500 overflow-y-scroll rounded-md px-1">
+    <div class="w-[20%] min-w-[230px] h-[100%] min-h-[500px] bg-gray mx-10 border-2 border-zinc-500 overflow-y-scroll rounded-md px-1">
         <div class="flex justify-start">
             <input type="text" class="border rounded-md h-[30px] w-[130px] px-3 mx-2 my-1 bg-white" placeholder="Search">
             <img src="../components/images/icon-filter.png" class="w-[25px] h-[30px] pt-2" alt="filter">

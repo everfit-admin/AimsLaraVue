@@ -34,7 +34,7 @@ export default {
       saveAddAssets(item) {
             // Logic to save the item
             console.log("save item:", item);
-            // You might want to show a confirmation dialog before deleting
+            // show a confirmation
             Swal.fire({
                 title: 'Add Scrapped Asset?',
                 text: "",

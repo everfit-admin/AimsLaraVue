@@ -130,7 +130,7 @@ export default {
         saveBudgetChanges(item) {
             // Logic to save the item
             console.log("save item:", item);
-            // You might want to show a confirmation dialog before deleting
+            // show a confirmation
             Swal.fire({
                 title: 'Save changes?',
                 text: "",
@@ -164,7 +164,7 @@ export default {
         submitBudget(item) {
             // Logic to submit the item
             console.log("submit item:", item);
-            // You might want to show a confirmation dialog before deleting
+            // show a confirmation
             Swal.fire({
                 title: 'Submit Budget?',
                 text: "",

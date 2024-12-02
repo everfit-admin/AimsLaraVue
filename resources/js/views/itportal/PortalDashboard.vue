@@ -136,7 +136,6 @@ import PortalSidebarPannel from '../../components/PortalSidebarPannel.vue';
         Authentic Holding Company Inc: All rights reserved . 2024 &copy;
     </div>
   </div>
-  
 </template>
 
 <style>
