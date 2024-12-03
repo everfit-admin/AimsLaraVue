@@ -5,6 +5,8 @@ import Modal from '../../components/modals/Modal.vue';
 import ProcurementSidebarPannel from '../../components/ProcurementSidebarPannel.vue';
 
 import { ref } from 'vue'
+import { reactive } from 'vue';
+
 const activeTab = ref('purchase_request');
 
 const isModalDepartmentRequest = ref(false);
@@ -12,6 +14,7 @@ const isModalDepartmentRequestEdit = ref(false);
 const currentItem = ref(null); // Store the item to be edited
 
 // Methods to toggle each modal's visibility
+//add department request
 function openModalDepartmentRequest() {
     isModalDepartmentRequest.value = true;
 }
@@ -20,7 +23,7 @@ function closeModalDepartmentRequest() {
     isModalDepartmentRequest.value = false;
 }
 
-
+//edit department request
 function openModalDepartmentRequestEdit() {
     isModalDepartmentRequestEdit.value = true;
 }
@@ -29,6 +32,45 @@ function closeModalDepartmentRequestEdit() {
     isModalDepartmentRequestEdit.value = false;
 }
 
+//supplier toggle
+const supplierOne = ref(false);
+function toggleDropdownSupplierOne() {
+    supplierOne.value = !supplierOne.value;
+}
+
+const supplierTwo = ref(false);
+function toggleDropdownSupplierTwo() {
+    supplierTwo.value = !supplierTwo.value;
+}
+
+const supplierThree = ref(false);
+function toggleDropdownSupplierThree() {
+    supplierThree.value = !supplierThree.value;
+}
+
+const rows = reactive([
+  {
+    purchase: "",
+    quantity: "",
+    supplierOneInput: "",
+    supplierTwoInput: "",
+    supplierThreeInput: "",
+  },
+]);
+
+const addRow = () => {
+  rows.push({
+    purchase: "",
+    quantity: "",
+    supplierOneInput: "",
+    supplierTwoInput: "",
+    supplierThreeInput: "",
+  });
+};
+
+const removeRow = (index) => {
+  rows.splice(index, 1);
+};
 </script>
 
 <script>
@@ -476,67 +518,120 @@ export default {
             <div class="flex justify-center mt-4">
                 <div class="w-[92%] h-0.5 bg-gray mt-[5px] rounded-full duration-500 ease-in-out transform"></div>
             </div>
-            <div class="flex justify-between my-4">
+            <div v-for="(row, index) in rows" :key="index" class="flex justify-between my-4">
                 <div class="w-[90%]">
-                    <div class="flex justify-between mr-4">
+                    <div v-if="index === 0" class="flex justify-between mr-4">
                         <h3>Description</h3>
                         <h3>Quanity</h3>
                     </div>
                     <div class="flex justify-between mr-4 mt-9">
-                        <p>Acer Altos</p>
-                        <p>1</p>
+                        
+                        
+                        <select name="" id="" class="w-[150px] border rounded-md px-1">
+                            <option value="sample">sample</option>
+                            <option value="sample">sample2</option>
+                            <option value="sample">sample3</option>
+                            <option value="sample">sample4</option>
+                        </select>
+                        <input type="number" v-model="row.quantity" class="border w-[100px] text-center px-2 py-1 rounded-md">
                     </div>
                     <div class="flex justify-start mt-4">
                         <div class="w-[92%] h-0.5 bg-gray mt-[5px] rounded-full duration-500 ease-in-out transform"></div>
                     </div>
                 </div>
                 
-                <div class="flex gap-3">
-                    <div class="w-[170px] bg-zinc-300 rounded-md shadow-lg">
+                <div class="flex gap-3 relative">
+                    <div class="relative">
+                        <div class="w-[170px] bg-zinc-300 h-[110px] rounded-md shadow-lg">
                         
-                        <div class="bg-gray py-2 rounded-t-md flex justify-between">
-                            <p class="flex-grow text-center">Alpha Core</p>
+                            <div class="py-2 rounded-t-md flex justify-between" :class="index === 0 ? 'bg-gray' : ''">
+                                <p class="flex-grow text-center" v-if="index === 0">Alpha Core</p>
 
-                            <div class="bg-white flex justify-end mr-2 items-center rounded-md">
-                                <svg
-                                class="w-5 h-5 transition-transform duration-300 rotate-3 pt-[2px] px-1  cursor-pointer"
+                                <div v-if="index === 0" class="bg-white flex justify-end mr-2 items-center rounded-md">
+                                    <svg
+                                    class="w-5 h-5 transition-transform duration-300 -rotate-90 pt-[2px] px-1  cursor-pointer"
+                                    :class="supplierOne ? 'rotate-3' : ''"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 10 6"
+                                    @click.stop="toggleDropdownSupplierOne"
+                                    >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m1 1 4 4 4-4"
+                                    />
+
+
+                                    </svg>
+                                </div>
+                            
+                            
+                            </div>
+                            
+                            <div class="flex justify-center mt-5">
+                                <input type="text" v-model="row.supplierOneInput" class="border rounded-md shadow-md w-[150px] bg-white px-1 py-1">
+                            </div>
+                        </div>
+                        <div
+                            v-if="supplierOne && index === 0"
+                            class="z-10 bg-white h-[150px] divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 top-[50px] absolute"
+                            >
+                            <div class="flex relative">
+                                <img src="../../components/images/icon-search.png" class="absolute left-2 top-1/2 transform -translate-y-1/2 w-[18px] h-[18px]" alt="search icon">
+                                <input type="text" class="border py-1 pl-7 w-full text-sm mt-1 mx-1 rounded-md" placeholder="Search Supplier">
                                 
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 10 6"
-                                @click.stop="toggleDropdown"
-                                >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="m1 1 4 4 4-4"
-                                />
-                                </svg>
                             </div>
-                        
-                        
-                        </div>
-                        
-                        <div class="flex justify-center mt-5">
-                            <input type="text" class="border rounded-md shadow-md w-[150px] bg-white">
+                            
+                            <div class="overflow-y-auto h-[115px]">
+                                <ul class="pb-2 pt-1 px-2 text-sm text-gray-700 dark:text-gray-200 text-center">
+                                    <li>
+                                        <p>Alpha Coreddd</p>
+                                    </li>
+                                    <li>
+                                        <p>Pacita Aire</p>
+                                    </li>
+                                    <li>
+                                        <p>Titans Infinity</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            
                         </div>
                     </div>
-                    <div class="w-[170px] bg-zinc-300 h-[110px] rounded-md shadow-lg">
-                        <div class="bg-gray py-2 rounded-t-md flex justify-between">
-                            <p class="flex-grow text-center">Pacita Aire</p>
+                    
+                    <div class="relative">
+                        <div class="w-[170px] bg-zinc-300 h-[110px] rounded-md shadow-lg">
+                            <div class="py-2 rounded-t-md flex justify-between" :class="index === 0 ? 'bg-gray' : ''">
+                                <p class="flex-grow text-center" v-if="index === 0">Pacita Aire</p>
 
-                            <div class="bg-white flex justify-end mr-2 items-center rounded-md">
-                                <svg
-                                    class="w-5 h-5 transition-transform duration-300 rotate-3 pt-[2px] px-1  cursor-pointer"
-                                    
+                                <div v-if="index === 0" class="bg-white flex justify-end mr-2 items-center rounded-md">
+                                    <svg
+                                    class="w-5 h-5 transition-transform duration-300 -rotate-90 pt-[2px] px-1  cursor-pointer"
+                                    :class="supplierTwo ? 'rotate-3' : ''"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 10 6"
-                                    @click.stop="toggleDropdown"
+                                    @click.stop="toggleDropdownSupplierTwo"
                                     >
                                     <path
                                         stroke="currentColor"
@@ -546,47 +641,138 @@ export default {
                                         d="m1 1 4 4 4-4"
                                     />
                                     </svg>
+                                </div>
+                            
+                            
                             </div>
-                        
-                        
+                            <div class="flex justify-center mt-5">
+                                <input type="text" v-model="row.supplierTwoInput" class="border rounded-md shadow-md w-[150px] bg-white px-1 py-1">
+                            </div>
                         </div>
-                        <div class="flex justify-center mt-5">
-                            <input type="text" class="border rounded-md shadow-md w-[150px] bg-white">
+                        <div
+                            v-if="supplierTwo && index === 0"
+                            class="z-10 bg-white divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 top-[50px] absolute"
+                            >
+                            <div class="flex relative">
+                                <img src="../../components/images/icon-search.png" class="absolute left-2 top-1/2 transform -translate-y-1/2 w-[18px] h-[18px]" alt="search icon">
+                                <input type="text" class="border py-1 pl-7 w-full text-sm mt-1 mx-1 rounded-md" placeholder="Search Supplier">
+                                
+                            </div>
+                            
+                            <div class="overflow-y-auto h-[115px]">
+                                <ul class="pb-2 pt-1 px-2 text-sm text-gray-700 dark:text-gray-200 text-center">
+                                    <li>
+                                        <p>Alpha Core</p>
+                                    </li>
+                                    <li>
+                                        <p>Pacita Aire</p>
+                                    </li>
+                                    <li>
+                                        <p>Titans Infinity</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="w-[170px] bg-zinc-300 rounded-md shadow-lg">
-                        <div class="bg-gray py-2 rounded-t-md flex justify-between">
-                            <p class="flex-grow text-center">Titans Infinity</p>
+                    <div class="relative">
+                        <div class="w-[170px] bg-zinc-300 h-[110px] rounded-md shadow-lg">
+                            <div class=" py-2 rounded-t-md flex justify-between" :class="index === 0 ? 'bg-gray' : ''">
+                                <p class="flex-grow text-center" v-if="index === 0">Titans Infinity</p>
 
-                            <div class="bg-white flex justify-end mr-2 items-center rounded-md">
-                                <svg
-                                    class="w-5 h-5 transition-transform duration-300 rotate-3 pt-[2px] px-1  cursor-pointer"
-                                    
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 10 6"
-                                    @click.stop="toggleDropdown"
-                                    >
-                                    <path
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="m1 1 4 4 4-4"
-                                    />
-                                    </svg>
+                                <div v-if="index === 0" class="bg-white flex justify-end mr-2 items-center rounded-md">
+                                        <svg
+                                        class="w-5 h-5 transition-transform duration-300 -rotate-90 pt-[2px] px-1  cursor-pointer"
+                                        :class="supplierThree ? 'rotate-3' : ''"
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 10 6"
+                                        @click.stop="toggleDropdownSupplierThree"
+                                        >
+                                        <path
+                                            stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="m1 1 4 4 4-4"
+                                        />
+                                        </svg>
+                                    </div>
                             </div>
-                        
-                        
+                            <div class="flex justify-center mt-5">
+                                <input type="text" v-model="supplierThreeInput" class="border rounded-md shadow-md w-[150px] bg-white px-1 py-1">
+                            </div>
                         </div>
-                        <div class="flex justify-center mt-5">
-                            <input type="text" class="border rounded-md shadow-md w-[150px] bg-white">
+                        <div
+                            v-if="supplierThree && index === 0"
+                            class="z-10 bg-white divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 top-[50px] absolute"
+                            >
+                            <div class="flex relative">
+                                <img src="../../components/images/icon-search.png" class="absolute left-2 top-1/2 transform -translate-y-1/2 w-[18px] h-[18px]" alt="search icon">
+                                <input type="text" class="border py-1 pl-7 w-full text-sm mt-1 mx-1 rounded-md" placeholder="Search Supplier">
+                                
+                            </div>
+                            <div class="overflow-y-auto h-[115px]">
+                                <ul class="pb-2 pt-1 px-2 text-sm text-gray-700 dark:text-gray-200 text-center">
+                                    <li>
+                                        <p>Alpha Core</p>
+                                    </li>
+                                    <li>
+                                        <p>Pacita Aire</p>
+                                    </li>
+                                    <li>
+                                        <p>Titans Infinity</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                    <li>
+                                        <p>Supplier</p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
+                    </div>
+                    <div class="items-center flex absolute right-0 top-4 translate-x-8">
+                        <img src="../../components/images/icon-delete.png" @click="removeRow(index)" class="w-[25px] pt-[27px] cursor-pointer hover:scale-110 duration-500" alt="">
                     </div>
                 </div>
             </div>
-            <div class="flex justify-between py-10 absolute bottom-0 w-[91%]">
+            <div class="flex justify-start mt-2">
+                <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] px-2 cursor-pointer hover:scale-110 duration-500" @click="addRow"/>
+                <h5 class="text-[15px] font-semibold pt-1">Create New Line</h5>
+            </div>
+            <div class="flex justify-between py-10 w-[91%]">
                 <div class="ml-[280px]">
                     <button type="button" @click="sendQuotation" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">SEND QUOTE</button>
                     <button type="button" @click="rejectQuotation" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-red-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">REJECT</button>

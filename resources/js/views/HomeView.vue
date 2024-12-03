@@ -17,9 +17,10 @@ import FooterPage from '../components/FooterPage.vue'
           <p class="text-white xl:ml-[180px] lg:ml-[160px] md:ml-[125px] ml-[70px] xl:text-3xl lg:text-[20px] md:text-[18px] text-[15px] duration-500 ease-in-out transform">
             Welcome to New Era <br> Authentic Information System, Jeff
           </p>
-          <div>
+          <div class="relative">
             <p class="duration-500 ease-in-out transform">How can I help you today?</p>
-            <input name="search" id="search" type="text" class="xl:w-[550px] lg:w-[500px] md:w-[350px] w-[250px] xl:text-xl lg:text-md md:text-[15px] text-[10px] p-1 pl-3 rounded-md shadow-2xl duration-500 ease-in-out transform border bg-white" placeholder="Search now">
+            <img src="../components/images/icon-search.png" class="absolute left-2 xl:top-[43px] lg:top-[40px] md:top-[41px] top-[39px] transform -translate-y-1/2 xl:w-[25px] xl:h-[25px] lg:w-[20px] lg:h-[20px] w-[16px] h-[16px]  z-10" alt="search icon">
+            <input name="search" id="search" type="text" class="xl:w-[550px] lg:w-[500px] md:w-[350px] w-[250px] xl:text-xl lg:text-md md:text-[15px] text-[10px] py-1 xl:pl-10 lg:pl-8 md:pl-6 sm:pl-6 rounded-md shadow-2xl duration-500 ease-in-out transform border bg-white" placeholder="Search now">
           </div>
         </div>
     </div>

@@ -7,20 +7,31 @@ import ModalSmallSize from '../../components/modals/ModalSmallSize.vue';
 
 import { ref } from 'vue';
  
+//add user modal
 const assetInventory = ref(false);
 function toggleAssetInventory() {
     assetInventory.value = !assetInventory.value;
 }
 
+//add user modal
 const itPortal = ref(false);
 function toggleItPortal() {
     itPortal.value = !itPortal.value;
 }
 
-const approverButton = ref(false);
-function toggleapproverButton() {
-    approverButton.value = !approverButton.value;
+//edit user modal
+const assetInventoryEdit = ref(false);
+function toggleAssetInventoryEdit() {
+    assetInventoryEdit.value = !assetInventoryEdit.value;
 }
+
+//edit user modal
+const itPortalEdit = ref(false);
+function toggleItPortalEdit() {
+    itPortalEdit.value = !itPortalEdit.value;
+}
+
+
 
 //create user
 const isModalCreateNewUser = ref(false);
@@ -204,7 +215,7 @@ export default {
             console.log("Delete item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
-                title: 'Are you sure you want to save changes?',
+                title: 'Are you sure you want to create this User?',
                 text: "",
                 icon: 'question',
                 showCancelButton: true,
@@ -219,7 +230,7 @@ export default {
                 if (result.isConfirmed) {
                     // Perform delete operation here
                     Swal.fire({
-                        title: 'Saved Successfully!',
+                        title: 'Created Successfully!',
                         text: '', // Optional, you can add a message here
                         icon: 'success', // This determines the alert type
                         confirmButtonText: 'OK', // Customize the button text
@@ -240,7 +251,7 @@ export default {
             console.log("Delete item:", item);
             // You might want to show a confirmation dialog before deleting
             Swal.fire({
-                title: 'Are you sure you want to save changes?',
+                title: 'Save changes?',
                 text: "",
                 icon: 'question',
                 showCancelButton: true,
@@ -406,13 +417,13 @@ export default {
                             
                         </tr>
                         
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventory" class="border">
                                 <td>
                                     Dashboard
                                 </td>
                                 
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventory" class="border">
                                 <td>
                                     Purchase Overview
                                 </td>
@@ -440,7 +451,7 @@ export default {
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventory" class="border">
                                 <td>
                                     Purchase Request
                                 </td>
@@ -466,7 +477,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventory" class="border">
                                 <td>
                                     Purchase Approval
                                 </td>
@@ -491,7 +502,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventory" class="border">
                                 <td>
                                     Budget/Fund
                                 </td>
@@ -518,7 +529,7 @@ export default {
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventory" class="border">
                                 <td>
                                     1. Assign Assets 
                                 </td>
@@ -543,7 +554,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventory" class="border">
                                 <td>
                                     2. Moved Assets
                                 </td>
@@ -569,7 +580,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventory" class="border">
                                 <td>
                                     3. Scrapped Assets
                                 </td>
@@ -595,7 +606,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventory" class="border">
                                 <td>
                                     4. Category
                                 </td>
@@ -649,19 +660,19 @@ export default {
                                 
                             </tr>
                         
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortal" class="border">
                                 <td>
                                     Dashboard
                                 </td>
                                 
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortal" class="border">
                                 <td>
                                     Account Management
                                 </td>
                                 
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortal" class="border">
                                 <td>
                                     1. User
                                 </td>
@@ -684,7 +695,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortal" class="border">
                                 <td>
                                     2. Department
                                 </td>
@@ -707,7 +718,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortal" class="border">
                                 <td>
                                     Maintenance
                                 </td>
@@ -730,7 +741,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortal" class="border">
                                 <td>
                                     Point of Sale 
                                 </td>
@@ -753,7 +764,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortal" class="border">
                                 <td>
                                     1. Store List
                                 </td>
@@ -776,7 +787,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortal" class="border">
                                 <td>
                                     2. Remote
                                 </td>
@@ -906,12 +917,12 @@ export default {
                     </thead>
                     <tbody>
                         <tr class="font-semibold border">
-                            <td class="flex cursor-pointer" @click="toggleAssetInventory">
+                            <td class="flex cursor-pointer" @click="toggleAssetInventoryEdit">
                                 Asset Inventory Management
                                 <span>
                                     <svg
                                     class="w-3 h-3 transition-transform duration-300 -rotate-90 cursor-pointer mt-1.5 ml-2"
-                                    :class="assetInventory ? 'rotate-3' : ''"
+                                    :class="assetInventoryEdit ? 'rotate-3' : ''"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -932,13 +943,13 @@ export default {
                             
                         </tr>
                         
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventoryEdit" class="border">
                                 <td>
                                     Dashboard
                                 </td>
                                 
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventoryEdit" class="border">
                                 <td>
                                     Purchase Overview
                                 </td>
@@ -966,7 +977,7 @@ export default {
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventoryEdit" class="border">
                                 <td>
                                     Purchase Request
                                 </td>
@@ -992,7 +1003,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventoryEdit" class="border">
                                 <td>
                                     Purchase Approval
                                 </td>
@@ -1017,7 +1028,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventoryEdit" class="border">
                                 <td>
                                     Budget/Fund
                                 </td>
@@ -1044,7 +1055,7 @@ export default {
                                     <input type="checkbox" disabled class="opacity-80">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventoryEdit" class="border">
                                 <td>
                                     1. Assign Assets 
                                 </td>
@@ -1069,7 +1080,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventoryEdit" class="border">
                                 <td>
                                     2. Moved Assets
                                 </td>
@@ -1095,7 +1106,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventoryEdit" class="border">
                                 <td>
                                     3. Scrapped Assets
                                 </td>
@@ -1121,7 +1132,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="assetInventory === true" class="border">
+                            <tr v-show="assetInventoryEdit" class="border">
                                 <td>
                                     4. Category
                                 </td>
@@ -1150,12 +1161,12 @@ export default {
                                 </td>
                             </tr>
                             <tr class="font-semibold border">
-                                <td class="flex cursor-pointer" @click="toggleItPortal">
+                                <td class="flex cursor-pointer" @click="toggleItPortalEdit">
                                     IT Portal
                                     <span>
                                         <svg
                                         class="w-3 h-3 transition-transform duration-300 -rotate-90 cursor-pointer mt-1.5 ml-2"
-                                        :class="itPortal ? 'rotate-3' : ''"
+                                        :class="itPortalEdit ? 'rotate-3' : ''"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -1175,19 +1186,19 @@ export default {
                                 
                             </tr>
                         
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortalEdit" class="border">
                                 <td>
                                     Dashboard
                                 </td>
                                 
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortalEdit" class="border">
                                 <td>
                                     Account Management
                                 </td>
                                 
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortalEdit" class="border">
                                 <td>
                                     1. User
                                 </td>
@@ -1210,7 +1221,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortalEdit" class="border">
                                 <td>
                                     2. Department
                                 </td>
@@ -1233,7 +1244,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortalEdit" class="border">
                                 <td>
                                     Maintenance
                                 </td>
@@ -1256,7 +1267,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortalEdit" class="border">
                                 <td>
                                     Point of Sale 
                                 </td>
@@ -1279,7 +1290,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortalEdit" class="border">
                                 <td>
                                     1. Store List
                                 </td>
@@ -1302,7 +1313,7 @@ export default {
                                     <input type="checkbox">
                                 </td>
                             </tr>
-                            <tr v-if="itPortal === true" class="border">
+                            <tr v-show="itPortalEdit" class="border">
                                 <td>
                                     2. Remote
                                 </td>
