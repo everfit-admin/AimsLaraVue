@@ -4,7 +4,7 @@ import Swal from 'sweetalert2'
 import Modal from '../../components/modals/Modal.vue';
 import ProcurementSidebarPannel from '../../components/ProcurementSidebarPannel.vue';
 
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { reactive } from 'vue';
 
 const activeTab = ref('purchase_request');
@@ -12,6 +12,7 @@ const activeTab = ref('purchase_request');
 const isModalDepartmentRequest = ref(false);
 const isModalDepartmentRequestEdit = ref(false);
 const currentItem = ref(null); // Store the item to be edited
+
 
 // Methods to toggle each modal's visibility
 //add department request
@@ -70,6 +71,26 @@ const addRow = () => {
 
 const removeRow = (index) => {
   rows.splice(index, 1);
+};
+
+
+//
+const selected = ref(null); // Holds the selected value
+const searchQuery = ref(""); // Search query for filtering
+const supplierData = ref(["Alpha Core", "Pacita Aire", "Titans Infinity", "Supplier", "Supplier", "Supplier", "Supplier"]); // Dropdown options
+
+// Computed property for filtered items
+const filteredItems = computed(() => {
+  return supplierData.value.filter(supplierItem =>
+  supplierItem.toLowerCase().includes(searchQuery.value.toLowerCase())
+  );
+});
+
+// Methods
+
+const selectItem = (supplierItem) => {
+  selected.value = supplierItem; // Updates the selected value
+  supplierOne.value = false; // Closes the dropdown
 };
 </script>
 
@@ -525,13 +546,11 @@ export default {
                         <h3>Quanity</h3>
                     </div>
                     <div class="flex justify-between mr-4 mt-9">
-                        
-                        
                         <select name="" id="" class="w-[150px] border rounded-md px-1">
-                            <option value="sample">sample</option>
-                            <option value="sample">sample2</option>
-                            <option value="sample">sample3</option>
-                            <option value="sample">sample4</option>
+                            <option value="sample">Acer Altos</option>
+                            <option value="sample">Asus</option>
+                            <option value="sample">Mac Book</option>
+                            <option value="sample">HP</option>
                         </select>
                         <input type="number" v-model="row.quantity" class="border w-[100px] text-center px-2 py-1 rounded-md">
                     </div>
@@ -545,8 +564,7 @@ export default {
                         <div class="w-[170px] bg-zinc-300 h-[110px] rounded-md shadow-lg">
                         
                             <div class="py-2 rounded-t-md flex justify-between" :class="index === 0 ? 'bg-gray' : ''">
-                                <p class="flex-grow text-center" v-if="index === 0">Alpha Core</p>
-
+                                <p class="flex-grow text-center" v-if="index === 0">{{ selected || "Select a Supplier" }}</p>
                                 <div v-if="index === 0" class="bg-white flex justify-end mr-2 items-center rounded-md">
                                     <svg
                                     class="w-5 h-5 transition-transform duration-300 -rotate-90 pt-[2px] px-1  cursor-pointer"
@@ -582,36 +600,20 @@ export default {
                             >
                             <div class="flex relative">
                                 <img src="../../components/images/icon-search.png" class="absolute left-2 top-1/2 transform -translate-y-1/2 w-[18px] h-[18px]" alt="search icon">
-                                <input type="text" class="border py-1 pl-7 w-full text-sm mt-1 mx-1 rounded-md" placeholder="Search Supplier">
+                                <input  type="text" v-model="searchQuery" class="border py-1 pl-7 w-full text-sm mt-1 mx-1 rounded-md" placeholder="Search Supplier">
                                 
                             </div>
                             
                             <div class="overflow-y-auto h-[115px]">
                                 <ul class="pb-2 pt-1 px-2 text-sm text-gray-700 dark:text-gray-200 text-center">
-                                    <li>
-                                        <p>Alpha Coreddd</p>
+                                    <li v-for="(supplierItem, index) in filteredItems" 
+                                        :key="index" 
+                                        @click="selectItem(supplierItem)"
+                                        class="hover:bg-blue-700 hover:text-white py-1"
+                                        >
+                                        {{ supplierItem }}
                                     </li>
-                                    <li>
-                                        <p>Pacita Aire</p>
-                                    </li>
-                                    <li>
-                                        <p>Titans Infinity</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                             
@@ -772,7 +774,7 @@ export default {
                 <font-awesome-icon :icon="['fas', 'square-plus']" class="text-[27px] px-2 cursor-pointer hover:scale-110 duration-500" @click="addRow"/>
                 <h5 class="text-[15px] font-semibold pt-1">Create New Line</h5>
             </div>
-            <div class="flex justify-between py-10 w-[91%]">
+            <div class="flex justify-between py-10 w-[100%]">
                 <div class="ml-[280px]">
                     <button type="button" @click="sendQuotation" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-green-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">SEND QUOTE</button>
                     <button type="button" @click="rejectQuotation" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-red-700 rounded-lg border hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-white hover:scale-105 duration-300">REJECT</button>
