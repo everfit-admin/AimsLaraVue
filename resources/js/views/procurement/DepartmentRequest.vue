@@ -53,6 +53,7 @@ const rows = reactive([
   {
     purchase: "",
     quantity: "",
+    dropdownDescription: "",
     supplierOneInput: "",
     supplierTwoInput: "",
     supplierThreeInput: "",
@@ -63,6 +64,7 @@ const addRow = () => {
   rows.push({
     purchase: "",
     quantity: "",
+    dropdownDescription: "",
     supplierOneInput: "",
     supplierTwoInput: "",
     supplierThreeInput: "",
@@ -75,22 +77,52 @@ const removeRow = (index) => {
 
 
 //
-const selected = ref(null); // Holds the selected value
-const searchQuery = ref(""); // Search query for filtering
+const selectedSupplierOne = ref(null); // Holds the selected value for SUPPLIER ONE
+const selectedSupplierTwo = ref(null); // Holds the selected value for SUPPLIER TWO
+const selectedSupplierThree = ref(null); // Holds the selected value for SUPPLIER THREE
+
+const searchQuerySupplierOne = ref(""); // Search query for filtering SUPPLIER ONE
+const searchQuerySupplierTwo = ref(""); // Search query for filtering SUPPLIER TWO
+const searchQuerySupplierThree = ref(""); // Search query for filtering SUPPLIER THREE
+
 const supplierData = ref(["Alpha Core", "Pacita Aire", "Titans Infinity", "Supplier", "Supplier", "Supplier", "Supplier"]); // Dropdown options
 
-// Computed property for filtered items
-const filteredItems = computed(() => {
+// Computed property for filtered items SUPPLIER ONE
+const filteredItemsSupplierOne = computed(() => {
   return supplierData.value.filter(supplierItem =>
-  supplierItem.toLowerCase().includes(searchQuery.value.toLowerCase())
+  supplierItem.toLowerCase().includes(searchQuerySupplierOne.value.toLowerCase())
+  );
+});
+
+// Computed property for filtered items SUPPLIER TWO
+const filteredItemsSupplierTwo = computed(() => {
+  return supplierData.value.filter(supplierItem =>
+  supplierItem.toLowerCase().includes(searchQuerySupplierTwo.value.toLowerCase())
+  );
+});
+
+// Computed property for filtered items SUPPLIER THREE
+const filteredItemsSupplierThree = computed(() => {
+  return supplierData.value.filter(supplierItem =>
+  supplierItem.toLowerCase().includes(searchQuerySupplierThree.value.toLowerCase())
   );
 });
 
 // Methods
 
-const selectItem = (supplierItem) => {
-  selected.value = supplierItem; // Updates the selected value
+const selectItemSupplierOne = (supplierItem) => {
+    selectedSupplierOne.value = supplierItem; // Updates the selected value
   supplierOne.value = false; // Closes the dropdown
+};
+
+const selectItemSupplierTwo = (supplierItem) => {
+    selectedSupplierTwo.value = supplierItem; // Updates the selected value
+  supplierTwo.value = false; // Closes the dropdown
+};
+
+const selectItemSupplierThree = (supplierItem) => {
+    selectedSupplierThree.value = supplierItem; // Updates the selected value
+  supplierThree.value = false; // Closes the dropdown
 };
 </script>
 
@@ -543,16 +575,16 @@ export default {
                 <div class="w-[90%]">
                     <div v-if="index === 0" class="flex justify-between mr-4">
                         <h3>Description</h3>
-                        <h3>Quanity</h3>
+                        <h3>Quantity</h3>
                     </div>
                     <div class="flex justify-between mr-4 mt-9">
-                        <select name="" id="" class="w-[150px] border rounded-md px-1">
-                            <option value="sample">Acer Altos</option>
-                            <option value="sample">Asus</option>
-                            <option value="sample">Mac Book</option>
-                            <option value="sample">HP</option>
+                        <select name="" id="" v-model="row.dropdownDescription" class="w-[150px] border rounded-md px-1">
+                            <option value="Acer Altos">Acer Altos</option>
+                            <option value="Asus">Asus</option>
+                            <option value="Mac Book">Mac Book</option>
+                            <option value="HP">HP</option>
                         </select>
-                        <input type="number" v-model="row.quantity" class="border w-[100px] text-center px-2 py-1 rounded-md">
+                        <input type="number" v-model="row.quantity" min="0" class="border w-[100px] text-center px-2 py-1 rounded-md">
                     </div>
                     <div class="flex justify-start mt-4">
                         <div class="w-[92%] h-0.5 bg-gray mt-[5px] rounded-full duration-500 ease-in-out transform"></div>
@@ -560,11 +592,12 @@ export default {
                 </div>
                 
                 <div class="flex gap-3 relative">
+                    <!--SUPPLIER ONE-->
                     <div class="relative">
                         <div class="w-[170px] bg-zinc-300 h-[110px] rounded-md shadow-lg">
                         
                             <div class="py-2 rounded-t-md flex justify-between" :class="index === 0 ? 'bg-gray' : ''">
-                                <p class="flex-grow text-center" v-if="index === 0">{{ selected || "Select a Supplier" }}</p>
+                                <p class="flex-grow text-center" v-if="index === 0">{{ selectedSupplierOne || "Select a Supplier" }}</p>
                                 <div v-if="index === 0" class="bg-white flex justify-end mr-2 items-center rounded-md">
                                     <svg
                                     class="w-5 h-5 transition-transform duration-300 -rotate-90 pt-[2px] px-1  cursor-pointer"
@@ -600,16 +633,16 @@ export default {
                             >
                             <div class="flex relative">
                                 <img src="../../components/images/icon-search.png" class="absolute left-2 top-1/2 transform -translate-y-1/2 w-[18px] h-[18px]" alt="search icon">
-                                <input  type="text" v-model="searchQuery" class="border py-1 pl-7 w-full text-sm mt-1 mx-1 rounded-md" placeholder="Search Supplier">
+                                <input  type="text" v-model="searchQuerySupplierOne" class="border py-1 pl-7 w-full text-sm mt-1 mx-1 rounded-md" placeholder="Search Supplier">
                                 
                             </div>
                             
                             <div class="overflow-y-auto h-[115px]">
                                 <ul class="pb-2 pt-1 px-2 text-sm text-gray-700 dark:text-gray-200 text-center">
-                                    <li v-for="(supplierItem, index) in filteredItems" 
+                                    <li v-for="(supplierItem, index) in filteredItemsSupplierOne" 
                                         :key="index" 
-                                        @click="selectItem(supplierItem)"
-                                        class="hover:bg-blue-700 hover:text-white py-1"
+                                        @click="selectItemSupplierOne(supplierItem)"
+                                        class="hover:bg-blue-600 hover:text-white py-1"
                                         >
                                         {{ supplierItem }}
                                     </li>
@@ -619,11 +652,11 @@ export default {
                             
                         </div>
                     </div>
-                    
+                    <!--SUPPLIER TWO-->
                     <div class="relative">
                         <div class="w-[170px] bg-zinc-300 h-[110px] rounded-md shadow-lg">
                             <div class="py-2 rounded-t-md flex justify-between" :class="index === 0 ? 'bg-gray' : ''">
-                                <p class="flex-grow text-center" v-if="index === 0">Pacita Aire</p>
+                                <p class="flex-grow text-center" v-if="index === 0">{{ selectedSupplierTwo || "Select a Supplier" }}</p>
 
                                 <div v-if="index === 0" class="bg-white flex justify-end mr-2 items-center rounded-md">
                                     <svg
@@ -657,47 +690,27 @@ export default {
                             >
                             <div class="flex relative">
                                 <img src="../../components/images/icon-search.png" class="absolute left-2 top-1/2 transform -translate-y-1/2 w-[18px] h-[18px]" alt="search icon">
-                                <input type="text" class="border py-1 pl-7 w-full text-sm mt-1 mx-1 rounded-md" placeholder="Search Supplier">
-                                
+                                <input  type="text" v-model="searchQuerySupplierTwo" class="border py-1 pl-7 w-full text-sm mt-1 mx-1 rounded-md" placeholder="Search Supplier">
                             </div>
                             
                             <div class="overflow-y-auto h-[115px]">
                                 <ul class="pb-2 pt-1 px-2 text-sm text-gray-700 dark:text-gray-200 text-center">
-                                    <li>
-                                        <p>Alpha Core</p>
-                                    </li>
-                                    <li>
-                                        <p>Pacita Aire</p>
-                                    </li>
-                                    <li>
-                                        <p>Titans Infinity</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
+                                    <li v-for="(supplierItem, index) in filteredItemsSupplierTwo" 
+                                        :key="index" 
+                                        @click="selectItemSupplierTwo(supplierItem)"
+                                        class="hover:bg-blue-600 hover:text-white py-1"
+                                        >
+                                        {{ supplierItem }}
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    <!--SUPPLIER THREE-->
                     <div class="relative">
                         <div class="w-[170px] bg-zinc-300 h-[110px] rounded-md shadow-lg">
                             <div class=" py-2 rounded-t-md flex justify-between" :class="index === 0 ? 'bg-gray' : ''">
-                                <p class="flex-grow text-center" v-if="index === 0">Titans Infinity</p>
+                                <p class="flex-grow text-center" v-if="index === 0">{{ selectedSupplierThree || "Select a Supplier" }}</p>
 
                                 <div v-if="index === 0" class="bg-white flex justify-end mr-2 items-center rounded-md">
                                         <svg
@@ -720,7 +733,7 @@ export default {
                                     </div>
                             </div>
                             <div class="flex justify-center mt-5">
-                                <input type="text" v-model="supplierThreeInput" class="border rounded-md shadow-md w-[150px] bg-white px-1 py-1">
+                                <input type="text" v-model="row.supplierThreeInput" class="border rounded-md shadow-md w-[150px] bg-white px-1 py-1">
                             </div>
                         </div>
                         <div
@@ -729,37 +742,17 @@ export default {
                             >
                             <div class="flex relative">
                                 <img src="../../components/images/icon-search.png" class="absolute left-2 top-1/2 transform -translate-y-1/2 w-[18px] h-[18px]" alt="search icon">
-                                <input type="text" class="border py-1 pl-7 w-full text-sm mt-1 mx-1 rounded-md" placeholder="Search Supplier">
+                                <input type="text" v-model="searchQuerySupplierThree" class="border py-1 pl-7 w-full text-sm mt-1 mx-1 rounded-md" placeholder="Search Supplier">
                                 
                             </div>
                             <div class="overflow-y-auto h-[115px]">
                                 <ul class="pb-2 pt-1 px-2 text-sm text-gray-700 dark:text-gray-200 text-center">
-                                    <li>
-                                        <p>Alpha Core</p>
-                                    </li>
-                                    <li>
-                                        <p>Pacita Aire</p>
-                                    </li>
-                                    <li>
-                                        <p>Titans Infinity</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
-                                    </li>
-                                    <li>
-                                        <p>Supplier</p>
+                                    <li v-for="(supplierItem, index) in filteredItemsSupplierThree" 
+                                        :key="index" 
+                                        @click="selectItemSupplierThree(supplierItem)"
+                                        class="hover:bg-blue-600 hover:text-white py-1"
+                                        >
+                                        {{ supplierItem }}
                                     </li>
                                 </ul>
                             </div>
