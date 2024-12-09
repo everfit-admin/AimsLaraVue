@@ -92,6 +92,10 @@ function toggleActiveSupplierThreeEdit() {
 }
 
 function resetAll() {
+    isActiveSupplierOne.value = false;
+    isActiveSupplierTwo.value = false;
+    isActiveSupplierThree.value = false;
+
     isActiveSupplierOneEdit.value = false;
     isActiveSupplierTwoEdit.value = false;
     isActiveSupplierThreeEdit.value = false;
