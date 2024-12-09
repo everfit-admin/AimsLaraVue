@@ -57,7 +57,7 @@ export default {
                             confirmButton: 'text-white border-0',
                             cancelButton: 'text-white',
                         }
-                })
+                    })
                 }
             });
         },
@@ -174,13 +174,12 @@ export default {
                             <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
                         </div>
                         <div class="">
-                            <DeviceGridAssetManagement
-                            />
+                            <DeviceGridAssetManagement/>
                         </div>
                         
                     </div>
                         
-                    </div>
+                  </div>
                     
                 </div>
                 

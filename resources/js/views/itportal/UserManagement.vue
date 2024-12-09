@@ -354,19 +354,19 @@ export default {
                 @click="toggleActiveUser">
                     USER
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveHead ? 'bg-blue-800' : 'bg-gray' "
+                <button class="text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveHead ? 'bg-blue-800' : 'bg-gray' "
                 @click="toggleActiveHead">
                     HEAD 
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveApprover ? 'bg-blue-800' : 'bg-gray' "
+                <button class="text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveApprover ? 'bg-blue-800' : 'bg-gray' "
                 @click="toggleActiveApprover">
                     APPROVER 
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveAdmin ? 'bg-blue-800' : 'bg-gray' "
+                <button class="text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveAdmin ? 'bg-blue-800' : 'bg-gray' "
                 @click="toggleActiveAdmin">
                     ADMIN 
                 </button>
-                <button class="bg-blue-800 text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveProcurement ? 'bg-blue-800' : 'bg-gray' "
+                <button class="text-white text-[13px] mx-1 w-[140px] rounded-lg hover:scale-105 duration-500" :class="isActiveProcurement ? 'bg-blue-800' : 'bg-gray' "
                 @click="toggleActiveProcurement">
                     PROCUREMENT 
                 </button>
