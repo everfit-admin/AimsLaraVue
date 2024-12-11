@@ -1,4 +1,4 @@
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+/* The flip card container */
 .flip-card {
     background-color: transparent;
     border: 1px solid #f1f1f1;
@@ -28,7 +28,7 @@
     backface-visibility: hidden;
   }
   
-  /* Style the front side (fallback if image is missing) */
+  /* Style the front side */
   .flip-card-front {
     color: black;
   }
@@ -39,10 +39,24 @@
     color: white;
     transform: rotateY(180deg);
   }
-
-
-
+  .container-bg {
+    position: relative; /* Ensures the child elements are positioned relative to this container */
+    overflow: hidden; /* Hides any overflowing content */
+    width: 100%; /* Makes the container responsive */
+  }
   
+  .slicedBox {
+    border-bottom: 794px solid #000000;
+    border-left: 0px solid transparent;
+    border-right: 300px solid transparent;
+    width: 60%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 32%;
+  
+  }
+
 /*Tracking for pusrchase overview*/
 body {
   color: #000;
@@ -271,22 +285,27 @@ input:checked + .slider:before {
 .tooltip-requestor .tooltiptext-requestor {
   visibility: hidden;
   width: 90px;
-  background-color: black;
+  background-color: rgb(80, 80, 80);
   color: #fff;
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
   top: 0px;
   left: 7px;
- 
-  /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip-requestor:hover .tooltiptext-requestor {
   visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
 }
 
 
@@ -295,7 +314,7 @@ input:checked + .slider:before {
 .tooltip-manager .tooltiptext-manager {
   visibility: hidden;
   width: 90px;
-  background-color: black;
+  background-color: rgb(80, 80, 80);
   color: #fff;
   text-align: center;
   padding: 5px 0;
@@ -303,14 +322,21 @@ input:checked + .slider:before {
   top: 0px;
   left: 7px;
  
-  /* Position the tooltip text - see examples below! */
+  
   position: absolute;
   z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip-manager:hover .tooltiptext-manager {
   visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
 }
 
 
@@ -318,7 +344,7 @@ input:checked + .slider:before {
 .tooltip-quotation .tooltiptext-quotation {
   visibility: hidden;
   width: 90px;
-  background-color: black;
+  background-color: rgb(80, 80, 80);
   color: #fff;
   text-align: center;
   padding: 5px 0;
@@ -326,14 +352,21 @@ input:checked + .slider:before {
   top: 0px;
   left: 7px;
  
-  /* Position the tooltip text - see examples below! */
+  
   position: absolute;
   z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip-quotation:hover .tooltiptext-quotation {
   visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
 }
 
 
@@ -341,7 +374,7 @@ input:checked + .slider:before {
 .tooltip-coo .tooltiptext-coo {
   visibility: hidden;
   width: 90px;
-  background-color: black;
+  background-color: rgb(80, 80, 80);
   color: #fff;
   text-align: center;
   padding: 5px 0;
@@ -349,14 +382,21 @@ input:checked + .slider:before {
   top: 0px;
   left: 7px;
  
-  /* Position the tooltip text - see examples below! */
+  
   position: absolute;
   z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip-coo:hover .tooltiptext-coo {
   visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
 }
 
 
@@ -364,7 +404,7 @@ input:checked + .slider:before {
 .tooltip-cfo .tooltiptext-cfo {
   visibility: hidden;
   width: 90px;
-  background-color: black;
+  background-color: rgb(80, 80, 80);
   color: #fff;
   text-align: center;
   padding: 5px 0;
@@ -372,21 +412,28 @@ input:checked + .slider:before {
   top: 0px;
   left: 7px;
  
-  /* Position the tooltip text - see examples below! */
+  
   position: absolute;
   z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip-cfo:hover .tooltiptext-cfo {
   visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
 }
 
 /* Tooltip text PROCUREMENT*/
 .tooltip-procurement .tooltiptext-procurement {
   visibility: hidden;
   width: 90px;
-  background-color: black;
+  background-color: rgb(80, 80, 80);
   color: #fff;
   text-align: center;
   padding: 5px 0;
@@ -394,14 +441,21 @@ input:checked + .slider:before {
   top: 0px;
   left: 7px;
  
-  /* Position the tooltip text - see examples below! */
+
   position: absolute;
   z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip-procurement:hover .tooltiptext-procurement {
   visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
 }
 
 
@@ -409,7 +463,7 @@ input:checked + .slider:before {
 .tooltip-completed .tooltiptext-completed {
   visibility: hidden;
   width: 90px;
-  background-color: black;
+  background-color: rgb(80, 80, 80);
   color: #fff;
   text-align: center;
   padding: 5px 0;
@@ -420,18 +474,25 @@ input:checked + .slider:before {
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip-completed:hover .tooltiptext-completed {
   visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
 }
 
 /* Tooltip text SWITCH ACTIVE USER MANAGEMENT*/
 .tooltip-active .tooltiptext-active {
   visibility: hidden;
   width: 90px;
-  background-color: black;
+  background-color: rgb(80, 80, 80);
   color: #fff;
   text-align: center;
   padding: 5px 0;
@@ -439,35 +500,48 @@ input:checked + .slider:before {
   transform: translateY(-36px) translateX(10px);
   
 
-  /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(15px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip-active:hover .tooltiptext-active {
   visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(-36px) translateX(10px); /* Reset offset */
 }
 
 /* Tooltip text SWITCH ACTIVE USER MANAGEMENT EDIT*/
 .tooltip-activeedit .tooltiptext-activeedit {
   visibility: hidden;
   width: 90px;
-  background-color: black;
+  background-color: rgb(80, 80, 80);
   color: #fff;
   text-align: center;
   padding: 5px 0;
   border-radius: 20px 17px 17px 2px;
   transform: translateY(-36px) translateX(10px);
   
-  /* Position the tooltip text - see examples below! */
+  
   position: absolute;
   z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip-activeedit:hover .tooltiptext-activeedit {
   visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(-36px) translateX(10px); /* Reset offset */
 }
 
 
@@ -475,19 +549,26 @@ input:checked + .slider:before {
 .tooltip-activedepartment .tooltiptext-activedepartment {
   visibility: hidden;
   width: 90px;
-  background-color: black;
+  background-color: rgb(80, 80, 80);
   color: #fff;
   text-align: center;
   padding: 5px 0;
   border-radius: 50px;
   transform: translateX(70px);
 
-  /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip-activedepartment:hover .tooltiptext-activedepartment {
   visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateX(65px); /* Reset offset */
+  
 }

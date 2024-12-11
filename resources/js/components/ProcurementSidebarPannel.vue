@@ -109,7 +109,7 @@ function handleClickOutsidePos(event) {
           </li>
           <li class="text-lg">
             <div class="flex">
-              <router-link to="/department-request" active-class="font-semibold bg-white pr-[0px] py-1 shadow-lg no-hover rounded-r-full">
+              <router-link to="/department-request" active-class="font-semibold bg-white pr-[25px] py-1 shadow-lg no-hover">
                 <button
                 id="dropdownDefaultButton"
                 
@@ -121,7 +121,7 @@ function handleClickOutsidePos(event) {
               </button>
               </router-link>
               <svg
-                  class="w-4 h-4 transition-transform duration-300 -rotate-90 mt-[10px] ml-[3px] cursor-pointer"
+                  class="w-4 h-4 transition-transform duration-300 -rotate-90 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
                   :class="isDropdownVisible ? 'rotate-3' : ''"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"

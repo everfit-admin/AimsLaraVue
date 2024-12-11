@@ -21,54 +21,57 @@ import ProcurementSidebarPannel from '../../components/ProcurementSidebarPannel.
         
         <ProcurementSidebarPannel/>
 
-        <div class="flex justify-center flex-grow h-[1000px] overflow-y-auto">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-[98%] h-[200px] mt-[50px]">
-            <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
-              
+        <div class="flex-grow md:h-[1050px] h-[1150px] overflow-y-auto">
+          <div class="flex justify-center">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-[98%] h-[150px] mt-[50px]">
+              <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
+                
+                  <div>
+                    <div class="text-2xl font-semibold">620</div>
+                    <div class="text-gray-600">Total Department Request</div>
+                  </div>
+                  
+                  <div>
+                    <img src="../../components/images/icon-monitor-1.png" class="w-[47px] " alt="Total Hardware Icon">
+                  </div>
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
                 <div>
-                  <div class="text-2xl font-semibold">620</div>
-                  <div class="text-gray-600">Total Department Request</div>
+                  <div class="text-2xl font-semibold">129</div>
+                  <div class="text-gray-600">Total Pending Request</div>
                 </div>
                 
                 <div>
-                  <img src="../../components/images/icon-monitor-1.png" class="w-[47px] " alt="Total Hardware Icon">
+                  <img src="../../components/images/icon-software.png" class="w-[47px]" alt="Total Software Icon">
                 </div>
-              
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-semibold">7</div>
+                  <div class="text-gray-600">Total Rejected</div>
+                </div>
+                
+                <div>
+                  <img src="../../components/images/icon-protect.png" class="w-[47px]" alt="Total Email Icon">
+                </div>
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-semibold">85</div>
+                  <div class="text-gray-600">Total Special Request</div>
+                </div>
+                
+                <div>
+                  <img src="../../components/images/icon-envelope-1.png" class="w-[47px]" alt="Total User Icon">
+                </div>
+              </div>
               
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
-              <div>
-                <div class="text-2xl font-semibold">129</div>
-                <div class="text-gray-600">Total Pending Request</div>
-              </div>
-              
-              <div>
-                <img src="../../components/images/icon-software.png" class="w-[47px]" alt="Total Software Icon">
-              </div>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
-              <div>
-                <div class="text-2xl font-semibold">7</div>
-                <div class="text-gray-600">Total Rejected</div>
-              </div>
-              
-              <div>
-                <img src="../../components/images/icon-protect.png" class="w-[47px]" alt="Total Email Icon">
-              </div>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
-              <div>
-                <div class="text-2xl font-semibold">85</div>
-                <div class="text-gray-600">Total Special Request</div>
-              </div>
-              
-              <div>
-                <img src="../../components/images/icon-envelope-1.png" class="w-[47px]" alt="Total User Icon">
-              </div>
-            </div>
-            <div class="col-span-4">
+          </div>
+          
+          <div class="col-span-4 mt-[120px] md:mt-[20px]">
                 <div class="flex justify-center">
-                    <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
+                    <div class="w-[98%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
                 </div>
                 <div class="flex justify-center">
                   <table class="w-[80%] text-[13px]">
@@ -217,12 +220,8 @@ import ProcurementSidebarPannel from '../../components/ProcurementSidebarPannel.
                       </tr>
                     </tbody>
                   </table>
-                </div>
-              
-                
-            </div>
+                </div>   
           </div>
-    
         </div>
       </div>
     </div>

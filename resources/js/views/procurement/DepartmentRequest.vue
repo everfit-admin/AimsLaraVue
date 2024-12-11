@@ -642,10 +642,7 @@ export default {
 
                                     </svg>
                                 </div>
-                            
-                            
                             </div>
-                            
                             <div class="flex justify-center mt-5">
                                 <input type="text" class="border rounded-md shadow-md w-[150px] bg-white px-1 py-1 text-center">
                             </div>
@@ -1129,7 +1126,7 @@ export default {
                                 <h1 class="text-[23px] font-semibold ml-[40px]">Department Request</h1>
                             </div>
                             <div class="flex justify-center">
-                                <div class="w-[95%] h-0.5 bg-gray mt-[20px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
+                                <div class="xl:w-[90%] lg:w-[85%] w-[75%] h-0.5 bg-gray mt-[20px] mb-[20px] mr-[99px] rounded-full duration-500 ease-in-out transform"></div>
                             </div>
                             <div class="flex gap-5 ml-11 text-[18px]">
                                 <button>

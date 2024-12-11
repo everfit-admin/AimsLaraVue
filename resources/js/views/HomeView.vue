@@ -8,13 +8,16 @@ import FooterPage from '../components/FooterPage.vue'
     <NavBar/>
   </header>
   <div class="flex flex-col min-h-screen">
-      <div>
-        <img src="../components/images/bg.png" alt="">
+      <div class="">
+        <div class="container-bg">
+          <img src="../components/images/bg.png" alt="">
+          <div class="slicedBox animate-animationslicedBox"></div>
+        </div>
         <div>
           <img src="../components/images/newera_logo.png" class="absolute xl:top-[100px] md:top-[70px] top-[65px] lg:right-[80px] md:right-[70px] right-[30px] xl:w-[480px] lg:w-[420px] md:w-[320px] w-[220px] duration-500 ease-in-out transform" alt="New Era Logo">
         </div>
         <div class="absolute xl:top-[240px] lg:top-[200px] md:top-[160px] top-[130px] lg:right-[80px] md:right-[70px] right-[30px] w-[100%] flex justify-between">
-          <p class="text-white xl:ml-[180px] lg:ml-[160px] md:ml-[125px] ml-[70px] xl:text-3xl lg:text-[20px] md:text-[18px] text-[15px] duration-500 ease-in-out transform">
+          <p class="text-white xl:ml-[150px] lg:ml-[160px] md:ml-[80px] ml-[60px] xl:text-3xl lg:text-[20px] md:text-[18px] text-[15px] duration-500 ease-in-out transform">
             Welcome to New Era <br> Authentic Information System, Jeff
           </p>
           <div class="relative">

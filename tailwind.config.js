@@ -28,10 +28,15 @@ module.exports = {
           '50%': { transform: 'scale(0.9)' },
           '80%': { transform: 'scale(1.05)' },
         },
+        animationslicedBox: {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)'},
+        },
       },
       animation: {
         slideInLeft: 'slideInLeft 1s ease-out forwards',
         slideInRight: 'slideInRight 1s ease-out forwards',
+        animationslicedBox: 'animationslicedBox 1s ease-out forwards',
         bounceModal: 'bounceModal 0.3s ease',
         
       },

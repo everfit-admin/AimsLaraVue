@@ -23,8 +23,11 @@ import FooterPage from '../components/FooterPage.vue'
             <h2 class="font-bold text-2xl">Login</h2>
             <input name="username" id="username" type="text" class="w-[300px] border rounded-md text-xl p-1 pl-3 mt-7" placeholder="Username">
             <input name="password" id="password" type="password" class="w-[300px] border rounded-md text-xl p-1 pl-3 mt-6" placeholder="Password">
+            <div class="flex justify-start mx-[30px]">
+              <a href="" class="text-blue-800 underline">Forgot Password?</a>
+            </div>
             <div>
-              <button type="submit" class="bg-black w-[87%] ml-[5px] my-5 py-2 rounded-lg font-semibold hover:scale-105 duration-500">Login</button>
+              <button type="submit" class="bg-black w-[87%] ml-[5px] my-2 py-2 rounded-lg font-semibold hover:scale-105 duration-500">Login</button>
             </div>
             
           </div>

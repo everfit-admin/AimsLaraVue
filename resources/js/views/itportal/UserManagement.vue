@@ -414,9 +414,7 @@ export default {
                                 </span>
                             </td>
                             
-                            
                         </tr>
-                        
                             <tr v-show="assetInventory" class="border">
                                 <td>
                                     Dashboard
@@ -1369,7 +1367,7 @@ export default {
                             
                             <div class="flex justify-center">
                                 <div
-                                    class="w-[95%] h-0.5 bg-gray mt-[20px] mb-[20px] rounded-full duration-500 ease-in-out transform">
+                                    class="xl:w-[90%] lg:w-[85%] w-[75%] h-0.5 bg-gray mt-[20px] mb-[20px] mr-[99px] rounded-full duration-500 ease-in-out transform">
                                 </div>
                             </div>
                             
