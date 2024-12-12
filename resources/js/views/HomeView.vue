@@ -14,13 +14,13 @@ import FooterPage from '../components/FooterPage.vue'
           <div class="slicedBox animate-animationslicedBox"></div>
         </div>
         <div>
-          <img src="../components/images/newera_logo.png" class="absolute xl:top-[100px] md:top-[70px] top-[65px] lg:right-[80px] md:right-[70px] right-[30px] xl:w-[480px] lg:w-[420px] md:w-[320px] w-[220px] duration-500 ease-in-out transform" alt="New Era Logo">
+          <img src="../components/images/newera_logo.png" class="animate-opacityAnimation absolute xl:top-[100px] md:top-[70px] top-[65px] lg:right-[80px] md:right-[70px] right-[30px] xl:w-[480px] lg:w-[420px] md:w-[320px] w-[220px] duration-500 ease-in-out transform" alt="New Era Logo">
         </div>
         <div class="absolute xl:top-[240px] lg:top-[200px] md:top-[160px] top-[130px] lg:right-[80px] md:right-[70px] right-[30px] w-[100%] flex justify-between">
-          <p class="text-white xl:ml-[150px] lg:ml-[160px] md:ml-[80px] ml-[60px] xl:text-3xl lg:text-[20px] md:text-[18px] text-[15px] duration-500 ease-in-out transform">
+          <p class="animate-animationslicedBox text-white xl:ml-[150px] lg:ml-[160px] md:ml-[80px] ml-[60px] xl:text-3xl lg:text-[20px] md:text-[18px] text-[15px] duration-500 ease-in-out transform">
             Welcome to New Era <br> Authentic Information System, Jeff
           </p>
-          <div class="relative">
+          <div class="relative animate-opacityAnimation">
             <p class="duration-500 ease-in-out transform">How can I help you today?</p>
             <img src="../components/images/icon-search.png" class="absolute left-2 xl:top-[43px] lg:top-[40px] md:top-[41px] top-[39px] transform -translate-y-1/2 xl:w-[25px] xl:h-[25px] lg:w-[20px] lg:h-[20px] w-[16px] h-[16px]  z-10" alt="search icon">
             <input name="search" id="search" type="text" class="xl:w-[550px] lg:w-[500px] md:w-[350px] w-[250px] xl:text-xl lg:text-md md:text-[15px] text-[10px] py-1 xl:pl-10 lg:pl-8 md:pl-6 sm:pl-6 rounded-md shadow-2xl duration-500 ease-in-out transform border bg-white" placeholder="Search now">
@@ -30,7 +30,7 @@ import FooterPage from '../components/FooterPage.vue'
     <div class="flex justify-center">
       <div class="flex xl:gap-10 lg:gap-7 md:gap-4 gap-3 md:py-5 py-2">
         <a href="">
-          <div class="flip-card">
+          <div class="flip-card animate-slideInLeft">
             <div class="flip-card-inner">
               <div class="flip-card-front relative xl:w-[300px] xl:h-[300px] lg:w-[230px] lg:h-[230px] md:w-[200px] md:h-[200px] w-[160px] h-[160px] bg-black flex justify-center rounded-md duration-500 ease-in-out transform">
                 <h2 class="absolute xl:top-13 lg:top-10 md:top-7 top-[19px] xl:text-xl lg:text-[17px] md:text-[15px] text-xs text-white font-bold duration-500 ease-in-out transform">ASSET INVENTORY</h2>
@@ -55,7 +55,7 @@ import FooterPage from '../components/FooterPage.vue'
           
         </a> 
         <a href="">
-          <div class="flip-card">
+          <div class="flip-card animate-slideInLeft">
             <div class="flip-card-inner">
               <div class="flip-card-front relative xl:w-[300px] xl:h-[300px] lg:w-[230px] lg:h-[230px] md:w-[200px] md:h-[200px] w-[160px] h-[160px] bg-black flex justify-center rounded-md duration-500 ease-in-out transform">
                 <h2 class="absolute xl:top-13 lg:top-10 md:top-7 top-[15px] xl:text-xl lg:text-[17px] md:text-[15px] text-xs text-white font-bold duration-500 ease-in-out transform">PORTAL</h2>
@@ -78,7 +78,7 @@ import FooterPage from '../components/FooterPage.vue'
           </div>
         </a> 
         <a href="">
-          <div class="flip-card">
+          <div class="flip-card animate-slideInLeft">
             <div class="flip-card-inner">
               <div class="flip-card-front relative xl:w-[300px] xl:h-[300px] lg:w-[230px] lg:h-[230px] md:w-[200px] md:h-[200px] w-[160px] h-[160px] bg-black flex justify-center rounded-md duration-500 ease-in-out transform">
                 <h2 class="absolute xl:top-13 lg:top-10 md:top-7 top-[15px] xl:text-xl lg:text-[17px] md:text-[15px] text-xs text-white font-bold duration-500 ease-in-out transform">PROCUREMENT</h2>
@@ -103,7 +103,7 @@ import FooterPage from '../components/FooterPage.vue'
           
         </a> 
         <a href="">
-          <div class="flip-card">
+          <div class="flip-card animate-slideInLeft">
             <div class="flip-card-inner">
               <div class="flip-card-front relative xl:w-[300px] xl:h-[300px] lg:w-[230px] lg:h-[230px] md:w-[200px] md:h-[200px] w-[160px] h-[160px] bg-black flex justify-center rounded-md duration-500 ease-in-out transform">
                 <h2 class="absolute xl:top-13 lg:top-10 md:top-7 top-[15px] xl:text-xl lg:text-[17px] md:text-[15px] text-xs text-white font-bold duration-500 ease-in-out transform">DIRECTORY</h2>

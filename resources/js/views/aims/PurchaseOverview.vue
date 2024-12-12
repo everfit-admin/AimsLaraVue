@@ -154,7 +154,7 @@ export default {
             </div>
             <div class="flex">
                 <SidebarPannel />
-                <div class="h-screen">
+                <div class="h-screen animate-opacityAnimation">
                     <div class="absolute w-[100%] h-[100%] min-h-[700px] bg-black z-40 opacity-35" :class="isModalVisible ? 'block' : 'hidden'"></div>
                         <div class="flex-grow">
                             <div class="flex ml-[30px] mt-[20px] gap-6 opacity-45">

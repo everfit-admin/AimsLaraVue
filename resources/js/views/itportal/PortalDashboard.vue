@@ -18,7 +18,7 @@ import PortalSidebarPannel from '../../components/PortalSidebarPannel.vue';
       </div>
       <div class="flex">
         <PortalSidebarPannel/>
-        <div class="flex justify-center flex-grow md:h-screen h-[900px]">
+        <div class="flex justify-center flex-grow md:h-screen h-[900px] animate-opacityAnimation">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-[98%] h-[450px] mt-[50px]">
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
                 <div>

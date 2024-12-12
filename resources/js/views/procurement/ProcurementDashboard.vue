@@ -21,7 +21,7 @@ import ProcurementSidebarPannel from '../../components/ProcurementSidebarPannel.
         
         <ProcurementSidebarPannel/>
 
-        <div class="flex-grow md:h-[1050px] h-[1150px] overflow-y-auto">
+        <div class="flex-grow md:h-[1050px] h-[1150px] overflow-y-auto animate-opacityAnimation">
           <div class="flex justify-center">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-[98%] h-[150px] mt-[50px]">
               <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">

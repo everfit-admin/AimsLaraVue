@@ -46,7 +46,7 @@ export default {
             </div>
             <div class="flex">
                 <SidebarPannel />
-                <div class="w-[100%] h-screen">
+                <div class="w-[100%] h-screen animate-opacityAnimation">
                     <div class="absolute w-[100%] h-[100%] bg-black z-40 opacity-35" :class="isModalAddAsset ? 'block' : 'hidden'"></div>
                     <div class="flex justify-between">
                         <div class="mx-10 mt-5 mb-6 font-semibold text-[23px]">

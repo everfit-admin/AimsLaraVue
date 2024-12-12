@@ -425,7 +425,7 @@ export default {
             </div>
             <div class="flex">
                 <SidebarPannel />
-                <div class="h-screen">
+                <div class="h-screen animate-opacityAnimation">
                     <div class="flex-grow">
                         <div class="mt-5">
                             <h1 class="text-[23px] font-semibold ml-[40px]">Budget / Fund</h1>

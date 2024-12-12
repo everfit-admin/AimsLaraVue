@@ -20,7 +20,7 @@ import SidebarPannel from '../../components/SidebarPannel.vue';
         
         <SidebarPannel/>
 
-        <div class="flex justify-center flex-grow h-screen">
+        <div class="flex justify-center flex-grow h-screen animate-opacityAnimation">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-[98%] h-[300px] mt-[50px]">
             <div class="bg-white p-6 rounded-lg shadow-lg border flex items-center justify-between">
                 <div>
