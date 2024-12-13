@@ -269,7 +269,7 @@ export default {
             <p>11/12/2024</p>
             
         </div>
-        <div class="w-[94%] h-0.5 bg-zinc-300 mt-[0px] rounded-full duration-500 ease-in-out transform absolute top-[100px]"></div>
+        <div class="w-[91%] h-0.5 bg-zinc-300 mt-[0px] rounded-full duration-500 ease-in-out transform absolute top-[100px]"></div>
         <div>
             <button class="py-2.5 px-5 me-4 mb-0 text-sm font-semibold focus:outline-none mt-4 rounded-t-[10px] border text-zinc-400 duration-300" :class="activeTab === 'purchase_request' ? 'rounded-t-[10px] border bg-zinc-300 text-black' : ''" 
                     @click="activeTab = 'purchase_request'">
