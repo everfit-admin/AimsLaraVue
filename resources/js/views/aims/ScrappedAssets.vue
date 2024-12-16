@@ -8,6 +8,8 @@ import DeviceGridAssetIn from './DeviceGridAssetIn.vue';
 import ModalSquareSize from '../../components/modals/ModalSquareSize.vue';
 import DeviceGridAssetManagement from './DeviceGridAssetManagement.vue';
 import DeviceGridScrappedAssets from './DeviceGridScrappedAssets.vue';
+import { showModalScrappedAsset } from './ModalStateAssetManagement';
+import { showModalEditScrappedAsset } from './ModalStateAssetManagement';
 
 import { ref } from 'vue'
 
@@ -150,7 +152,7 @@ export default {
             <div class="flex">
                 <SidebarPannel />
                 <div class="w-[100%] h-screen animate-opacityAnimation">
-                    <div class="absolute w-[100%] h-[100%] min-h-[700px] bg-black z-40 opacity-35" :class="isModalAddAsset ? 'block' : 'hidden'"></div>
+                    <div class="absolute w-[100%] h-[100%] min-h-[700px] bg-black z-40 opacity-35" :class="showModalEditScrappedAsset || showModalScrappedAsset || isModalAddAsset ? 'block' : 'hidden'"></div>
                     <div class="flex justify-between">
                         <div class="mx-10 mt-5 mb-6 font-semibold text-[23px]">
                             <h1 class="">Scapped Assets</h1>

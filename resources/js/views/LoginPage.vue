@@ -11,7 +11,7 @@ import FooterPage from '../components/FooterPage.vue'
       <h2 class="text-3xl">Welcome, Originators!</h2>
     </div>
     <div class="flex justify-center relative">
-      <div class="lg:flex xl:gap-[150px] lg:gap-[60px] lg:mr-[90px]">
+      <div class="lg:flex xl:gap-[150px] lg:gap-[60px] xl:mr-[110px] lg:mr-[100px]">
         <div class="flex justify-center lg:pb-[230px] animate-slideInLeft transition-all duration-500 ease-in-out transform">
           <img src="../components/images/newera_logo.png" class="lg:w-[500px] w-[350px] lg:mt-[200px] mt-[80px] lg:pl-[50px]" alt="">
         </div>

@@ -7,6 +7,8 @@ import SideAssetCategories from '../../components/SideAssetCategories.vue';
 import DeviceGridAssetIn from './DeviceGridAssetIn.vue';
 import ModalSquareSize from '../../components/modals/ModalSquareSize.vue';
 import DeviceGridAssetManagement from './DeviceGridAssetManagement.vue';
+import { showModalAssetIn } from './ModalStateAssetManagement';
+import { showModalEditAssetIn } from './ModalStateAssetManagement';
 
 import { ref } from 'vue'
 
@@ -48,7 +50,7 @@ export default {
             <div class="flex">
                 <SidebarPannel />
                 <div class="w-[100%] h-screen animate-opacityAnimation">
-                    <div class="absolute w-[100%] h-[100%] bg-black z-40 opacity-35" :class="isModalAddAsset ? 'block' : 'hidden'"></div>
+                    <div class="absolute w-[100%] h-[100%] bg-black z-40 opacity-35" :class="showModalEditAssetIn || showModalAssetIn || isModalAddAsset ? 'block' : 'hidden'"></div>
                     <div class="flex justify-between">
                         <div class="mx-10 mt-5 mb-6 font-semibold text-[23px]">
                             <h1 class="">Moved Assets >> Assets In</h1>

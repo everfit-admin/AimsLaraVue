@@ -6,9 +6,10 @@ import Modal from '../../components/modals/Modal.vue';
 import SideAssetCategories from '@/components/SideAssetCategories.vue';
 import DeviceGridAssetManagement from './DeviceGridAssetManagement.vue';
 import ModalSquareSize from '../../components/modals/ModalSquareSize.vue';
+import { showModalAsset } from './ModalStateAssetManagement';
+import { showModalEditAsset } from './ModalStateAssetManagement';
 
 import { ref } from 'vue'
-
 
 const isModalAddAsset = ref(false);
 const currentItem = ref(null); // Store the item to be edited
@@ -21,6 +22,7 @@ function openModalAddAsset() {
 function closeModalAddAsset() {
     isModalAddAsset.value = false;
 }
+
 
 
 </script>
@@ -147,7 +149,8 @@ export default {
             <div class="flex">
                 <SidebarPannel />
                 <div class="w-[100%] h-screen animate-opacityAnimation">
-                    <div class="absolute w-[100%] h-[100%] min-h-[700px] bg-black z-40 opacity-35" :class="isModalAddAsset ? 'block' : 'hidden'"></div>
+                  <DeviceCardAssetManagement ref="child" />
+                    <div class="absolute w-[100%] h-[100%] min-h-[700px] bg-black z-40 opacity-35" :class="showModalAsset || showModalEditAsset || isModalAddAsset ? 'block' : 'hidden'"></div>
                     <div class="mx-10 mt-5 mb-6 font-semibold text-[23px]">
                         Asset Management
                     </div>

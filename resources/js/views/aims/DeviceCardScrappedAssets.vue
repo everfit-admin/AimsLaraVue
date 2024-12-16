@@ -2,24 +2,24 @@
 import { ref } from 'vue';
 import ModalAsset from '../../components/modals/ModalAsset.vue';
 import Swal from 'sweetalert2';
+import { showModalScrappedAsset } from './ModalStateAssetManagement';
+import { showModalEditScrappedAsset } from './ModalStateAssetManagement';
 
-const showModalAsset = ref(false);
-const showModalEditAsset = ref(false);
 
 function openAssetsModal() {
-  showModalAsset.value = true;
+  showModalScrappedAsset.value = true;
 }
 
 function closeAssetModal() {
-  showModalAsset.value = false;
+  showModalScrappedAsset.value = false;
 }
 
 function openEditAssetsModal() {
-  showModalEditAsset.value = true;
+  showModalEditScrappedAsset.value = true;
 }
 
 function closeEditAssetModal() {
-  showModalEditAsset.value = false;
+  showModalEditScrappedAsset.value = false;
 }
 </script>
 
@@ -110,7 +110,7 @@ function closeEditAssetModal() {
   </style>
 
 <template>
-    <ModalAsset :isVisible="showModalAsset" @close="closeAssetModal">
+    <ModalAsset :isVisible="showModalScrappedAsset" @close="closeAssetModal">
       <div class="px-2 py-2">
         <div class="flex justify-between">
           <div class="flex items-center">
@@ -206,7 +206,7 @@ function closeEditAssetModal() {
         </div>
       </div>
     </ModalAsset>
-    <ModalAsset :isVisible="showModalEditAsset" @close="closeEditAssetModal">
+    <ModalAsset :isVisible="showModalEditScrappedAsset" @close="closeEditAssetModal">
       <div class="px-2 py-2">
         <div>
           <h4 class="font-semibold text-[20px]">Edit Scrapped Assets</h4>
@@ -287,7 +287,7 @@ function closeEditAssetModal() {
         </div>
       </div>
     </ModalAsset>
-    <div class="absolute w-[78%] h-[30%] min-h-[540px] left-[380px] top-[220px] bg-white z-40 opacity-50 rounded-md" :class="showModalAsset || showModalEditAsset ? 'block' : 'hidden'"></div>
+    
     <div class="border rounded-md shadow-md p-4 w-[100%] bg-zinc-200" @click="openAssetsModal">
       <div class="flex justify-between items-center mb-2">
         <h2 class="text-lg font-semibold">{{ device.name }}</h2>
